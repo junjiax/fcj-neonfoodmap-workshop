@@ -1,58 +1,35 @@
 ---
 title: "Worklog Tuần 6"
-date: 2024-01-01
-weight: 1
+date: 2026-07-27
+weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
-{{% /notice %}}
 
+{{% notice warning %}}
+⚠️ **Lưu ý:** Thông tin dưới đây chỉ mang tính tham khảo. Vui lòng không sao chép nguyên văn cho báo cáo cá nhân, bao gồm cả cảnh báo này.
+{{% /notice %}}
 
 ### Mục tiêu tuần 6:
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+- Hoàn thành Task OPS-001 nhằm thiết lập và tối ưu môi trường vận hành ứng dụng trên AWS.
+- Hoàn thành Task LOGS-001 để triển khai hệ thống thu thập và giám sát log.
+- Đảm bảo hệ thống có khả năng theo dõi trạng thái hoạt động, hỗ trợ kiểm tra và xử lý sự cố trong quá trình triển khai.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2025   | 11/08/2025      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2025   | 12/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2025   | 13/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2025   | 15/08/2025      | <https://cloudjourney.awsstudygroup.com/> |
+### Các công việc cần triển khai trong tuần:
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| 2 | - Tiếp nhận và phân tích yêu cầu của Sprint 3 <br> - Nghiên cứu Acceptance Criteria của OPS-001 và LOGS-001 | 27/07/2026 | 27/07/2026 | |
+| 3 | - Thực hiện Task OPS-001 <br> - Cấu hình môi trường vận hành trên AWS <br> - Kiểm tra trạng thái dịch vụ và xác minh khả năng kết nối giữa các thành phần | 28/07/2026 | 28/07/2026 | |
+| 4 | - Tiếp tục hoàn thiện OPS-001 <br> - Kiểm thử hoạt động hệ thống sau khi cấu hình <br> - Điều chỉnh thiết lập và khắc phục lỗi phát sinh | 29/07/2026 | 29/07/2026 | |
+| 5 | - Thực hiện Task LOGS-001 <br> - Cấu hình Amazon CloudWatch Logs <br> - Thiết lập Log Group và Log Stream cho các dịch vụ <br> - Kiểm tra việc ghi nhận log từ container và dịch vụ AWS | 30/07/2026 | 30/07/2026 | |
+| 6 | - Kiểm thử tổng thể OPS-001 và LOGS-001 <br> - Xác nhận log được thu thập và hiển thị đầy đủ trên CloudWatch <br> - Hoàn thiện tài liệu triển khai và báo cáo kết quả Sprint 3 | 31/07/2026 | 31/07/2026 | |
 
 ### Kết quả đạt được tuần 6:
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
-
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
-
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
-
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
-
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
-
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+- Hoàn thành Task OPS-001, cấu hình thành công môi trường vận hành và kiểm tra hoạt động của các thành phần trong hệ thống.
+- Hoàn thành Task LOGS-001, triển khai Amazon CloudWatch Logs để thu thập và quản lý log của ứng dụng.
+- Xác nhận log từ các dịch vụ được ghi nhận đầy đủ, hỗ trợ theo dõi trạng thái và phục vụ xử lý sự cố.
+- Hoàn thiện tài liệu cấu hình và quy trình giám sát hệ thống.
+- Đảm bảo môi trường vận hành đáp ứng yêu cầu của Sprint 3 và sẵn sàng cho các giai đoạn phát triển, kiểm thử tiếp theo.

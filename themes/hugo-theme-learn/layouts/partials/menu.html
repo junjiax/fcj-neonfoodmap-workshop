@@ -46,25 +46,26 @@
             <i class="fas fa-language fa-fw"></i>
             <div class="select-style">
               <select id="select-language" onchange="location = this.value;">
-                {{ $siteLanguages := .Site.Languages}} {{ $pageLang :=
-                .Page.Lang}} {{ range .Page.AllTranslations }} {{ $translation
-                := .}} {{ range $siteLanguages }} {{ if eq $translation.Lang
-                .Lang }} {{ $selected := false }} {{ if eq $pageLang .Lang}}
+                {{ $pageLang := .Page.Lang }}
+                {{ range .Page.AllTranslations }}
+                {{ $translation := . }}
+                {{ if eq $pageLang $translation.Language.Lang }}
                 <option
-                  id="{{ $translation.Language }}"
+                  id="{{ $translation.Language.Lang }}"
                   value="{{ $translation.Permalink }}"
                   selected
                 >
-                  {{ .LanguageName }}
+                  {{ $translation.Language.Label }}
                 </option>
                 {{ else }}
                 <option
-                  id="{{ $translation.Language }}"
+                  id="{{ $translation.Language.Lang }}"
                   value="{{ $translation.Permalink }}"
                 >
-                  {{ .LanguageName }}
+                  {{ $translation.Language.Label }}
                 </option>
-                {{ end }} {{ end }} {{ end }} {{ end }}
+                {{ end }}
+                {{ end }}
               </select>
               <svg
                 version="1.1"
