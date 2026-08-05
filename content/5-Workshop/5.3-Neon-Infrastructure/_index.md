@@ -1,34 +1,34 @@
 ---
-title : "VPC Endpoint Policies"
+title : "Design and Build NeonFoodMap Infrastructure on AWS"
 date : 2024-01-01
-weight : 5
+weight : 3
 chapter : false
-pre : " <b> 5.5. </b> "
+pre : " <b> 5.3. </b> "
 ---
 
-When you create an interface or gateway endpoint, you can attach an endpoint policy to it that controls access to the service to which you are connecting. A VPC endpoint policy is an IAM resource policy that you attach to an endpoint. If you do not attach a policy when you create an endpoint, AWS attaches a default policy for you that allows full access to the service through the endpoint.
+### Objectives
 
-You can create a policy that restricts access to specific S3 buckets only. This is useful if you only want certain S3 Buckets to be accessible through the endpoint.
+In this section, you will deploy the NeonFoodMap infrastructure on AWS following a clear, sequential, end-to-end workflow. The content is organized step by step — from network initialization and data setup to access configuration and final verification.
 
-In this section you will create a VPC endpoint policy that restricts access to the S3 bucket specified in the VPC endpoint policy.
+### Deployment Architecture Overview
 
-![endpoint diagram](/images/5-Workshop/5.5-Policy/s3-bucket-policy.png)
+The infrastructure is built using a multi-tier model with the following layers:
 
-#### Connect to an EC2 instance and verify connectivity to S3
+- Public subnet: receives traffic from the Internet
+- Private subnet: runs applications and internal services
+- Database subnet: hosts the system's RDS instance
+- S3 bucket: stores frontend assets, media, audio, and logs
+- IAM Role and OIDC: grants secure deploy permissions to GitHub Actions
 
-1. Start a new AWS Session Manager session on the instance named Test-Gateway-Endpoint. From the session, verify that you can list the contents of the bucket you created in Part 1: Access S3 from VPC:
+### Deployment Summary
 
-```
-aws s3 ls s3://\<your-bucket-name\>
-```
-![test](/images/5-Workshop/5.5-Policy/test1.png)
+After completing all the steps above, the NeonFoodMap system has a complete foundational infrastructure for secure operation and continuous deployment:
 
-The bucket contents include the two 1 GB files uploaded in earlier.
-
-2. Create a new S3 bucket; follow the naming pattern you used in Part 1, but add a '-2' to the name. Leave other fields as default and click create
-
-![create bucket](/images/5-Workshop/5.5-Policy/create-bucket.png)
-
+- VPC and subnets follow the correct multi-tier network model
+- NAT Gateway allows private subnets to access the Internet in a controlled manner
+- RDS MySQL is deployed in a private subnet, accessible only through the allowed security group
+- S3 is configured to store system resources
+- IAM Role and GitHub OIDC enable GitHub Actions to deploy to AWS following the principle of least privilege
 Successfully create bucket
 
 ![Success](/images/5-Workshop/5.5-Policy/create-bucket-success.png)
