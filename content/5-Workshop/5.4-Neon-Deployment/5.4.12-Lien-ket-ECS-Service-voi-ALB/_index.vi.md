@@ -1,7 +1,7 @@
 ---
 title : "Liên kết ECS Service với ALB"
 date : 2024-01-01
-weight : 1
+weight : 12
 chapter : false
 pre : " <b> 5.4.12. </b> "
 ---
