@@ -1,7 +1,7 @@
 ---
 title : "Tạo Application Load Balancer và cấu hình routing"
 date : 2024-01-01
-weight : 1
+weight : 11
 chapter : false
 pre : " <b> 5.4.11. </b> "
 ---

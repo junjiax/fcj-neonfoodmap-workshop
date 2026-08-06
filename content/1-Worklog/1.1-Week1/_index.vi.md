@@ -16,7 +16,7 @@ pre: " <b> 1.1. </b> "
 
 | Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
 | --- | --- | --- | --- | --- |
-| 2 | - Tham gia buổi định hướng chương trình thực tập <br> - Tìm hiểu mục tiêu, quy định và kế hoạch học tập | 22/06/2026 | 22/06/2026 | |
+| 2 | - Tìm hiểu mục tiêu, quy định và kế hoạch học tập | 22/06/2026 | 22/06/2026 | |
 | 3 | - Nghiên cứu các dịch vụ AWS cơ bản <br> - Tìm hiểu IAM, EC2, S3 và mô hình Cloud Computing | 23/06/2026 | 23/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 | 4 | - Tạo tài khoản AWS Free Tier <br> - Làm quen AWS Console và AWS CLI | 24/06/2026 | 24/06/2026 | <https://cloudjourney.awsstudygroup.com/> |
 | 5 | - Tìm hiểu cơ bản về EC2 <br> - Nghiên cứu phương thức SSH và Elastic IP | 25/06/2026 | 25/06/2026 | <https://cloudjourney.awsstudygroup.com/> |

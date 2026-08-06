@@ -1,7 +1,7 @@
 ---
 title : "Kiểm tra health check và smoke test sau deploy"
 date : 2024-01-01
-weight : 1
+weight : 13
 chapter : false
 pre : " <b> 5.4.13. </b> "
 ---

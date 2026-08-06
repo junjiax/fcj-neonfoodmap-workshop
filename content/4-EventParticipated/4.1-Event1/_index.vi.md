@@ -10,7 +10,7 @@ pre: " <b> 4.1. </b> "
 
 ### Mục Đích Của Sự Kiện
 
-- Trải nghiệm demo về các câu hỏi trong chứng chỉ của AWS
+- Được tham gia 
 
 ### Danh Sách Diễn Giả
 

@@ -8,8 +8,8 @@ pre: " <b> 7. </b> "
 <!-- {{% notice warning %}}
 ⚠️ **Lưu ý:** Các thông tin dưới đây chỉ nhằm mục đích tham khảo, vui lòng **không sao chép nguyên văn** cho bài báo cáo của bạn kể cả warning này.
 {{% /notice %}} -->
-
->Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau:
+<!-- 
+>Tại đây bạn có thể tự do đóng góp ý kiến cá nhân về những trải nghiệm khi tham gia chương trình First Cloud AI Journey, giúp team FCAJ cải thiện những vấn đề còn thiếu sót dựa trên các hạng mục sau: -->
 
 ### Đánh giá chung
 
@@ -33,12 +33,27 @@ Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về t
 
 
 ### Một số câu hỏi khác
-- Điều bạn **hài lòng nhất** trong thời gian thực tập?  
-- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?  
-- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+- Điều bạn **hài lòng nhất** trong thời gian thực tập?
 
+    Điều em hài lòng nhất trong thời gian thực tập là có cơ hội tiếp cận quy trình triển khai phần mềm theo mô hình DevOps trên nền tảng AWS. Bên cạnh đó, môi trường làm việc chuyên nghiệp, cởi mở và luôn khuyến khích học hỏi đã giúp em tự tin hơn trong việc nghiên cứu, giải quyết vấn đề và phát triển bản thân.
+
+- Điều bạn nghĩ công ty **cần cải thiện** cho các thực tập sinh sau?
+    
+    Qua trải nghiệm thực tập, em nhận thấy chương trình đã được tổ chức khá bài bản và mang lại nhiều giá trị cho thực tập sinh. Vì vậy, hiện tại em chưa có đề xuất cụ thể nào cần cải thiện.
+
+- Nếu giới thiệu cho bạn bè, bạn có **khuyên họ thực tập ở đây không**? Vì sao?  
+    
+    Em vẫn sẽ giới thiệu cho bạn bè thực tập ở đây vì đây là môi trường phù hợp để sinh viên tiếp cận các công nghệ hiện đại, được tham gia vào dự án thực tế và rèn luyện kỹ năng làm việc trong môi trường doanh nghiệp
 
 ### Đề xuất & mong muốn
 - Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?  
+    
+    Hiện tại em chưa có đề xuất nào thêm vì chương trình thực tập đã đáp ứng tốt nhu cầu học tập và trải nghiệm của em.
+
 - Bạn có muốn tiếp tục chương trình này trong tương lai?
+    
+    Em mong muốn được tiếp tục tham gia chương trình trong tương lai nếu có cơ hội.
+
 - Góp ý khác (tự do chia sẻ):
+    
+    Hiện tại em không có thêm góp ý nào khác. Em xin chân thành cảm ơn Công ty TNHH Amazon Web Services Việt Nam cùng các anh, chị hướng dẫn đã tạo điều kiện để em được học tập, trải nghiệm và phát triển bản thân trong suốt thời gian thực tập.

@@ -17,15 +17,17 @@ pre : " <b> 5.5.3. </b> "
 - Các truy vấn CloudWatch Log Insights đã được chuẩn bị
 
 ### Các bước thực hiện
-#### Bước 1. Tạo CloudWatch Dashboard (JSON Template)
+#### Bước 1. Tạo CloudWatch Dashboard
 
 1. Đăng nhập **AWS Management Console**.
 2. Truy cập dịch vụ **CloudWatch**.
 3. Chọn **Dashboards**.
 4. Nhấn **Create dashboard**.
+
 ![Hình 66.](/images/5-Workshop/5.5-Neon-Operations/image066.png)
 
 5. Nhập tên Dashboard (ví dụ: `NeonFoodMap-Operational-Dashboard`).
+
 ![Hình 67.](/images/5-Workshop/5.5-Neon-Operations/image067.png)
 
 6. Chọn tạo Dashboard mới.
@@ -33,6 +35,7 @@ pre : " <b> 5.5.3. </b> "
    - Chọn **Actions** → **View/Edit source**.
    - Dán nội dung JSON template.
    - Chọn **Save**.
+
 ![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 ---
@@ -40,27 +43,29 @@ pre : " <b> 5.5.3. </b> "
 #### Bước 2. Thêm Widget hiển thị Metrics của ECS
 
 1. Trong Dashboard chọn **Add widget**.
-Hình 68 ![Hình 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
 
 2. Chọn loại **Line** hoặc **Number**.
-Hình 46 ![Hình 46.](/images/5-Workshop/5.5-Neon-Operations/image046.png)
+
+![Hình 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
 
 3. Chọn nguồn dữ liệu **CloudWatch Metrics**.
-Hình 45 ![Hình 45.](/images/5-Workshop/5.5-Neon-Operations/image045.png)
-
 4. Điều hướng đến:
    - **ECS → Cluster Metrics**
-Hình 53 ![Hình 53.](/images/5-Workshop/5.5-Neon-Operations/image053.png)
-
 5. Thêm các Metrics:
    - CPU Utilization
    - Memory Utilization
    - Network In
    - Network Out
-Hình 55 ![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
+
+![Hình 46.](/images/5-Workshop/5.5-Neon-Operations/image046.png)
+![Hình 53.](/images/5-Workshop/5.5-Neon-Operations/image053.png)
+![Hình 45.](/images/5-Workshop/5.5-Neon-Operations/image045.png)
 
 6. Đặt tên Widget phù hợp.
 7. Nhấn **Create widget**.
+
+
+![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
 
 ---
 
