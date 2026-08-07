@@ -27,7 +27,6 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 6. Nhấn Create.
 
 ![Hình 31.](/images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
-![Hình 32.](/images/5-Workshop/5.3-Neon-Infracstructure/image032.png)
 
 
 ### 5.3.7. Tạo DB Parameter Group cho MySQL
@@ -48,11 +47,8 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 7. Nhấn Save changes.
 
 ![Hình 33.](/images/5-Workshop/5.3-Neon-Infracstructure/image033.png)
-![Hình 34.](/images/5-Workshop/5.3-Neon-Infracstructure/image034.png)
 ![Hình 35.](/images/5-Workshop/5.3-Neon-Infracstructure/image035.png)
-![Hình 36.](/images/5-Workshop/5.3-Neon-Infracstructure/image036.png)
 ![Hình 37.](/images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
-![Hình 38.](/images/5-Workshop/5.3-Neon-Infracstructure/image038.png)
 
 
 ### 5.3.8. Tạo Security Group cho RDS
@@ -71,7 +67,6 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 6. Nhấn Create security group.
 
 ![Hình 39.](/images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
-![Hình 40.](/images/5-Workshop/5.3-Neon-Infracstructure/image040.png)
 
 ### 5.3.9. Khởi tạo Amazon RDS MySQL instance
 
@@ -104,13 +99,9 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 9. Nhấn Create database.
 
 ![Hình 41.](/images/5-Workshop/5.3-Neon-Infracstructure/image041.png)
-![Hình 42.](/images/5-Workshop/5.3-Neon-Infracstructure/image042.png)
 ![Hình 43.](/images/5-Workshop/5.3-Neon-Infracstructure/image043.png)
-![Hình 44.](/images/5-Workshop/5.3-Neon-Infracstructure/image044.png)
 ![Hình 45.](/images/5-Workshop/5.3-Neon-Infracstructure/image045.png)
-![Hình 46.](/images/5-Workshop/5.3-Neon-Infracstructure/image046.png)
 ![Hình 47.](/images/5-Workshop/5.3-Neon-Infracstructure/image047.png)
-![Hình 48.](/images/5-Workshop/5.3-Neon-Infracstructure/image048.png)
 ![Hình 49.](/images/5-Workshop/5.3-Neon-Infracstructure/image049.png)
 ![Hình 50.](/images/5-Workshop/5.3-Neon-Infracstructure/image050.png)
 ![Hình 51.](/images/5-Workshop/5.3-Neon-Infracstructure/image051.png)

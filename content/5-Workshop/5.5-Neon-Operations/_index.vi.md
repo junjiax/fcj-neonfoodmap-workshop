@@ -5,7 +5,6 @@ weight : 5
 chapter : false
 pre : " <b> 5.5. </b> "
 ---
-
 ### Mục tiêu
 
 Trong phần này, bạn sẽ vận hành và kiểm tra hệ thống NeonFoodMap theo một luồng end-to-end rõ ràng. Nội dung được tổ chức theo từng bước, từ việc tạo ECS service, bật auto-scaling, cấu hình CloudFront, thiết lập CloudWatch, cho đến kiểm thử toàn bộ workflow người dùng và dọn dẹp tài nguyên nếu cần.
@@ -35,16 +34,18 @@ Luồng thực hiện gồm các giai đoạn chính sau:
 9. Bật `Availability Zone rebalancing` nếu muốn dịch chuyển task giữa các AZ hiệu quả hơn.
 10. Chọn deployment strategy `Rolling update`.
 11. Trong phần Networking:
-   - VPC: chọn VPC dự án
-   - Subnets: chọn 2 private subnets
-   - Security Group: chọn security group phù hợp
-12. Trong phần Load balancing:
-   - Load balancer type: `Application Load Balancer`
-   - Chọn ALB đã tạo
-   - Chọn target group backend
-13. Nhấn Create.
 
-![Hình 1. Tạo ECS Service Backend](/images/5-Workshop/5.5-neon-operations/placeholder-ecs-service.png)
+- VPC: chọn VPC dự án
+- Subnets: chọn 2 private subnets
+- Security Group: chọn security group phù hợp
+
+12. Trong phần Load balancing:
+
+- Load balancer type: `Application Load Balancer`
+- Chọn ALB đã tạo
+- Chọn target group backend
+
+13. Nhấn Create.
 
 ### 5.5.2. Cấu hình auto-scaling cho ECS service
 
@@ -68,8 +69,6 @@ Luồng thực hiện gồm các giai đoạn chính sau:
 - `Target value = 70`: nếu CPU vượt ngưỡng, service sẽ scale out.
 - `Scale-out cooldown = 60s`: sau khi scale out, hệ thống sẽ chờ 60 giây để task mới ổn định.
 - `Scale-in cooldown = 300s`: khi tải giảm, hệ thống sẽ chờ 5 phút trước khi scale in để tránh flapping.
-
-![Hình 2. Cấu hình Auto Scaling ECS](/images/5-Workshop/5.5-neon-operations/placeholder-auto-scaling.png)
 
 ### 5.5.3. Cấu hình CloudFront để phục vụ frontend và proxy API
 

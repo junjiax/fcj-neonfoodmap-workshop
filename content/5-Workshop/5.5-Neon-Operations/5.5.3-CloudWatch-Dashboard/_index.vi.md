@@ -8,12 +8,12 @@ pre : " <b> 5.5.3. </b> "
 
 ### 5.5.3. CloudWatch Dashboard 
 
-### Mục tiêu
+Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu sau:
 
 - Dashboard hiển thị trong CloudWatch
 - Tất cả các chỉ số (Metrics) được cập nhật theo thời gian thực
 - Các cảnh báo (Alarms) đã được cấu hình và kiểm thử
-- Thông báo Email hoạt động bình thường
+- Thông báo alarm qua Email hoạt động bình thường
 - Các truy vấn CloudWatch Log Insights đã được chuẩn bị
 
 ### Các bước thực hiện
@@ -42,108 +42,126 @@ pre : " <b> 5.5.3. </b> "
 
 #### Bước 2. Thêm Widget hiển thị Metrics của ECS
 
-1. Trong Dashboard chọn **Add widget**.
+1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-2. Chọn loại **Line** hoặc **Number**.
+![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
 
+2. Chọn Data type: **Metrics**, Preferred experience: **Metrics Console**
+
+3. Chọn Widget type: **Line**
 ![Hình 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
 
-3. Chọn nguồn dữ liệu **CloudWatch Metrics**.
-4. Điều hướng đến:
-   - **ECS → Cluster Metrics**
-5. Thêm các Metrics:
+4. Nhấn **Next**, điều hướng đến **ECS → ClusterName, ServiceName**
+
+5. Nhấn chọn các **Metric Name** như sau:
    - CPU Utilization
    - Memory Utilization
-   - Network In
-   - Network Out
 
 ![Hình 46.](/images/5-Workshop/5.5-Neon-Operations/image046.png)
-![Hình 53.](/images/5-Workshop/5.5-Neon-Operations/image053.png)
+
+6. Đặt tên Widget phù hợp, nhấn **Create widget**.
+
 ![Hình 45.](/images/5-Workshop/5.5-Neon-Operations/image045.png)
 
-6. Đặt tên Widget phù hợp.
-7. Nhấn **Create widget**.
-
-
-![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
 
 ---
 
 #### Bước 3. Thêm Widget Metrics của Application Load Balancer (ALB)
+1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-1. Chọn **Add widget**.
-Hình 70 ![Hình 70.](/images/5-Workshop/5.5-Neon-Operations/image070.png)
+![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
 
-2. Chọn **CloudWatch Metrics**.
-3. Điều hướng đến:
-   - **ApplicationELB**
-Hình 60 ![Hình 60.](/images/5-Workshop/5.5-Neon-Operations/image060.png)
+2. Chọn Data type: **Metrics**, Preferred experience: **Metrics Console**
 
-4. Thêm các Metrics:
+
+3. Chọn **Add widget**.
+
+4. Chọn **CloudWatch Metrics**, nhấn **Next**.
+
+![Hình 70.](/images/5-Workshop/5.5-Neon-Operations/image070.png)
+
+5. Chọn **Per AppELB, per AZ, per TG Metrics**, thêm các Metrics sau dựa vào cấu hình Targer Group ở giai đoạn trước:
    - Healthy Host Count
    - UnHealthy Host Count
    - Target Response Time
    - Request Count
    - HTTPCode_Target_5XX_Count
-5. Lưu Widget.
 
-<!-- Hình 59 ![Hình 59.](/images/5-Workshop/5.5-Neon-Operations/image059.png) -->
-Hình 70 ![Hình 70.](/images/5-Workshop/5.5-Neon-Operations/image070.png)
-Hình 60 ![Hình 60.](/images/5-Workshop/5.5-Neon-Operations/image060.png)
-<!-- Hình 72 ![Hình 72.](/images/5-Workshop/5.5-Neon-Operations/image072.png) -->
+
+![Hình 60.](/images/5-Workshop/5.5-Neon-Operations/image060.png)
+![Hình 110.](/images/5-Workshop/5.5-Neon-Operations/image110.png)
+![Hình 111.](/images/5-Workshop/5.5-Neon-Operations/image111.png)
+![Hình 112.](/images/5-Workshop/5.5-Neon-Operations/image112.png)
+
+6. Đặt tên Widget phù hợp, nhấn **Create widget**.
+
+
+![Hình 113.](/images/5-Workshop/5.5-Neon-Operations/image113.png)
 
 ---
 
 #### Bước 4. Thêm Widget Metrics của Amazon S3
 
-1. Chọn **Add widget**.
-2. Chọn Metrics của dịch vụ **Amazon S3**.
-Hình 88 ![Hình 88.](/images/5-Workshop/5.5-Neon-Operations/image088.png)
+1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-3. Chọn Bucket cần theo dõi.
-Hình 89 ![Hình 89.](/images/5-Workshop/5.5-Neon-Operations/image089.png)
+![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
 
-4. Thêm các Metrics:
-   - NumberOfObjects
-   - BucketSizeBytes
-   - AllRequests
-   - BytesDownloaded
-   - BytesUploaded
-Hình 90 ![Hình 90.](/images/5-Workshop/5.5-Neon-Operations/image090.png)
-Hình 91 ![Hình 91.](/images/5-Workshop/5.5-Neon-Operations/image091.png)
-Hình 92 ![Hình 92.](/images/5-Workshop/5.5-Neon-Operations/image092.png)
-Hình 93 ![Hình 93.](/images/5-Workshop/5.5-Neon-Operations/image093.png)
-Hình 94 ![Hình 94.](/images/5-Workshop/5.5-Neon-Operations/image094.png)
-Hình 95 ![Hình 95.](/images/5-Workshop/5.5-Neon-Operations/image095.png)
+2. Chọn Data type: **Metrics**, Preferred experience: **Metrics Console**
 
-5. Lưu Widget.
-Hình 96 ![Hình 96.](/images/5-Workshop/5.5-Neon-Operations/image096.png)
+3. Chọn **Add widget**.
+
+4. Chọn **CloudWatch Metrics**, nhấn **Next**
+
+![Hình 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
+
+5. Trong cửa sổ **Browse**, chọn namespace **S3**, sau đó chọn Bucket cần theo dõi.
+
+![Hình 114.](/images/5-Workshop/5.5-Neon-Operations/image114.png)
+
+4. Chọn các Storage Metrics của Bucket `neonfoodmap-frontend-dev` và `neonfoodmap-logs`:
+   - **BucketSizeBytes**
+   - **NumberOfObjects**
+
+![Hình 115.](/images/5-Workshop/5.5-Neon-Operations/image115.png)
+
+5. Đặt tên Widget phù hợp, nhấn **Create widget**.
+
+![Hình 116.](/images/5-Workshop/5.5-Neon-Operations/image116.png)
+
 
 ---
 
 ####   Bước 5. Thêm Widget CloudWatch Log Insights
+1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-1. Chọn **Add widget**.
-Hình 73 ![Hình 73.](/images/5-Workshop/5.5-Neon-Operations/image073.png)
+![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
 
-2. Chọn **Log query**.
-Hình 74 ![Hình 74.](/images/5-Workshop/5.5-Neon-Operations/image074.png)
+2. Chọn **Log query**. Chọn Log Group của **ECS**, **Application**, **ALB**
 
-3. Chọn Log Group của:
-   - ECS
-   - Application
-   - ALB
-4. Nhập câu lệnh CloudWatch Log Insights.
-Hình 75 ![Hình 75.](/images/5-Workshop/5.5-Neon-Operations/image075.png)
+![Hình 74.](/images/5-Workshop/5.5-Neon-Operations/image074.png)
 
-5. Kiểm tra kết quả trả về.
+4. Nhập câu lệnh sau vào **CloudWatch Log Insights** để truy vấn các bản ghi log chứa lỗi (`ERROR`, `Exception` hoặc mã trạng thái `500`) trong 7 ngày gần nhất.
 
-6. Lưu Widget vào Dashboard.
-Hình 76 ![Hình 76.](/images/5-Workshop/5.5-Neon-Operations/image076.png)
+```sql
+SOURCE "arn:aws:logs:ap-southeast-1:497172038341:log-group:/ecs/neonfoodmap-backend" START=-604800s END=0s
+| SOURCE "arn:aws:logs:ap-southeast-1:497172038341:log-group:/ecs/neonfoodmap-task-be"
+| fields @timestamp, @message
+| filter @message like /ERROR|Exception|500/
+| sort @timestamp desc
+| limit 20
+```
+
+![Hình 75.](/images/5-Workshop/5.5-Neon-Operations/image075.png)
+
+5. Kiểm tra kết quả trả về, lưu Widget vào Dashboard bằng cách nhấn **create**, sau đó nhấn **Save** tại màn hình `DashboardsNeonFoodMap-Operational-Dashboard` để lưu toàn bộ danh sách Widget.
+
+![Hình 76.](/images/5-Workshop/5.5-Neon-Operations/image076.png)
 
 ---
 
 #### Bước 6. Thêm Widget Metrics của Amazon RDS
+
+Lặp lại tương tự như các bước ở trên, cách làm như sau:
 
 1. Chọn **Add widget**.
 2. Chọn Metrics của **Amazon RDS**.
@@ -160,69 +178,97 @@ Hình 76 ![Hình 76.](/images/5-Workshop/5.5-Neon-Operations/image076.png)
 
 #### Bước 7. Tạo CloudWatch Alarms
 
-1. Truy cập **CloudWatch → Alarms**.
-2. Chọn **Create Alarm**.
-Hình 50 ![Hình 50.](/images/5-Workshop/5.5-Neon-Operations/image050.png)
+CloudWatch Alarms giúp giám sát các chỉ số (Metrics) của hệ thống và tự động phát hiện khi tài nguyên hoạt động vượt quá ngưỡng cho phép. Trong phần này, sẽ tạo cảnh báo theo dõi mức sử dụng CPU của ECS Service.
 
-3. Tạo Alarm cho:
-   - CPU Utilization > 80%
-   - HTTP 5XX Errors > 10 lần/phút
-Hình 51 ![Hình 51.](/images/5-Workshop/5.5-Neon-Operations/image051.png)
+1. Truy cập **CloudWatch** → **Alarms**.
 
-4. Thiết lập:
-   - Evaluation Period
-   - Threshold
-   - Alarm Name
-Hình 52 ![Hình 52.](/images/5-Workshop/5.5-Neon-Operations/image052.png)
+2. Chọn **Create alarm** để tạo cảnh báo mới.
 
-5. Chọn hành động gửi thông báo khi Alarm kích hoạt.
-Hình 56 ![Hình 56.](/images/5-Workshop/5.5-Neon-Operations/image056.png)
-Hình 57 ![Hình 57.](/images/5-Workshop/5.5-Neon-Operations/image057.png)
-Hình 58 ![Hình 58.](/images/5-Workshop/5.5-Neon-Operations/image058.png)
-Hình 61 ![Hình 61.](/images/5-Workshop/5.5-Neon-Operations/image061.png)
-Hình 62 ![Hình 62.](/images/5-Workshop/5.5-Neon-Operations/image062.png)
-Hình 63 ![Hình 63.](/images/5-Workshop/5.5-Neon-Operations/image063.png)
-Hình 64 ![Hình 64.](/images/5-Workshop/5.5-Neon-Operations/image064.png)
-Hình 65 ![Hình 65.](/images/5-Workshop/5.5-Neon-Operations/image065.png)
+![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
 
----
+3. Tại bước **Specify metric and conditions**, nhấn **Select metric** để lựa chọn Metric cần theo dõi.
 
-#### Bước 8. Tạo SNS Topic để gửi thông báo
+![Hình 56.](/images/5-Workshop/5.5-Neon-Operations/image056.png)
 
-1. Truy cập dịch vụ **Amazon SNS**.
-2. Chọn **Topics**.
-3. Nhấn **Create topic**.
+4. Trong danh sách Metric, chọn:
+
+   - **ECS**
+   - **ClusterName, ServiceName**
+
+![Hình 57.](/images/5-Workshop/5.5-Neon-Operations/image057.png)
+
+5. Chọn Metric **CPUUtilization** của ECS Service, sau đó nhấn **Select metric**.
+
+![Hình 58.](/images/5-Workshop/5.5-Neon-Operations/image058.png)
+
+6. Cấu hình điều kiện kích hoạt Alarm:
+
+   - **Statistic:** Average
+   - **Period:** 5 minutes
+   - **Threshold type:** Static
+   - **Whenever CPUUtilization is:** Greater than
+   - **Threshold value:** 80
+
+CloudWatch sẽ chuyển Alarm sang trạng thái **ALARM** khi mức sử dụng CPU trung bình vượt quá **80%** trong khoảng thời gian đánh giá.
+
+![Hình 61.](/images/5-Workshop/5.5-Neon-Operations/image061.png)
+
+7. Tại bước **Configure actions**, lựa chọn hành động khi Alarm được kích hoạt. Có thể chọn gửi thông báo thông qua **SNS Topic** hoặc bỏ qua nếu chỉ cần theo dõi trạng thái.
+
+![Hình 62.](/images/5-Workshop/5.5-Neon-Operations/image062.png)
+
+8. Đặt tên cho Alarm, ví dụ:
+
+   - **Alarm name:** `neonfoodmap-ecs-cpu-high`
+
+Có thể bổ sung mô tả để dễ dàng quản lý về sau.
+
+![Hình 63.](/images/5-Workshop/5.5-Neon-Operations/image063.png)
+
+9. Kiểm tra lại toàn bộ cấu hình và nhấn **Create alarm** để hoàn tất.
+
+![Hình 64.](/images/5-Workshop/5.5-Neon-Operations/image064.png)
+
+10. Sau khi tạo thành công, Alarm sẽ xuất hiện trong danh sách **CloudWatch Alarms** với trạng thái ban đầu là **OK**. Khi giá trị CPU vượt ngưỡng đã thiết lập, trạng thái sẽ tự động chuyển sang **ALARM**.
+
+![Hình 65.](/images/5-Workshop/5.5-Neon-Operations/image065.png)
+
+> **Lưu ý:** Tương tự, có thể tạo thêm các CloudWatch Alarm khác để giám sát hệ thống như:
+>
+> - **HTTPCode_Target_5XX_Count** > 10 lỗi/phút.
+> - **MemoryUtilization** > 80%.
+> - **TargetResponseTime** vượt ngưỡng mong muốn.
+> - **HealthyHostCount** giảm xuống dưới số lượng tối thiểu.
+
+#### Bước 8. Tạo SNS Topic để gửi thông báo và đăng ký Email nhận thông báo
+
+1. Truy cập dịch vụ **Amazon SNS**, chọn **Topics**, nhấn **Create topic**.
+
+2. Chọn loại **Standard**.
+
+3. Đặt tên Topic (ví dụ: `NeonFoodMap-Alerts-Topic`).
+
+4. Hoàn tất việc tạo Topic.
+
+![alt text](image-2.png)
+
 ![Hình 47.](/images/5-Workshop/5.5-Neon-Operations/image047.png)
 
-4. Chọn loại **Standard**.
-5. Đặt tên Topic (ví dụ: `NeonFoodMap-Alerts`).
-6. Hoàn tất việc tạo Topic.
+![alt text](image-1.png)
+
+5. Mở Topic vừa tạo, chọn **Create subscription**.
+
 ![Hình 48.](/images/5-Workshop/5.5-Neon-Operations/image048.png)
 
----
+6. Protocol: chọn **Email**
 
-#### Bước 9. Đăng ký Email nhận thông báo
+7. Nhập địa chỉ Email của nhóm vận hành hoặc địa chỉ Email cá nhân.
 
-1. Mở Topic vừa tạo.
-2. Chọn **Create subscription**.
+8. Gửi Subscription, mở Email và nhấn **Confirm Subscription** để kích hoạt.
+
 ![Hình 49.](/images/5-Workshop/5.5-Neon-Operations/image049.png)
 
-3. Chọn:
-   - Protocol: **Email**
-4. Nhập địa chỉ Email của nhóm vận hành.
-5. Gửi Subscription.
-6. Mở Email và nhấn **Confirm Subscription** để kích hoạt.
-![Hình 97.](/images/5-Workshop/5.5-Neon-Operations/image097.png)
+Hình 50 ![Hình 50.](/images/5-Workshop/5.5-Neon-Operations/image050.png)
+<!-- ![Hình 97.](/images/5-Workshop/5.5-Neon-Operations/image097.png) -->
 
 ---
-
-####  Bước 10. Kiểm thử Alarm
-
-1. Tạo điều kiện để Alarm được kích hoạt, ví dụ:
-   - Tăng tải CPU của ECS.
-   - Sinh nhiều HTTP 5XX Error.
-2. Quan sát trạng thái Alarm chuyển sang **ALARM**.
-3. Kiểm tra Email thông báo được gửi qua SNS.
-4. Xác nhận Dashboard cập nhật Metrics theo thời gian thực.
-5. Ghi nhận kết quả kiểm thử.
-Hình 71 ![Hình 71.](/images/5-Workshop/5.5-Neon-Operations/image071.png)

@@ -27,17 +27,15 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 1. Đăng nhập **AWS Management Console**.
 2. Truy cập dịch vụ **CloudWatch**.
 3. Chọn **Log Groups**.
-Hình 77 ![Hình 77.](/images/5-Workshop/5.5-Neon-Operations/image077.png)
-
-4. Chọn Log Group cần cấu hình.
-Hình 78 ![Hình 78.](/images/5-Workshop/5.5-Neon-Operations/image078.png)
+4. Chọn danh sách Log Group cần cấu hình.
+![Hình 78.](/images/5-Workshop/5.5-Neon-Operations/image078.png)
 
 5. Chọn **Actions → Edit retention setting**.
-Hình 79 ![Hình 79.](/images/5-Workshop/5.5-Neon-Operations/image079.png)
+![Hình 79.](/images/5-Workshop/5.5-Neon-Operations/image079.png)
 
 6. Chọn thời gian lưu trữ là **30 Days**.
 7. Nhấn **Save** để áp dụng.
-Hình 80 ![Hình 80.](/images/5-Workshop/5.5-Neon-Operations/image080.png)
+![Hình 80.](/images/5-Workshop/5.5-Neon-Operations/image080.png)
 
 > Lặp lại thao tác này cho tất cả Log Group của hệ thống.
 
