@@ -1,157 +1,148 @@
 ---
-title: "Bản đề xuất"
+title: "Proposal"
 date: 2026-07-01
 weight: 2
 chapter: false
 pre: "<b>2.</b>"
 ---
 
-# Tự động hóa quy trình CI/CD cho ứng dụng Neon Food Map trên nền tảng AWS
+# CI/CD Pipeline Automation for the Neon Food Map Application on AWS
 
-## 2.1. Bối cảnh chung về dự án
+## 2.1. Project Background
 
-Đề xuất này trình bày giải pháp triển khai hệ thống NeonFoodMap trên nền tảng Amazon Web Services (AWS) theo kiến trúc Cloud-Native, đáp ứng các yêu cầu về khả năng mở rộng, tính sẵn sàng cao, bảo mật và tự động hóa quy trình phát hành phần mềm. Mục tiêu của giải pháp là xây dựng một hạ tầng triển khai có khả năng tái sử dụng, hỗ trợ triển khai lặp lại, đồng thời chuẩn hóa quy trình vận hành theo định hướng DevOps trong môi trường Production.
+This proposal presents a solution for deploying the NeonFoodMap system on Amazon Web Services (AWS) using a Cloud-Native architecture, addressing requirements for scalability, high availability, security, and automated software release pipelines. The goal is to build a reusable, repeatable deployment infrastructure while standardizing operational workflows following DevOps practices in a Production environment.
 
+NeonFoodMap is a food map website platform that allows users to search, explore, and review dining locations in real time. The system integrates features such as Point of Interest (POI) search, GPS positioning, route display, location reviews, and Text-to-Speech audio descriptions to enhance the user experience. Given its real-time data processing nature and the need to serve concurrent users, the system must be deployed on an infrastructure that supports flexible scaling, high availability, and ease of maintenance.
 
-NeonFoodMap là nền tảng website bản đồ ẩm thực, cho phép người dùng tìm kiếm, khám phá và đánh giá các địa điểm ăn uống theo thời gian thực. Hệ thống tích hợp các chức năng như tìm kiếm địa điểm (POI), định vị GPS, hiển thị lộ trình, đánh giá địa điểm và phát nội dung mô tả bằng công nghệ Text-to-Speech nhằm nâng cao trải nghiệm người dùng. Với đặc điểm xử lý dữ liệu theo thời gian thực và yêu cầu phục vụ nhiều người dùng đồng thời, hệ thống cần được triển khai trên một hạ tầng có khả năng mở rộng linh hoạt, đảm bảo tính sẵn sàng và dễ dàng bảo trì.
-
-
-Đề xuất tập trung xây dựng kiến trúc triển khai sử dụng Docker và Amazon ECS Fargate, quản lý mã nguồn bằng GitHub, tự động hóa quy trình Build–Test–Deploy thông qua GitHub Actions và OpenID Connect (OIDC), lưu trữ Docker Image trên Amazon ECR, triển khai cơ sở dữ liệu Amazon RDS trong Private Subnet, quản lý tài nguyên tĩnh bằng Amazon S3 và giám sát hệ thống bằng Amazon CloudWatch. Giải pháp hướng tới việc hình thành một quy trình triển khai thống nhất, an toàn và có khả năng mở rộng cho các giai đoạn phát triển tiếp theo của dự án.
-
+The proposal focuses on building a deployment architecture using Docker and Amazon ECS Fargate, managing source code with GitHub, automating the Build–Test–Deploy pipeline through GitHub Actions and OpenID Connect (OIDC), storing Docker Images on Amazon ECR, deploying Amazon RDS databases in a Private Subnet, managing static assets with Amazon S3, and monitoring the system with Amazon CloudWatch. The solution aims to establish a unified, secure, and scalable deployment pipeline for future development phases of the project.
 
 ---
 
+## 2.2. Problem Statement
+### Current State
 
-## 2.2 Phát biểu vấn đề
-### Hiện trạng
+Before implementing this proposal, the NeonFoodMap Website project existed only as standalone application source code (Frontend and Backend), without a standardized deployment process or cloud infrastructure integration. Specifically:
 
-Trước khi triển khai đề xuất, dự án NeonFoodMap Website mới chỉ tồn tại ở dạng mã nguồn ứng dụng (Frontend và Backend) hoạt động đơn lẻ, chưa được chuẩn hóa quy trình triển khai hay tích hợp lên hạ tầng đám mây. Cụ thể:
-
-* **Chưa có hạ tầng tự động hóa:** Quy trình build và deploy ứng dụng đang thực hiện thủ công, chưa thiết lập luồng CI/CD tự động hóa trên môi trường Production.
-* **Chưa ứng dụng mô hình Container hóa:** Ứng dụng chưa được đóng gói chuẩn hóa dưới dạng Docker Image để vận hành nhất quán giữa các môi trường.
-* **Hạ tầng AWS chưa được thiết lập:** Hệ thống mạng VPC, cơ sở dữ liệu phân tán, các chính sách bảo mật IAM tối ưu cũng như các cơ chế giám sát (Monitoring/Logging) trên nền tảng AWS chưa được xây dựng và cấu hình đồng bộ.
-
+* **No automation infrastructure:** The build and deploy process is performed manually with no automated CI/CD pipeline established for the Production environment.
+* **No containerization model:** The application has not been packaged as a standardized Docker Image to ensure consistent operation across environments.
+* **No AWS infrastructure configured:** The VPC network, distributed database, optimized IAM security policies, and monitoring/logging mechanisms on AWS have not been built or configured in a synchronized manner.
 
 ---
 
+## 2.3. Deployment Objectives
 
-## 2.3. Mục tiêu triển khai
+The proposal targets the following technical goals:
 
-Đề xuất hướng tới các mục tiêu kỹ thuật sau:
+- Automate the Build, Test, and Deploy pipeline.
+- Eliminate the use of AWS Access Keys in GitHub through OpenID Connect (OIDC).
+- Standardize the application deployment process using the Container model.
+- Ensure High Availability for the system.
+- Support flexible resource scaling based on load demand.
+- Establish centralized monitoring, logging, and alerting mechanisms.
+- Standardize the deployment process following the DevOps model and improve reusability.
 
-- Tự động hóa quy trình Build, Test và Deploy.
-- Loại bỏ việc sử dụng AWS Access Key trong GitHub thông qua OpenID Connect (OIDC).
-- Chuẩn hóa quy trình triển khai ứng dụng theo mô hình Container.
-- Đảm bảo tính sẵn sàng cao (High Availability) cho hệ thống.
-- Hỗ trợ mở rộng tài nguyên linh hoạt theo nhu cầu tải.
-- Thiết lập cơ chế giám sát, ghi log và cảnh báo tập trung.
-- Chuẩn hóa quy trình triển khai theo mô hình DevOps và nâng cao khả năng tái sử dụng.
+## 2.4. Solution
 
-## 2.4. Giải pháp
-
-- Thiết kế kiến trúc hạ tầng AWS.
-- Xây dựng quy trình CI/CD.
-- Triển khai Backend và Frontend bằng Amazon ECS Fargate.
-- Quản lý Docker Image.
-- Cấu hình cơ sở dữ liệu.
-- Quản lý Static Assets.
-- Xây dựng hệ thống Logging và Monitoring.
-- Hoàn thiện tài liệu triển khai theo từng Sprint.
-
+- Design AWS infrastructure architecture.
+- Build the CI/CD pipeline.
+- Deploy Backend and Frontend using Amazon ECS Fargate.
+- Manage Docker Images.
+- Configure the database.
+- Manage Static Assets.
+- Build a Logging and Monitoring system.
+- Complete deployment documentation per Sprint.
 
 ---
 
+## 2.6. Expected Outcomes
 
-## 2.6. Kết quả mong đợi
+Upon completing the deployment, the system is expected to achieve the following results:
 
-Sau khi hoàn thành quá trình triển khai, hệ thống dự kiến đạt được các kết quả sau:
+- A complete deployment architecture on AWS following the Cloud-Native model.
+- An automated CI/CD pipeline operating end-to-end from Build to Deploy.
+- Application deployed using Amazon ECS Fargate.
+- Docker Images centrally managed on Amazon ECR.
+- Database securely deployed within a Private Subnet.
+- System monitored through Logging, Monitoring, and Alerting mechanisms.
+- A standardized, scalable, and reusable deployment process for similar future projects.
 
+## 2.7. Return on Investment
 
-- Hoàn thiện kiến trúc triển khai trên nền tảng AWS theo mô hình Cloud-Native.
-- Quy trình CI/CD hoạt động tự động từ Build đến Deploy.
-- Ứng dụng được triển khai bằng Amazon ECS Fargate.
-- Docker Image được quản lý tập trung trên Amazon ECR.
-- Cơ sở dữ liệu được triển khai an toàn trong Private Subnet.
-- Hệ thống được giám sát thông qua cơ chế Logging, Monitoring và Alerting.
-- Quy trình triển khai được chuẩn hóa, có khả năng mở rộng và tái sử dụng cho các dự án tương tự.
+Standardizing and automating the system delivers tangible value:
 
-## 2.7. Lợi tức đầu tư
+- **Cost Efficiency:** The Serverless model (ECS Fargate) and Serverless Storage ensure payment only for actual resources used, minimizing idle infrastructure waste.
 
-Việc chuẩn hóa và tự động hóa hệ thống mang lại những giá trị thiết thực:
+- **Time-to-Market:** The automated CI/CD pipeline reduces the time to release new features from hours/days down to just minutes.
 
-- Tối ưu hóa chi phí vận hành (Cost Efficiency): Mô hình Serverless (ECS Fargate) và Serverless Storage giúp chỉ chi trả theo tài nguyên thực tế sử dụng, giảm thiểu lãng phí hạ tầng idle (nhàn rỗi).
+- **High Availability:** Self-healing infrastructure and load balancing help the system achieve high uptime and minimize service downtime.
 
-- Tăng tốc độ phát triển (Time-to-Market): Quy trình CI/CD tự động giúp giảm thời gian release tính năng mới từ vài giờ/ngày xuống chỉ còn vài phút.
-
-- Độ ổn định và sẵn sàng cao (High Availability): Hạ tầng tự động phục hồi và cân bằng tải giúp hệ thống đạt uptime cao, hạn chế tối đa thời gian gián đoạn dịch vụ (Downtime).
-
-- Bảo mật và kiểm soát tốt hơn: Các tiêu chuẩn bảo mật của AWS kết hợp hệ thống giám sát chủ động giúp bảo vệ dữ liệu khách hàng và phát hiện sớm các lỗ hổng tiềm ẩn.
+- **Better Security & Control:** AWS security standards combined with proactive monitoring protect customer data and enable early detection of potential vulnerabilities.
 
 ---
 
-## 2.8. Kiến trúc giải pháp
+## 2.8. Solution Architecture
 
 ![](/images/2-Proposal/diagram1.png)
 
-### Danh sách dịch vụ AWS được sử dụng
+### List of AWS Services Used
 
-Dưới đây là bảng liệt kê các dịch vụ AWS được sử dụng cho dự án:
+The table below lists the AWS services used for the project:
 
-| Dịch vụ AWS                         | Loại hình Dịch vụ              | Vai trò & Chức năng trong Hệ thống                                                                                                                            |
-| ----------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **AWS IAM**                         | Identity & Access Management   | Quản lý người dùng, nhóm, vai trò (Roles) và chính sách bảo mật, bắt buộc bật chính sách Force MFA cho tất cả tài khoản.                                      |
-| **VPC**                             | Networking                     | Cung cấp mạng riêng ảo (Virtual Private Cloud) với các dải CIDR blocks, Subnets công cộng và riêng tư, Route Tables, Internet Gateway và NAT Gateways.        |
-| **Amazon RDS**                      | Relational Database            | Củng cố cơ sở dữ liệu quan hệ (RDS MySQL Multi-AZ) để lưu trữ và quản lý dữ liệu ứng dụng.                                                                    |
-| **Amazon S3**                       | Object Storage                 | Lưu trữ tệp tin với các bucket chuyên biệt (frontend, media, audio, logs), hỗ trợ cấu hình phiên bản (versioning), chính sách vòng đời (lifecycle) và mã hóa. |
-| **Amazon ECR**                      | Container Registry             | Kho lưu trữ các Docker Container Images cho cả Frontend và Backend.                                                                                           |
-| **Amazon ECS**                      | Container Orchestration        | Quản lý cụm cụm máy chủ ảo (Cluster) chạy ứng dụng theo dạng Fargate launch type.                                                                             |
-| **Application Load Balancer (ALB)** | Load Balancing                 | Phân phối lưu lượng truy cập HTTP/HTTPS internet vào các target groups và hỗ trợ cấu hình chuyển hướng, health checks.                                        |
-| **Amazon CloudWatch**               | Monitoring & Observability     | Thu thập log (CloudWatch Logs), theo dõi metrics và thiết lập các dashboard, báo động (alarms).                                                               |
-| **Amazon SNS**                      | Push Notification Service      | Gửi thông báo cảnh báo (ví dụ: billing alerts cho chi phí) tới quản trị viên.                                                                                 |
-| **AWS CloudFront**                  | Content Delivery Network (CDN) | Phân phối nội dung toàn cầu, tăng tốc độ truy cập giao diện frontend và caching file âm thanh.                                                                |
+| AWS Service                         | Service Type                   | Role & Function in the System                                                                                                                                          |
+| ----------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AWS IAM**                         | Identity & Access Management   | Manages users, groups, roles, and security policies; enforces Force MFA policy for all accounts.                                                                       |
+| **VPC**                             | Networking                     | Provides a Virtual Private Cloud with CIDR blocks, public and private Subnets, Route Tables, Internet Gateway, and NAT Gateways.                                       |
+| **Amazon RDS**                      | Relational Database            | Hosts the relational database (RDS MySQL Multi-AZ) to store and manage application data.                                                                               |
+| **Amazon S3**                       | Object Storage                 | Stores files in dedicated buckets (frontend, media, audio, logs) with versioning, lifecycle policies, and encryption configurations.                                   |
+| **Amazon ECR**                      | Container Registry             | Repository for Docker Container Images for both Frontend and Backend.                                                                                                  |
+| **Amazon ECS**                      | Container Orchestration        | Manages the cluster running the application using the Fargate launch type.                                                                                             |
+| **Application Load Balancer (ALB)** | Load Balancing                 | Distributes HTTP/HTTPS internet traffic to target groups and supports redirect configuration and health checks.                                                        |
+| **Amazon CloudWatch**               | Monitoring & Observability     | Collects logs (CloudWatch Logs), tracks metrics, and sets up dashboards and alarms.                                                                                    |
+| **Amazon SNS**                      | Push Notification Service      | Sends alert notifications (e.g., billing alerts for costs) to administrators.                                                                                          |
+| **AWS CloudFront**                  | Content Delivery Network (CDN) | Distributes content globally, accelerates frontend access, and caches audio files.                                                                                     |
 
 ---
 
-## 2.9. Quy trình triển khai của hệ thống như sau:
+## 2.9. System Deployment Flow
 
-1. Developer Push Source Code.
-2. GitHub Actions Trigger Workflow.
+1. Developer pushes source code.
+2. GitHub Actions triggers the workflow.
 3. Build Docker Image.
-4. Authenticate thông qua AWS STS.
-5. Push Image lên Amazon ECR.
-6. ECS Pull Image.
-7. ECS Rolling Update.
-8. ALB chuyển tiếp Request.
-9. Backend truy cập RDS.
-10. Media Upload tới Amazon S3.
-11. CloudWatch thu thập Logs.
-12. SNS gửi Email khi xảy ra sự cố.
+4. Authenticate via AWS STS.
+5. Push Image to Amazon ECR.
+6. ECS pulls the Image.
+7. ECS performs a Rolling Update.
+8. ALB forwards the request.
+9. Backend accesses RDS.
+10. Media is uploaded to Amazon S3.
+11. CloudWatch collects Logs.
+12. SNS sends an email when an incident occurs.
 
 ---
 
 ## 2.10. Timeline & Milestones
 
-| Giai đoạn                                         | Thời gian               | Hạng mục công việc chính                                                                                                                                                                                                                                                                                                            |
-| :------------------------------------------------ | :---------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Tuần 1: Nghiên cứu & Thiết kế**                 | 22/06/2026 - 26/06/2026 | - Tìm hiểu AWS Foundation (Global Infrastructure, IAM, VPC, EC2, S3).<br><br>- Thiết kế kiến trúc hệ thống (Application, Database, Storage, Networking) và sơ đồ luồng dữ liệu.                                                                                                                                                     |
-| **Tuần 2: Tìm hiểu Services & Thiết kế chi tiết** | 29/06/2026 - 03/07/2026 | - Tìm hiểu RDS và quy trình migrate database.<br><br>- Tìm hiểu ECS/ECR, CloudWatch, SQS, Athena, QuickSight, API Gateway và Load Balancer.<br><br>- Hoàn thiện sơ đồ kiến trúc triển khai.                                                                                                                                         |
-| **Tuần 3: Phát triển Front-end & Back-end**       | 06/07/2026 - 10/07/2026 | - Phát triển Frontend (xây dựng giao diện, tích hợp API, Responsive UI).<br><br>- Phát triển Backend (Database Schema, RESTful API, Authentication/Authorization).<br><br>- Tạo IAM User, chính sách bảo mật và cài đặt Bill Alert.                                                                                                 |
-| **Tuần 4: Foundation & Infrastructure**           | 13/07/2026 - 17/07/2026 | - Thiết lập VPC Multi-AZ.<br><br>- Cấp phát RDS MySQL.<br><br>- S3 Buckets + Lifecycle + IAM.<br><br>- Cấu hình IAM (CloudFormation).<br><br>- Thiết lập ECR + Docker.                                                                                                                                                              |
-| **Tuần 5: CI/CD Pipeline & Deployment**           | 20/07/2026 - 24/07/2026 | - Xây dựng CI/CD pipeline với GitHub Actions.<br><br>- Cấu hình ECS cluster + task definitions.<br><br>- Cấu hình ALB + Target Groups + Health Checks.<br><br>- Cấu hình Django trên AWS.<br><br>- Cấu hình React trên AWS.                                                                                                         |
-| **Tuần 6-7: Scaling, Monitoring & Go-Live**       | 27/07/2026 - 07/08/2026 | - Cấu hình ECS Services + Auto-Scaling.<br><br>- Thiết lập CloudFront + CDN.<br><br>- Triển khai CloudWatch dashboard.<br><br>- Giám sát chi phí & Cài đặt cảnh báo (Cost Monitoring & Alerts).<br><br>- CloudWatch Logs + Log Insights.<br><br>- Kiểm thử toàn diện (End-to-End Testing).<br><br>- Hoàn thiện tài liệu triển khai. |
+| Phase                                             | Timeline                | Key Deliverables                                                                                                                                                                                                                                                                                                                                     |
+| :------------------------------------------------ | :---------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Week 1: Research & Design**                     | 22/06/2026 - 26/06/2026 | - Study AWS Foundation (Global Infrastructure, IAM, VPC, EC2, S3).<br><br>- Design system architecture (Application, Database, Storage, Networking) and data flow diagrams.                                                                                                                                                                          |
+| **Week 2: Service Research & Detailed Design**    | 29/06/2026 - 03/07/2026 | - Study RDS and the database migration process.<br><br>- Study ECS/ECR, CloudWatch, SQS, Athena, QuickSight, API Gateway, and Load Balancer.<br><br>- Finalize the deployment architecture diagram.                                                                                                                                                   |
+| **Week 3: Frontend & Backend Development**        | 06/07/2026 - 10/07/2026 | - Frontend development (UI building, API integration, Responsive UI).<br><br>- Backend development (Database Schema, RESTful API, Authentication/Authorization).<br><br>- Create IAM User, security policies, and configure Billing Alerts.                                                                                                           |
+| **Week 4: Foundation & Infrastructure**           | 13/07/2026 - 17/07/2026 | - Set up Multi-AZ VPC.<br><br>- Provision RDS MySQL.<br><br>- S3 Buckets + Lifecycle + IAM.<br><br>- Configure IAM (CloudFormation).<br><br>- Set up ECR + Docker.                                                                                                                                                                                   |
+| **Week 5: CI/CD Pipeline & Deployment**           | 20/07/2026 - 24/07/2026 | - Build CI/CD pipeline with GitHub Actions.<br><br>- Configure ECS cluster + task definitions.<br><br>- Configure ALB + Target Groups + Health Checks.<br><br>- Configure Django on AWS.<br><br>- Configure React on AWS.                                                                                                                            |
+| **Week 6-7: Scaling, Monitoring & Go-Live**       | 27/07/2026 - 07/08/2026 | - Configure ECS Services + Auto-Scaling.<br><br>- Set up CloudFront + CDN.<br><br>- Deploy CloudWatch dashboard.<br><br>- Cost Monitoring & Alerts setup.<br><br>- CloudWatch Logs + Log Insights.<br><br>- End-to-End Testing.<br><br>- Complete deployment documentation.                                                                          |
 
 ---
 
-## 2.11. Ngân sách dự kiến
+## 2.11. Estimated Budget
 
-Hệ thống tận dụng tối đa mô hình **AWS Free Tier** và **Serverless Pay-As-You-Go** (chỉ trả tiền cho tài nguyên thực tế sử dụng), giúp tối ưu hóa chi phí vận hành ở mức thấp nhất.
+The system leverages the **AWS Free Tier** and **Serverless Pay-As-You-Go** model (paying only for actual resources used) to minimize operational costs.
 
-| Dịch vụ AWS                         | Mức sử dụng thực tế / giai đoạn                                      | Chi phí thực tế ước tính (USD)    | Vai trò & Chức năng trong Hệ thống                                                                                                                                 |
-| ----------------------------------- | -------------------------------------------------------------------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Amazon RDS**                      | RDS MySQL Multi-AZ (chạy liên tục, có scale/migrate version)         | **$10.00 - $15.00**               | Củng cố cơ sở dữ liệu quan hệ để lưu trữ và quản lý dữ liệu ứng dụng.                                                                                              |
-| **Amazon S3 & ECR**                 | Lưu trữ tệp tin (media, logs) và Docker Container Images             | **$2.00 - $5.00**                 | Lưu trữ tệp tin chuyên biệt và kho lưu trữ Docker Container Images cho Frontend/Backend.                                                                           |
-| **Amazon ECS & NAT Gateway**        | Chạy cụm container (Fargate) kết hợp NAT Gateways hoạt động liên tục | **$10.00 - $20.00**               | Quản lý cụm cụm máy chủ ảo chạy ứng dụng và định tuyến mạng.                                                                                                       |
-| **Application Load Balancer (ALB)** | Phân phối lưu lượng HTTP/HTTPS internet                              | **$3.00 - $6.00**                 | Phân phối lưu lượng truy cập vào các target groups, hỗ trợ health checks.                                                                                          |
-| **Amazon CloudWatch & SNS**         | Thu thập log (CloudWatch Logs), metrics, dashboards và alarms        | **$1.00 - $3.00**                 | Giám sát hệ thống, theo dõi metrics và gửi thông báo cảnh báo qua SNS.                                                                                             |
-| **AWS CloudFront**                  | Phân phối nội dung CDN và caching                                    | **$0.00 - $2.00**                 | Tăng tốc độ truy cập giao diện frontend và caching file âm thanh.                                                                                                  |
-| **TỔNG CHI PHÍ THỰC TẾ**            | **Vận hành hệ thống & Testing**                                      | **~$26.00 - +$51.00 USD / tháng** | _Bám sát theo các mốc log cost thực tế phát sinh trong quá trình chạy thử nghiệm và cấu hình tài nguyên (thực tế ghi nhận khoảng **31.52$ vào ngày 25/07/2026**)._ |
+| AWS Service                         | Actual Usage / Phase                                                     | Estimated Actual Cost (USD)       | Role & Function in the System                                                                                                                                      |
+| ----------------------------------- | ------------------------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Amazon RDS**                      | RDS MySQL Multi-AZ (running continuously, with scaling/version migration) | **$10.00 - $15.00**               | Hosts the relational database to store and manage application data.                                                                                                |
+| **Amazon S3 & ECR**                 | File storage (media, logs) and Docker Container Images                   | **$2.00 - $5.00**                 | Dedicated file storage and Docker Container Image repository for Frontend/Backend.                                                                                 |
+| **Amazon ECS & NAT Gateway**        | Running container cluster (Fargate) with continuously active NAT Gateways | **$10.00 - $20.00**               | Manages the container cluster running the application and handles network routing.                                                                                 |
+| **Application Load Balancer (ALB)** | Distributing HTTP/HTTPS internet traffic                                 | **$3.00 - $6.00**                 | Distributes traffic to target groups and supports health checks.                                                                                                   |
+| **Amazon CloudWatch & SNS**         | Collecting logs, metrics, dashboards, and alarms                         | **$1.00 - $3.00**                 | Monitors the system, tracks metrics, and sends alert notifications via SNS.                                                                                        |
+| **AWS CloudFront**                  | CDN content distribution and caching                                     | **$0.00 - $2.00**                 | Accelerates frontend access and caches audio files.                                                                                                                |
+| **TOTAL ESTIMATED COST**            | **System operation & Testing**                                           | **~$26.00 - +$51.00 USD / month** | _Based on actual cost logs incurred during testing and resource configuration (actual recorded cost was approximately **$31.52 on 25/07/2026**)._ |
