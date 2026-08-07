@@ -50,18 +50,20 @@ Cảm ơn mọi người đã đọc bài chia sẻ của mình.
 Mình vẫn đang trong quá trình học nên nếu có chỗ nào hiểu chưa đúng, mong mọi người góp ý thêm ạ.
 
 
-Link bài viết tham khảo: https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/automatically-stop-and-start-an-amazon-rds-db-instance-using-aws-systems-manager-maintenance-windows.html
-
-
-TP. Hồ Chí Minh, 31 tháng 07, 2026 <br>
-Diệp Thụy An
-
+## Hình ảnh
 
 ![](/images/3-Blog/blog2.jpg)
 
+## Link
 
-[Link bài đăng tại AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230171591081134/)
+- [Link bài đăng tại AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230171591081134/)
 
+
+## Link bài viết tham khảo: 
+- https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/automatically-stop-and-start-an-amazon-rds-db-instance-using-aws-systems-manager-maintenance-windows.html
+
+TP. Hồ Chí Minh, 31 tháng 07, 2026 <br>
+Diệp Thụy An
 
 
 

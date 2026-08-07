@@ -13,14 +13,23 @@ Sau khi ECS task chạy xong, kiểm tra trạng thái target group.
 Các mục cần kiểm tra:
 
 - Target group frontend chuyển sang `Healthy`
+
+![alt text](image-1.png)
+
 - Target group backend chuyển sang `Healthy`
+
+![alt text](image.png)
+
 - ALB DNS có thể truy cập bằng browser
+```
+http://alb-neonfoodmap-406336237.ap-southeast-1.elb.amazonaws.com/map
+```
 - Endpoint `/api/...` trả về response hợp lệ
 
-Ví dụ kiểm tra:
+```
+http://alb-neonfoodmap-406336237.ap-southeast-1.elb.amazonaws.com/api/
+```
 
-- Frontend: `http://<alb-dns>`
-- Backend: `http://<alb-dns>/api/...`
+![alt text](image-2.png)
 
-![Hình 16. Kiểm tra health check và smoke test](/images/5-Workshop/5.4-neon-deployment/placeholder-smoke-test.png)
 

@@ -184,22 +184,24 @@ CloudWatch Alarms giúp giám sát các chỉ số (Metrics) của hệ thống 
 
 2. Chọn **Create alarm** để tạo cảnh báo mới.
 
-![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
+![alt text](image-3.png)
 
 3. Tại bước **Specify metric and conditions**, nhấn **Select metric** để lựa chọn Metric cần theo dõi.
 
-![Hình 56.](/images/5-Workshop/5.5-Neon-Operations/image056.png)
+![alt text](image-4.png)
+
 
 4. Trong danh sách Metric, chọn:
 
    - **ECS**
    - **ClusterName, ServiceName**
 
-![Hình 57.](/images/5-Workshop/5.5-Neon-Operations/image057.png)
+![alt text](image-5.png)
 
 5. Chọn Metric **CPUUtilization** của ECS Service, sau đó nhấn **Select metric**.
 
-![Hình 58.](/images/5-Workshop/5.5-Neon-Operations/image058.png)
+![alt text](image-6.png)
+
 
 6. Cấu hình điều kiện kích hoạt Alarm:
 
@@ -211,19 +213,20 @@ CloudWatch Alarms giúp giám sát các chỉ số (Metrics) của hệ thống 
 
 CloudWatch sẽ chuyển Alarm sang trạng thái **ALARM** khi mức sử dụng CPU trung bình vượt quá **80%** trong khoảng thời gian đánh giá.
 
-![Hình 61.](/images/5-Workshop/5.5-Neon-Operations/image061.png)
+![alt text](image-7.png)
+![alt text](image-8.png)
 
 7. Tại bước **Configure actions**, lựa chọn hành động khi Alarm được kích hoạt. Có thể chọn gửi thông báo thông qua **SNS Topic** hoặc bỏ qua nếu chỉ cần theo dõi trạng thái.
 
-![Hình 62.](/images/5-Workshop/5.5-Neon-Operations/image062.png)
+![Hình 57.](/images/5-Workshop/5.5-Neon-Operations/image057.png)
 
 8. Đặt tên cho Alarm, ví dụ:
 
-   - **Alarm name:** `neonfoodmap-ecs-cpu-high`
+   - **Alarm name:** `ECS-Backend-High-CPU-Alarm`
 
 Có thể bổ sung mô tả để dễ dàng quản lý về sau.
 
-![Hình 63.](/images/5-Workshop/5.5-Neon-Operations/image063.png)
+![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
 
 9. Kiểm tra lại toàn bộ cấu hình và nhấn **Create alarm** để hoàn tất.
 
@@ -267,8 +270,5 @@ Có thể bổ sung mô tả để dễ dàng quản lý về sau.
 8. Gửi Subscription, mở Email và nhấn **Confirm Subscription** để kích hoạt.
 
 ![Hình 49.](/images/5-Workshop/5.5-Neon-Operations/image049.png)
-
-Hình 50 ![Hình 50.](/images/5-Workshop/5.5-Neon-Operations/image050.png)
-<!-- ![Hình 97.](/images/5-Workshop/5.5-Neon-Operations/image097.png) -->
 
 ---

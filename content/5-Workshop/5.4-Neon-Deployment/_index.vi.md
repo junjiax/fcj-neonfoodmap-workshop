@@ -8,11 +8,11 @@ pre : " <b> 5.4. </b> "
 
 ### Mục tiêu
 
-Trong phần này, bạn sẽ triển khai dự án NeonFoodMap lên AWS theo một luồng end-to-end rõ ràng, tuần tự và có thể kiểm tra được. Nội dung được tổ chức theo từng bước để dễ thực hiện và dễ đối chiếu khi cần chèn hình ảnh minh họa sau này.
+Trong giai đoạn này, dự án NeonFoodMap sẽ được triển khai tự động hóa và container hóa lên hạ tầng AWS theo một luồng end-to-end rõ ràng, tuần tự và có thể kiểm tra được. 
 
-### Tổng quan luồng triển khai
+### Tổng quan
 
-Luồng triển khai đề xuất gồm các giai đoạn sau:
+Quy trình thực hiện bao gồm các bước như sau:
 
 1. Chuẩn bị mã nguồn và workflow CI/CD
 2. Tạo stack IAM bằng CloudFormation
