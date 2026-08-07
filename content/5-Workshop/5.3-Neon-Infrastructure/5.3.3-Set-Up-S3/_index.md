@@ -25,7 +25,8 @@ Steps:
 6. Click **Create bucket**.
 7. Repeat for all 4 buckets.
 
-![Figure 11. Create S3 buckets](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-buckets.png)
+![Figure 59.](/images/5-Workshop/5.3-Neon-Infracstructure/image059.png)
+![Figure 61.](/images/5-Workshop/5.3-Neon-Infracstructure/image061.png)
 
 ### 5.3.12. Enable Versioning for Media and Audio Buckets
 
@@ -35,7 +36,18 @@ Steps:
 4. Choose **Enable**.
 5. Repeat the same steps for the `neonfoodmap-audio-dev` bucket.
 
-![Figure 12. Enable Versioning](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-versioning.png)
+![Figure 63.](/images/5-Workshop/5.3-Neon-Infracstructure/image063.png)
+![Figure 65.](/images/5-Workshop/5.3-Neon-Infracstructure/image065.png)
+![Figure 67.](/images/5-Workshop/5.3-Neon-Infracstructure/image067.png)
+![Figure 69.](/images/5-Workshop/5.3-Neon-Infracstructure/image069.png)
+![Figure 71.](/images/5-Workshop/5.3-Neon-Infracstructure/image071.png)
+![Figure 75.](/images/5-Workshop/5.3-Neon-Infracstructure/image075.png)
+![Figure 77.](/images/5-Workshop/5.3-Neon-Infracstructure/image077.png)
+![Figure 78.](/images/5-Workshop/5.3-Neon-Infracstructure/image078.png)
+![Figure 80.](/images/5-Workshop/5.3-Neon-Infracstructure/image080.png)
+![Figure 82.](/images/5-Workshop/5.3-Neon-Infracstructure/image082.png)
+![Figure 83.](/images/5-Workshop/5.3-Neon-Infracstructure/image083.png)
+![Figure 85.](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
 
 ### 5.3.13. Configure Lifecycle Rule for Storage Bucket
 
@@ -46,7 +58,7 @@ Steps:
 5. Select **Apply to all objects in the bucket**.
 6. Choose to transition objects to `Standard-IA` after 90 days.
 
-![Figure 13. Configure Lifecycle Rule](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-lifecycle.png)
+![Figure 87.](/images/5-Workshop/5.3-Neon-Infracstructure/image087.png)
 
 ### 5.3.14. Block Public Access and Enable ACL for Bucket
 
@@ -60,4 +72,9 @@ Steps:
 8. Select `Bucket owner preferred`.
 9. Click **Save changes**.
 
-![Figure 14. Configure bucket access permissions](/images/5-Workshop/5.3-neon-infrastructure/placeholder-s3-permissions.png)
+![Figure 89.](/images/5-Workshop/5.3-Neon-Infracstructure/image089.png)
+![Figure 91.](/images/5-Workshop/5.3-Neon-Infracstructure/image091.png)
+![Figure 93.](/images/5-Workshop/5.3-Neon-Infracstructure/image093.png)
+![Figure 95.](/images/5-Workshop/5.3-Neon-Infracstructure/image095.png)
+![Figure 97.](/images/5-Workshop/5.3-Neon-Infracstructure/image097.png)
+![Figure 98.](/images/5-Workshop/5.3-Neon-Infracstructure/image098.png)
