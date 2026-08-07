@@ -36,9 +36,7 @@ Expected results:
 ![Figure 3.](/images/5-Workshop/5.3-Neon-Infracstructure/image003.png)
 ![Figure 4.](/images/5-Workshop/5.3-Neon-Infracstructure/image004.png)
 ![Figure 5.](/images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
-![Figure 6.](/images/5-Workshop/5.3-Neon-Infracstructure/image006.png)
 ![Figure 7.](/images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
-![Figure 8.](/images/5-Workshop/5.3-Neon-Infracstructure/image008.png)
 
 ### 5.3.1.2. Create Elastic IP for NAT Gateway
 
@@ -49,9 +47,7 @@ Expected results:
 5. Click **Allocate**.
 
 ![Figure 9.](/images/5-Workshop/5.3-Neon-Infracstructure/image009.png)
-![Figure 10.](/images/5-Workshop/5.3-Neon-Infracstructure/image010.png)
 ![Figure 11.](/images/5-Workshop/5.3-Neon-Infracstructure/image011.png)
-![Figure 12.](/images/5-Workshop/5.3-Neon-Infracstructure/image012.png)
 
 ### 5.3.1.3. Create NAT Gateway
 
@@ -66,9 +62,7 @@ Expected results:
 5. Wait until the status shows `Available`.
 
 ![Figure 13.](/images/5-Workshop/5.3-Neon-Infracstructure/image013.png)
-![Figure 14.](/images/5-Workshop/5.3-Neon-Infracstructure/image014.png)
 ![Figure 15.](/images/5-Workshop/5.3-Neon-Infracstructure/image015.png)
-![Figure 16.](/images/5-Workshop/5.3-Neon-Infracstructure/image016.png)
 
 ### 5.3.1.4. Configure Route Table for Private Subnet
 
@@ -81,15 +75,10 @@ Expected results:
 5. Click **Save changes**.
 
 ![Figure 17.](/images/5-Workshop/5.3-Neon-Infracstructure/image017.png)
-![Figure 18.](/images/5-Workshop/5.3-Neon-Infracstructure/image018.png)
 ![Figure 19.](/images/5-Workshop/5.3-Neon-Infracstructure/image019.png)
-![Figure 20.](/images/5-Workshop/5.3-Neon-Infracstructure/image020.png)
 ![Figure 21.](/images/5-Workshop/5.3-Neon-Infracstructure/image021.png)
-![Figure 22.](/images/5-Workshop/5.3-Neon-Infracstructure/image022.png)
 ![Figure 23.](/images/5-Workshop/5.3-Neon-Infracstructure/image023.png)
-![Figure 24.](/images/5-Workshop/5.3-Neon-Infracstructure/image024.png)
 ![Figure 25.](/images/5-Workshop/5.3-Neon-Infracstructure/image025.png)
-![Figure 26.](/images/5-Workshop/5.3-Neon-Infracstructure/image026.png)
 
 ### 5.3.1.5. Enable Auto-assign Public IPv4 for Public Subnets
 
@@ -101,6 +90,4 @@ Expected results:
 6. Repeat the same steps for public subnet 2.
 
 ![Figure 27.](/images/5-Workshop/5.3-Neon-Infracstructure/image027.png)
-![Figure 28.](/images/5-Workshop/5.3-Neon-Infracstructure/image028.png)
 ![Figure 29.](/images/5-Workshop/5.3-Neon-Infracstructure/image029.png)
-![Figure 30.](/images/5-Workshop/5.3-Neon-Infracstructure/image030.png)
