@@ -21,8 +21,9 @@ pre : " <b> 5.4.11. </b> "
    - HTTPS `443` từ `0.0.0.0/0`
 5. Giữ outbound rule mặc định.
 
-![Hình 11. Tạo ALB security group](/images/5-Workshop/5.4-neon-deployment/placeholder-alb-sg.png)
+![alt text](image.png)
 
+![alt text](image-1.png)
 
 
 #### 5.4.11.2. Tạo target group cho frontend và backend
@@ -46,8 +47,6 @@ Các cấu hình chính:
 ![](/images/5-Workshop/5.4-Neon-Deployment/image028.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image029.png)
 
-![Hình 12. Tạo target group](/images/5-Workshop/5.4-neon-deployment/placeholder-target-group.png)
-
 #### 5.4.11.3. Tạo Application Load Balancer
 
 1. Mở EC2 Console → Load Balancers.
@@ -61,21 +60,17 @@ Các cấu hình chính:
 6. Cấu hình listener `HTTP:80` và route mặc định tới frontend target group.
 7. Tạo load balancer.
 
-![Hình 13. Tạo Application Load Balancer](/images/5-Workshop/5.4-neon-deployment/placeholder-alb.png)
-
-![](/images/5-Workshop/5.4-Neon-Deployment/image030.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image031.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image032.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image033.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image034.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image035.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image036.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image037.png)
-
 
 #### 5.4.11.4. Tạo listener rule cho API path
 
 1. Mở ALB → Listeners and rules.
+
+![alt text](image-2.png)
+
 2. Chọn listener `HTTP:80`.
 3. Thêm rule:
    - Name: `route-backend-api`
@@ -83,15 +78,4 @@ Các cấu hình chính:
    - Action: Forward tới target group backend
 4. Lưu rule.
 
-
-![](/images/5-Workshop/5.4-Neon-Deployment/image038.png)
-
-![Hình 84.](/images/5-Workshop/5.5-Neon-Operations/image084.png)
-
-![Hình 85.](/images/5-Workshop/5.5-Neon-Operations/image085.png)
-
-![Hình 86.](/images/5-Workshop/5.5-Neon-Operations/image086.png)
-
-![Hình 87.](/images/5-Workshop/5.5-Neon-Operations/image087.png)
-
-![Hình 83.](/images/5-Workshop/5.5-Neon-Operations/image083.png)
+![alt text](image-3.png)

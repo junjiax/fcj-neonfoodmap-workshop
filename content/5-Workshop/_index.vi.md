@@ -38,4 +38,3 @@ Hệ thống được tổ chức theo năm lớp chính:
 3. [Thiết kế và xây dựng hạ tầng NeonFoodMap trên AWS](5.3-Neon-Infrastructure/)
 4. [Triển khai NeonFoodMap trên AWS](5.4-Neon-Deployment/)
 5. [Kiểm thử, vận hành và triển khai liên tục](5.5-Neon-Operations/)
-6. [Hình ảnh minh họa](5.6-Neon-Image/)

@@ -1,200 +1,201 @@
 ---
-title: "Giới thiệu"
+
+title: "Introduction"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
----
+----------------------
 
-# 5.1. Tổng quan
+# 5.1. Overview
 
-# Bài toán Cloud & DevOps: Đưa hệ thống lên AWS Cloud, xây dựng luồng CI/CD tự động
+# Cloud & DevOps Problem: Deploying the System to AWS Cloud and Building an Automated CI/CD Pipeline
 
-#### Nhằm đáp ứng yêu cầu về khả năng triển khai linh hoạt, tự động hóa quy trình phát hành phần mềm và nâng cao tính sẵn sàng của hệ thống, đề tài thực hiện triển khai ứng dụng trên nền tảng Amazon Web Services (AWS) và xây dựng quy trình CI/CD (Continuous Integration/Continuous Deployment) theo mô hình tự động hóa hoàn toàn. Kiến trúc Cloud & DevOps của hệ thống được tổ chức thành ba luồng xử lý chính, bao gồm: luồng CI/CD, luồng xử lý yêu cầu người dùng và luồng giám sát – quản lý chi phí.
+#### To meet the requirements for flexible deployment, software release process automation, and improved system availability, this project deploys the application on the Amazon Web Services (AWS) platform and builds a fully automated CI/CD (Continuous Integration/Continuous Deployment) pipeline. The Cloud & DevOps architecture of the system is organized into three main processing flows, including: the CI/CD flow, the user request flow, and the monitoring and cost management flow.
 
-## 5.1.1. Luồng CI/CD (Pipeline Flow)
+## 5.1.1. CI/CD Flow (Pipeline Flow)
 
-Quy trình tích hợp và triển khai liên tục được thiết kế nhằm: tự động hóa toàn bộ quá trình từ khi lập trình viên cập nhật mã nguồn đến khi phiên bản mới của ứng dụng được triển khai trên môi trường vận hành. Cụ thể, khi Developer thực hiện thao tác push code lên kho mã nguồn GitHub, GitHub Actions sẽ được kích hoạt để khởi chạy pipeline. Pipeline sử dụng cơ chế xác thực OIDC (OpenID Connect) để liên kết với AWS Security Token Service (STS) và cấp phát thông tin xác thực tạm thời (temporary credentials), thay thế cho việc sử dụng Access Key/Secret Key tĩnh nhằm mục đích tăng cường mức độ an toàn bảo mật. Sau khi xác thực thành công, pipeline tiến hành build Docker image của ứng dụng và đẩy image lên Amazon Elastic Container Registry (ECR). Tiếp theo, dịch vụ Amazon ECS Fargate sẽ tự động pull image mới nhất từ ECR và thực hiện triển khai phiên bản mới của ứng dụng mà không cần can thiệp thủ công. 
+The continuous integration and deployment process is designed to automate the entire workflow from the moment a developer updates the source code until the new version of the application is deployed to the production environment. Specifically, when a Developer pushes code to the GitHub repository, GitHub Actions is triggered to start the pipeline. The pipeline uses OIDC (OpenID Connect) authentication to establish a connection with AWS Security Token Service (STS) and obtain temporary credentials, replacing the use of static Access Key/Secret Key credentials in order to enhance security. After successful authentication, the pipeline builds the application's Docker image and pushes the image to Amazon Elastic Container Registry (ECR). Next, Amazon ECS Fargate automatically pulls the latest image from ECR and deploys the new version of the application without manual intervention.
 
-- Luồng xử lý:
-Developer → GitHub → GitHub Actions → OIDC Authentication → AWS STS → Amazon ECR → Amazon ECS Fargate.
+* Processing flow:
+  Developer → GitHub → GitHub Actions → OIDC Authentication → AWS STS → Amazon ECR → Amazon ECS Fargate.
 
-## 5.1.2. Luồng User (Request Flow)
+## 5.1.2. User Flow (Request Flow)
 
-Luồng xử lý yêu cầu được xây dựng theo mô hình phân phối nội dung và cân bằng tải nhằm đảm bảo hiệu năng truy cập và khả năng chịu lỗi của hệ thống.
-Khi người dùng (User) gửi yêu cầu truy cập, yêu cầu trước tiên được tiếp nhận bởi Amazon CloudFront – mạng phân phối nội dung (CDN) của AWS. Đối với các tài nguyên tĩnh của giao diện người dùng, CloudFront sẽ truy xuất trực tiếp từ Amazon S3 Frontend Bucket. Đối với các yêu cầu động, CloudFront chuyển tiếp yêu cầu đến Application Load Balancer (ALB). ALB có nhiệm vụ phân phối lưu lượng truy cập đến các tác vụ ECS Fargate đang chạy trên hai Availability Zone (AZ) khác nhau nhằm đảm bảo tính sẵn sàng cao (High Availability). Các container ứng dụng kết nối đến Amazon RDS Primary đặt tại Zone A để thực hiện thao tác đọc/ghi dữ liệu. Đồng thời, dữ liệu được đồng bộ liên tục sang RDS Standby tại Zone B theo cơ chế Multi-AZ, giúp hệ thống có khả năng chuyển đổi dự phòng khi xảy ra sự cố.
-Ngoài ra, các container ECS truy cập S3 Media Bucket thông qua VPC Endpoint, cho phép truyền dữ liệu nội bộ trong mạng AWS mà không cần đi qua Internet công cộng, từ đó tăng cường bảo mật và tối ưu chi phí truyền tải dữ liệu. 
+The request processing flow is designed based on a content distribution and load balancing model to ensure system access performance and fault tolerance.
+When a user sends an access request, the request is first received by Amazon CloudFront – AWS's Content Delivery Network (CDN). For static frontend resources, CloudFront retrieves the content directly from the Amazon S3 Frontend Bucket. For dynamic requests, CloudFront forwards the requests to the Application Load Balancer (ALB). The ALB distributes incoming traffic to ECS Fargate tasks running across two different Availability Zones (AZs) to ensure High Availability. The application containers connect to the Amazon RDS Primary instance located in Zone A to perform data read/write operations. At the same time, data is continuously replicated to the RDS Standby instance in Zone B using the Multi-AZ mechanism, allowing the system to perform failover in the event of a failure.
+In addition, ECS containers access the S3 Media Bucket through a VPC Endpoint, allowing data to be transmitted internally within the AWS network without going through the public Internet, thereby enhancing security and optimizing data transfer costs.
 
-- Luồng xử lý:
-User → CloudFront → (S3 Frontend hoặc ALB) → ECS Fargate (2 AZ) → RDS Primary (Zone A) → RDS Standby (Zone B)
+* Processing flow:
+  User → CloudFront → (S3 Frontend or ALB) → ECS Fargate (2 AZ) → RDS Primary (Zone A) → RDS Standby (Zone B)
 
-## 5.1.3. Luồng Giám sát & Chi phí (Observability & Billing)
+## 5.1.3. Monitoring & Cost Flow (Observability & Billing)
 
-Để đảm bảo hệ thống vận hành ổn định và kiểm soát hiệu quả chi phí sử dụng tài nguyên đám mây, đề tài triển khai cơ chế giám sát và cảnh báo tự động dựa trên các dịch vụ quản trị của AWS. Toàn bộ nhật ký hệ thống (logs), bao gồm VPC Flow Logs và Application Logs, được thu thập và tập trung tại Amazon CloudWatch để phục vụ việc theo dõi, phân tích và xử lý sự cố. Hệ thống đồng thời được cấu hình Auto Scaling cho dịch vụ ECS, cho phép tự động mở rộng số lượng tác vụ khi mức sử dụng CPU hoặc Memory vượt quá 70%, qua đó duy trì hiệu năng trong điều kiện tải tăng cao.
-Về quản lý chi phí, hệ thống sử dụng AWS Budgets với ngân sách được thiết lập ở mức 15 USD/tháng. Các ngưỡng cảnh báo được cấu hình tại 50%, 70% và 90% ngân sách. Khi chi phí đạt đến các ngưỡng này hoặc xuất hiện dấu hiệu gia tăng chi phí bất thường, AWS Budgets sẽ tự động kích hoạt Amazon SNS (Simple Notification Service) để gửi email cảnh báo đến quản trị viên, hỗ trợ phát hiện sớm rủi ro và đưa ra biện pháp xử lý kịp thời. 
+To ensure stable system operation and effectively control cloud resource usage costs, the project implements an automated monitoring and alerting mechanism based on AWS management services. All system logs, including VPC Flow Logs and Application Logs, are collected and centralized in Amazon CloudWatch for monitoring, analysis, and troubleshooting. The system is also configured with Auto Scaling for the ECS service, allowing the number of tasks to be automatically increased when CPU or Memory utilization exceeds 70%, thereby maintaining performance under increased workloads.
+For cost management, the system uses AWS Budgets with a budget set at USD 15/month. Alert thresholds are configured at 50%, 70%, and 90% of the budget. When costs reach these thresholds or abnormal cost increases are detected, AWS Budgets automatically triggers Amazon SNS (Simple Notification Service) to send email alerts to administrators, supporting early risk detection and timely corrective actions.
 
-- Luồng giám sát và cảnh báo:
-CloudWatch (Logs & Metrics) → Auto Scaling → AWS Budgets → Amazon SNS → Email Alert
+* Monitoring and alerting flow:
+  CloudWatch (Logs & Metrics) → Auto Scaling → AWS Budgets → Amazon SNS → Email Alert
 
-## 5.1.4 Kiến trúc hệ thống
+## 5.1.4. System Architecture
 
-### Kiến trúc tổng thể
+### Overall Architecture
 
 ![](/images/2-Proposal/diagram1.png)
 
-#### Kiến trúc hệ thống được chia thành năm lớp chính:
+#### The system architecture is divided into five main layers:
 
 #### CI/CD Layer
 
-- GitHub Repository
-- GitHub Actions
-- Docker Build
-- AWS STS
-- Amazon ECR
+* GitHub Repository
+* GitHub Actions
+* Docker Build
+* AWS STS
+* Amazon ECR
 
-Đây là lớp chịu trách nhiệm tự động hóa toàn bộ quy trình triển khai. Sau mỗi lần Push lên nhánh chính:
+This layer is responsible for automating the entire deployment process. After each push to the main branch:
 
-1. Source Code được Build.
-2. Docker Image được tạo.
-3. GitHub sử dụng OIDC để xác thực.
-4. AWS STS cấp Temporary Credential.
-5. Image được Push lên Amazon ECR.
-6. ECS Service thực hiện Rolling Deployment.
+1. The Source Code is Built.
+2. A Docker Image is Created.
+3. GitHub uses OIDC for authentication.
+4. AWS STS issues Temporary Credentials.
+5. The Image is Pushed to Amazon ECR.
+6. The ECS Service performs a Rolling Deployment.
 
 ---
 
 #### Presentation Layer
 
-Bao gồm:
+Includes:
 
-- Amazon CloudFront
-- Amazon S3 Static Website
+* Amazon CloudFront
+* Amazon S3 Static Website
 
-Frontend được lưu trữ trên Amazon S3 và phân phối thông qua CloudFront nhằm:
+The frontend is hosted on Amazon S3 and distributed through CloudFront in order to:
 
-- Giảm độ trễ
-- Tăng tốc truy cập
-- Giảm tải Backend
+* Reduce latency
+* Accelerate access
+* Reduce Backend load
 
 ---
 
 #### Application Layer
 
-Bao gồm:
+Includes:
 
-- Application Load Balancer
-- Amazon ECS Cluster
-- Backend Service
-- Frontend Service
+* Application Load Balancer
+* Amazon ECS Cluster
+* Backend Service
+* Frontend Service
 
-Ứng dụng được triển khai trên ECS Fargate giúp loại bỏ việc quản lý EC2. Các Service hoạt động độc lập giúp:
+The application is deployed on ECS Fargate, eliminating the need to manage EC2 instances. Services operate independently, allowing:
 
-- Mở rộng riêng từng thành phần
-- Rolling Update
-- Tự động khởi động lại khi lỗi
+* Independent scaling of each component
+* Rolling Updates
+* Automatic restart in case of failure
 
 ---
 
 #### Data Layer
 
-Bao gồm:
+Includes:
 
-- Amazon RDS MySQL
-- Multi-AZ Deployment
+* Amazon RDS MySQL
+* Multi-AZ Deployment
 
-Database được triển khai trong Private Database Subnet.
+The database is deployed in a Private Database Subnet.
 
-Việc sử dụng Multi-AZ giúp:
+Using Multi-AZ provides:
 
-- Tăng khả năng chịu lỗi
-- Tự động Failover
-- Giảm thời gian gián đoạn dịch vụ
+* Increased fault tolerance
+* Automatic Failover
+* Reduced service interruption time
 
 ---
 
 #### Monitoring Layer
 
-Bao gồm:
+Includes:
 
-- Amazon CloudWatch
-- Amazon SNS
+* Amazon CloudWatch
+* Amazon SNS
 
-CloudWatch thu thập:
+CloudWatch collects:
 
-- ECS Logs
-- Container Logs
-- Metrics
-- Application Logs
+* ECS Logs
+* Container Logs
+* Metrics
+* Application Logs
 
-SNS chịu trách nhiệm gửi Email Alert khi phát hiện bất thường.
+SNS is responsible for sending Email Alerts when anomalies are detected.
 
 ---
 
-### Kiến trúc triển khai ECS
+### ECS Deployment Architecture
 
 ![](/images/2-Proposal/diagram2.png)
 
-Hệ thống sử dụng một ECS Cluster gồm hai dịch vụ:
+The system uses one ECS Cluster consisting of two services:
 
 #### Backend Service
 
-Triển khai:
+Deployed using:
 
-- Django REST API
-- Docker Container
-- ECS Fargate
+* Django REST API
+* Docker Container
+* ECS Fargate
 
-Backend chịu trách nhiệm:
+The Backend is responsible for:
 
-- Authentication
-- Business Logic
-- Database Access
-- Upload Media
+* Authentication
+* Business Logic
+* Database Access
+* Media Upload
 
 ---
 
 #### Frontend Service
 
-Triển khai:
+Deployed using:
 
-- React Application
-- Docker Container
-- ECS Fargate
+* React Application
+* Docker Container
+* ECS Fargate
 
-Frontend giao tiếp với Backend thông qua ALB.
+The Frontend communicates with the Backend through the ALB.
 
 ---
 
 #### Service Discovery
 
-AWS Cloud Map được sử dụng để quản lý Service Discovery giữa các Container trong ECS Cluster.
+AWS Cloud Map is used to manage Service Discovery between Containers within the ECS Cluster.
 
 ---
 
 #### Load Balancing
 
-Application Load Balancer tiếp nhận HTTP Request/HTTPS Request, sau đó định tuyến đến Backend Service.
+The Application Load Balancer receives HTTP Requests/HTTPS Requests and then routes them to the Backend Service.
 
 ---
 
-## 5.1.5. Thành phần AWS sử dụng
+## 5.1.5. AWS Services Used
 
-| Dịch vụ                 | Mục đích                                                                                                                                                                                                                                                         |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| IAM                     | Quản lý danh tính (Identity) và phân quyền truy cập tài nguyên AWS. Tạo User, Group, Role và Policy để kiểm soát người dùng hoặc dịch vụ nào được phép thực hiện các thao tác cụ thể theo nguyên tắc **Least Privilege**.                                        |
-| STS                     | Cấp **Temporary Security Credentials** (Access Key, Secret Key, Session Token) có thời hạn ngắn cho người dùng hoặc ứng dụng. Được sử dụng trong GitHub Actions (OIDC), Assume Role và các kịch bản truy cập AWS an toàn mà không cần lưu khóa truy cập dài hạn. |
-| VPC                     | Xây dựng mạng riêng ảo trên AWS, cho phép định nghĩa dải địa chỉ IP, bảng định tuyến, ACL và Security Group để cô lập và bảo vệ hạ tầng triển khai ứng dụng.                                                                                                     |
-| Public / Private Subnet | Phân chia hạ tầng thành các vùng mạng có mức độ truy cập khác nhau. Public Subnet chứa các tài nguyên cần truy cập từ Internet (ALB, NAT Gateway), trong khi Private Subnet chứa các tài nguyên nội bộ (ECS, RDS) nhằm tăng cường bảo mật.                       |
-| NAT Gateway             | Cho phép các tài nguyên trong Private Subnet truy cập Internet theo chiều ra (Outbound) để tải package, cập nhật hệ thống hoặc pull Docker Image mà không cho phép kết nối trực tiếp từ Internet vào.                                                            |
-| Internet Gateway        | Kết nối VPC với Internet, cho phép các tài nguyên trong Public Subnet gửi và nhận lưu lượng mạng từ bên ngoài, phục vụ việc truy cập website và các dịch vụ công khai.                                                                                           |
-| ECS Fargate             | Nền tảng chạy container không cần quản lý máy chủ. Tự động cung cấp hạ tầng, triển khai và mở rộng ứng dụng container dựa trên Docker, giúp giảm chi phí vận hành và quản trị.                                                                                   |
-| ECR                     | Kho lưu trữ Docker Image riêng trên AWS. Lưu trữ, quản lý phiên bản và cung cấp Image cho ECS khi triển khai hoặc cập nhật ứng dụng thông qua quy trình CI/CD.                                                                                                   |
-| RDS MySQL               | Dịch vụ cơ sở dữ liệu quan hệ được quản lý hoàn toàn. Lưu trữ dữ liệu ứng dụng, hỗ trợ sao lưu tự động, Multi-AZ, giám sát và khả năng mở rộng nhằm đảm bảo tính sẵn sàng và độ tin cậy của hệ thống.                                                            |
-| S3                      | Dịch vụ lưu trữ đối tượng dùng để lưu trữ website tĩnh (React), hình ảnh, tệp người dùng, log hệ thống, file sao lưu và các tài nguyên tĩnh khác với độ bền và khả năng mở rộng cao.                                                                             |
-| CloudFront              | Mạng phân phối nội dung (CDN) giúp phân phối nội dung từ S3 hoặc ALB thông qua các Edge Location trên toàn cầu, giảm độ trễ, tăng tốc độ tải và hỗ trợ HTTPS, cache cũng như bảo vệ ứng dụng.                                                                    |
-| ALB                     | Cân bằng tải HTTP/HTTPS cho nhiều container hoặc máy chủ. Thực hiện định tuyến yêu cầu theo URL, Host Header hoặc Path đến các ECS Service tương ứng, đồng thời tích hợp Health Check và SSL/TLS.                                                                |
-| CloudWatch              | Giám sát tài nguyên AWS và ứng dụng thông qua Metrics, Logs, Dashboard và Alarm. Thu thập log từ ECS, theo dõi hiệu năng hệ thống, phát hiện sự cố và hỗ trợ phân tích, khắc phục lỗi.                                                                           |
-| SNS                     | Dịch vụ gửi thông báo theo mô hình Publish/Subscribe. Tự động gửi Email, SMS hoặc kích hoạt các dịch vụ khác khi CloudWatch Alarm hoặc các sự kiện AWS được kích hoạt.                                                                                           |
-| Secrets Manager         | Lưu trữ và quản lý an toàn các thông tin nhạy cảm như mật khẩu cơ sở dữ liệu, API Key và Access Token. Hỗ trợ mã hóa bằng KMS, kiểm soát quyền truy cập và tự động xoay vòng (Secret Rotation) để tăng cường bảo mật.                                            |
+| Service                 | Purpose                                                                                                                                                                                                                                                        |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| IAM                     | Manages identities and access permissions for AWS resources. Creates Users, Groups, Roles, and Policies to control which users or services are allowed to perform specific operations according to the **Least Privilege** principle.                          |
+| STS                     | Provides **Temporary Security Credentials** (Access Key, Secret Key, Session Token) with a short validity period for users or applications. Used in GitHub Actions (OIDC), Assume Role, and secure AWS access scenarios without storing long-term access keys. |
+| VPC                     | Builds a virtual private network on AWS, allowing the definition of IP address ranges, routing tables, ACLs, and Security Groups to isolate and protect the application deployment infrastructure.                                                             |
+| Public / Private Subnet | Divides the infrastructure into network zones with different levels of access. Public Subnets contain resources that require Internet access (ALB, NAT Gateway), while Private Subnets contain internal resources (ECS, RDS) to enhance security.              |
+| NAT Gateway             | Allows resources in Private Subnets to access the Internet for outbound traffic in order to download packages, update systems, or pull Docker Images, while preventing direct inbound connections from the Internet.                                           |
+| Internet Gateway        | Connects the VPC to the Internet, allowing resources in Public Subnets to send and receive network traffic from external sources for website access and public services.                                                                                       |
+| ECS Fargate             | A serverless container runtime platform that eliminates the need to manage servers. It automatically provisions infrastructure, deploys, and scales Docker-based container applications, reducing operational and management overhead.                         |
+| ECR                     | A private Docker Image repository on AWS. Stores and manages image versions and provides Images to ECS during application deployment or updates through the CI/CD process.                                                                                     |
+| RDS MySQL               | A fully managed relational database service. Stores application data and supports automated backups, Multi-AZ, monitoring, and scalability to ensure system availability and reliability.                                                                      |
+| S3                      | An object storage service used to store static websites (React), images, user files, system logs, backup files, and other static resources with high durability and scalability.                                                                               |
+| CloudFront              | A Content Delivery Network (CDN) that distributes content from S3 or ALB through Edge Locations worldwide, reducing latency, improving loading speed, and supporting HTTPS, caching, and application protection.                                               |
+| ALB                     | Provides HTTP/HTTPS load balancing for multiple containers or servers. Routes requests based on URL, Host Header, or Path to the corresponding ECS Services, while also supporting Health Checks and SSL/TLS.                                                  |
+| CloudWatch              | Monitors AWS resources and applications through Metrics, Logs, Dashboards, and Alarms. Collects logs from ECS, monitors system performance, detects issues, and supports troubleshooting and error analysis.                                                   |
+| SNS                     | A notification service based on the Publish/Subscribe model. Automatically sends Email, SMS, or triggers other services when CloudWatch Alarms or AWS events are activated.                                                                                    |
+| Secrets Manager         | Securely stores and manages sensitive information such as database passwords, API Keys, and Access Tokens. Supports KMS encryption, access control, and automatic Secret Rotation to enhance security.                                                         |
 
 ---
