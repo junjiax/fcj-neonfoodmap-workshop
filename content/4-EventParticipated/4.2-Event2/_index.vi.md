@@ -166,7 +166,7 @@ Sau khi tham gia sự kiện, em rút ra một số bài học quan trọng:
 
 ## Một số hình ảnh khi tham gia sự kiện
 
-* ![Hình ảnh tham gia Event Cloud Architect](image.png)
-* ![Hình ảnh tham gia Event Cloud Architect](image-1.png)
+* ![Hình ảnh tham gia Event Cloud Architect](images/image.png)
+* ![Hình ảnh tham gia Event Cloud Architect](images/image-1.png)
 
 [Bài đăng về sự kiện trên LinkedIn](https://www.linkedin.com/posts/huynhson081103_it-was-an-honor-to-stand-on-the-fcaj-stage-ugcPost-7481615527300202496-F5eo/?utm_medium=member_desktop&rcm=ACoAAFd44wMBcNLkJz447g4e80PkvcnRgv0AXXE&utm_source=chatgpt.com)

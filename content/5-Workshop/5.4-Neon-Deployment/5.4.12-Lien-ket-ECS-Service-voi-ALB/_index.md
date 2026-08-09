@@ -24,10 +24,3 @@ To allow ECS to automatically register Tasks with the target group, load balanci
    * Select the corresponding Target Group.
 6. Save the configuration.
 
-Result:
-
-* Backend
-  ![alt text](image.png)
-
-* Frontend
-  ![alt text](image-1.png)

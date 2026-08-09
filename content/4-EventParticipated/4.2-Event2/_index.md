@@ -166,7 +166,7 @@ After participating in the event, I gained several important lessons:
 
 ## Photos from the Event
 
-* ![Cloud Architect Event](image.png)
-* ![Cloud Architect Event](image-1.png)
+* ![Cloud Architect Event](images/image.png)
+* ![Cloud Architect Event](images/image-1.png)
 
 [Event post on LinkedIn](https://www.linkedin.com/posts/huynhson081103_it-was-an-honor-to-stand-on-the-fcaj-stage-ugcPost-7481615527300202496-F5eo/?utm_medium=member_desktop&rcm=ACoAAFd44wMBcNLkJz447g4e80PkvcnRgv0AXXE&utm_source=chatgpt.com)

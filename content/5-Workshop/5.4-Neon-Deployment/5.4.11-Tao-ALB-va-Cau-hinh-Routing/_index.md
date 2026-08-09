@@ -24,9 +24,9 @@ pre : " <b> 5.4.11. </b> "
    * HTTPS `443` from `0.0.0.0/0`
 5. Keep the default outbound rule.
 
-![alt text](image.png)
+![alt text](images/image.png)
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 #### 2. Creating Target Groups for the Frontend and Backend
 
@@ -72,7 +72,7 @@ Main configurations:
 
 1. Open the ALB → **Listeners and rules**.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 2. Select the `HTTP:80` listener.
 3. Add a rule:
@@ -82,4 +82,4 @@ Main configurations:
    * Action: Forward to the Backend target group.
 4. Save the rule.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)

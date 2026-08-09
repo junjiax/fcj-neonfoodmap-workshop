@@ -243,11 +243,11 @@ Protocol: TCP
 
 12. Review the configuration and select **Create**.
 
-![alt text](image.png)
+![alt text](/images/image.png)
 
-![alt text](image-1.png)
+![alt text](/images/image-1.png)
 
-![alt text](image-2.png)
+![alt text](/images/image-2.png)
 
 ---
 
@@ -369,7 +369,7 @@ The Task Execution Role allows ECS to perform the operations required during Tas
 NeonFoodmap-ECS-TaskExecution-Role
 ```
 
-![alt text](image-3.png)
+![alt text](/images/image-3.png)
 
 4. Open the Role and select the **Permissions** tab.
 
@@ -379,11 +379,11 @@ NeonFoodmap-ECS-TaskExecution-Role
 - Write Container Logs to Amazon CloudWatch Logs.
 - Access Secrets from AWS Secrets Manager if the Task Definition uses Secrets.
 
-![alt text](image-4.png)
+![alt text](/images/image-4.png)
 
 6. For ECR, the Role must have the appropriate permissions for ECS/Fargate to authenticate and pull Images from the Repository.
 
-![alt text](image-6.png)
+![alt text](/images/image-6.png)
 
 7. Return to **Amazon ECS → Task definitions**.
 
@@ -395,7 +395,7 @@ NeonFoodmap-ECS-TaskExecution-Role
 NeonFoodmap-ECS-TaskExecution-Role
 ```
 
-![alt text](image-7.png)
+![alt text](/images/image-7.png)
 
 10. Perform the same verification for the Frontend Task Definition.
 
@@ -424,6 +424,6 @@ After the above configurations are completed, the system is ready to create the 
 ![](images/5-Workshop/5.4-Neon-Deployment/image040.png)
 ![](images/5-Workshop/5.4-Neon-Deployment/image041.png)
 ![](images/5-Workshop/5.4-Neon-Deployment/image042.png)
-![alt text](image-8.png)
+![alt text](/images/image-8.png)
 
 ---

@@ -32,10 +32,6 @@ Expected results:
 - Private subnet 4: `10.0.176.0/20`
 
 ![Figure 1.](images/5-Workshop/5.3-Neon-Infracstructure/image001.png)
-![Figure 2.](images/5-Workshop/5.3-Neon-Infracstructure/image002.png)
-![Figure 3.](images/5-Workshop/5.3-Neon-Infracstructure/image003.png)
-![Figure 4.](images/5-Workshop/5.3-Neon-Infracstructure/image004.png)
-![Figure 5.](images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
 ![Figure 7.](images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
 
 ### 2. Create Elastic IP for NAT Gateway

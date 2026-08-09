@@ -1,13 +1,16 @@
 {{- $src := .Destination -}}
+{{- $image := .Page.Resources.GetMatch $src -}}
 
-{{- if not (or
-    (strings.HasPrefix $src "http://")
-    (strings.HasPrefix $src "https://")
-    (strings.HasPrefix $src "//")
-    (strings.HasPrefix $src "data:")
-) -}}
-    {{- $src = $src | relURL -}}
+{{- if $image -}}
+    <img
+        src="{{ $image.RelPermalink }}"
+        alt="{{ .Text }}"
+        {{- with .Title }} title="{{ . }}"{{ end -}}
+    >
+{{- else -}}
+    <img
+        src="{{ $src | relURL }}"
+        alt="{{ .Text }}"
+        {{- with .Title }} title="{{ . }}"{{ end -}}
+    >
 {{- end -}}
-
-<img src="{{ $src }}" alt="{{ .Text }}"
-    {{- with .Title }} title="{{ . }}"{{ end -}}>

@@ -31,10 +31,6 @@ Kết quả mong đợi:
 - Private subnet 4: `10.0.176.0/20`
 
 ![Hình 1.](images/5-Workshop/5.3-Neon-Infracstructure/image001.png)
-![Hình 2.](images/5-Workshop/5.3-Neon-Infracstructure/image002.png)
-![Hình 3.](images/5-Workshop/5.3-Neon-Infracstructure/image003.png)
-![Hình 4.](images/5-Workshop/5.3-Neon-Infracstructure/image004.png)
-![Hình 5.](images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
 ![Hình 7.](images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
 
 ### 2. Tạo Elastic IP cho NAT Gateway

@@ -92,5 +92,5 @@ I had the opportunity to:
 
 ### Photos from the Event
 
-* [![Cloud Architect Event](image.png)](https://www.facebook.com/share/r/1GUXvU6A4n/)
+* [![Cloud Architect Event](images/image.png)](https://www.facebook.com/share/r/1GUXvU6A4n/)
 [Event Video on Facebook](https://www.facebook.com/share/r/1GUXvU6A4n/?utm_source=chatgpt.com)

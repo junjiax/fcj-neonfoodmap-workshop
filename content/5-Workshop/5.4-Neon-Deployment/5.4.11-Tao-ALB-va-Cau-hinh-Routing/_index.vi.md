@@ -1,9 +1,9 @@
 ---
-title : "Tạo Application Load Balancer và cấu hình routing"
-date : 2024-01-01
-weight : 11
-chapter : false
-pre : " <b> 5.4.11. </b> "
+title: "Tạo Application Load Balancer và cấu hình routing"
+date: 2024-01-01
+weight: 11
+chapter: false
+pre: " <b> 5.4.11. </b> "
 ---
 
 ### 5.4.11. Tạo Application Load Balancer và cấu hình routing
@@ -21,10 +21,8 @@ pre : " <b> 5.4.11. </b> "
    - HTTPS `443` từ `0.0.0.0/0`
 5. Giữ outbound rule mặc định.
 
-![alt text](image.png)
-
-![alt text](image-1.png)
-
+![alt text](images/image.png)
+![alt text](images/image-1.png)
 
 #### 2. Tạo target group cho frontend và backend
 
@@ -69,7 +67,7 @@ Các cấu hình chính:
 
 1. Mở ALB → Listeners and rules.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 2. Chọn listener `HTTP:80`.
 3. Thêm rule:
@@ -78,4 +76,4 @@ Các cấu hình chính:
    - Action: Forward tới target group backend
 4. Lưu rule.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)

@@ -15,11 +15,11 @@ The following items should be verified:
 
 * The Frontend Target Group changes to `Healthy`.
 
-![alt text](image-1.png)
+![alt text](/images/image-1.png)
 
 * The Backend Target Group changes to `Healthy`.
 
-![alt text](image.png)
+![alt text](/images/image.png)
 
 * The ALB DNS name is accessible through a browser.
 
@@ -33,4 +33,4 @@ http://alb-neonfoodmap-406336237.ap-southeast-1.elb.amazonaws.com/map
 http://alb-neonfoodmap-406336237.ap-southeast-1.elb.amazonaws.com/api/
 ```
 
-![alt text](image-2.png)
+![alt text](/images/image-2.png)
