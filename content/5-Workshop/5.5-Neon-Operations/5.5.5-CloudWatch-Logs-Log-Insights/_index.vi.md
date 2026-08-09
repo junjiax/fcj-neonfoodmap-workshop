@@ -29,17 +29,17 @@ CloudWatch mặc định lưu trữ Log vô thời hạn. Để tối ưu chi ph
 2. Truy cập dịch vụ **CloudWatch**.
 3. Chọn **Log groups**.
 
-![Hình 78.](/images/5-Workshop/5.5-Neon-Operations/image078.png)
+![Hình 78.](images/5-Workshop/5.5-Neon-Operations/image078.png)
 
 4. Chọn Log Group cần cấu hình.
 5. Chọn **Actions → Edit retention setting**.
 
-![Hình 79.](/images/5-Workshop/5.5-Neon-Operations/image079.png)
+![Hình 79.](images/5-Workshop/5.5-Neon-Operations/image079.png)
 
 6. Trong mục **Retention setting**, chọn **30 Days**.
 7. Nhấn **Save** để lưu cấu hình.
 
-![Hình 80.](/images/5-Workshop/5.5-Neon-Operations/image080.png)
+![Hình 80.](images/5-Workshop/5.5-Neon-Operations/image080.png)
 
 > **Lưu ý:** Thực hiện tương tự cho tất cả Log Group của hệ thống để đảm bảo chính sách lưu trữ được áp dụng thống nhất.
 
@@ -99,7 +99,7 @@ hoặc
 6. Cập nhật ECS Service sử dụng Revision vừa tạo.
 7. Sau khi Deployment hoàn tất, Log sẽ tự động được ghi vào CloudWatch.
 
-![Hình 106.](/images/5-Workshop/5.5-Neon-Operations/image106.png)
+![Hình 106.](images/5-Workshop/5.5-Neon-Operations/image106.png)
 
 ---
 
@@ -121,11 +121,11 @@ Có thể sử dụng để:
 5. Nếu cần sử dụng lại, chọn **Save query**.
 6. Đặt tên truy vấn và lưu lại.
 
-![Hình 105.](/images/5-Workshop/5.5-Neon-Operations/image105.png)
+![Hình 105.](images/5-Workshop/5.5-Neon-Operations/image105.png)
 
-![Hình 107.](/images/5-Workshop/5.5-Neon-Operations/image107.png)
+![Hình 107.](images/5-Workshop/5.5-Neon-Operations/image107.png)
 
-![Hình 108.](/images/5-Workshop/5.5-Neon-Operations/image108.png)
+![Hình 108.](images/5-Workshop/5.5-Neon-Operations/image108.png)
 
 ---
 
@@ -137,7 +137,7 @@ VPC Flow Logs giúp ghi nhận toàn bộ lưu lượng mạng đi vào và đi 
 2. Chọn **Your VPCs**.
 3. Chọn VPC của hệ thống.
 
-![Hình 98.](/images/5-Workshop/5.5-Neon-Operations/image098.png)
+![Hình 98.](images/5-Workshop/5.5-Neon-Operations/image098.png)
 
 4. Chọn tab **Flow logs**.
 5. Nhấn **Create flow log**.
@@ -151,17 +151,17 @@ VPC Flow Logs giúp ghi nhận toàn bộ lưu lượng mạng đi vào và đi 
 
 7. Nhấn **Create flow log** để hoàn tất.
 
-![Hình 99.](/images/5-Workshop/5.5-Neon-Operations/image099.png)
+![Hình 99.](images/5-Workshop/5.5-Neon-Operations/image099.png)
 
-![Hình 100.](/images/5-Workshop/5.5-Neon-Operations/image100.png)
-
-
-![Hình 101.](/images/5-Workshop/5.5-Neon-Operations/image101.png)
-
-![Hình 102.](/images/5-Workshop/5.5-Neon-Operations/image102.png)
+![Hình 100.](images/5-Workshop/5.5-Neon-Operations/image100.png)
 
 
-![Hình 103.](/images/5-Workshop/5.5-Neon-Operations/image103.png)
+![Hình 101.](images/5-Workshop/5.5-Neon-Operations/image101.png)
+
+![Hình 102.](images/5-Workshop/5.5-Neon-Operations/image102.png)
+
+
+![Hình 103.](images/5-Workshop/5.5-Neon-Operations/image103.png)
 
 ---
 

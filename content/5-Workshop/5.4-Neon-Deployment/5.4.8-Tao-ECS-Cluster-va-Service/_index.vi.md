@@ -54,12 +54,12 @@ AWS Fargate (serverless)
 
 ---
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image010.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image011.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image012.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image013.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image014.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image015.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image010.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image011.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image012.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image013.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image014.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image015.png)
 
 #### Bước 2. Tạo Task Definition cho Backend với CPU 256 và RAM 512 MB
 
@@ -163,15 +163,15 @@ Log Group sử dụng:
 
 ---
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image016.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image017.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image018.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image019.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image020.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image021.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image022.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image023.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image024.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image016.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image017.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image018.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image019.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image020.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image021.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image022.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image023.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image024.png)
 
 #### Bước 3. Tạo Task Definition cho Frontend với CPU 256 và RAM 512 MB
 
@@ -418,8 +418,8 @@ Sau khi hoàn thành 6 bước trên, kiểm tra lại cấu hình trước khi 
 
 Sau khi các cấu hình trên hoàn tất, hệ thống đã sẵn sàng để tạo **ECS Service** và triển khai các Task trên các Subnet thuộc **AZ1 và AZ2**.
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image039.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image040.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image041.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image042.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image039.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image040.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image041.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image042.png)
 ![alt text](image-8.png)

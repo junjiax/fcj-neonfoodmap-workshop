@@ -25,11 +25,11 @@ After completing this section, the system will meet the following requirements:
 3. Select **Dashboards**.
 4. Click **Create dashboard**.
 
-![Figure 66.](/images/5-Workshop/5.5-Neon-Operations/image066.png)
+![Figure 66.](images/5-Workshop/5.5-Neon-Operations/image066.png)
 
 5. Enter a Dashboard name (for example: `NeonFoodMap-Operational-Dashboard`).
 
-![Figure 67.](/images/5-Workshop/5.5-Neon-Operations/image067.png)
+![Figure 67.](images/5-Workshop/5.5-Neon-Operations/image067.png)
 
 6. Select the option to create a new Dashboard.
 7. If a Dashboard JSON template has already been prepared:
@@ -37,7 +37,7 @@ After completing this section, the system will meet the following requirements:
    - Paste the JSON template content.
    - Select **Save**.
 
-![Figure 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Figure 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 ---
 
@@ -45,13 +45,13 @@ After completing this section, the system will meet the following requirements:
 
 1. Open the Dashboard, select the newly created `NeonFoodMap-Operational-Dashboard`, and click **Add widget**.
 
-![Figure 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Figure 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Select Data type: **Metrics**, Preferred experience: **Metrics Console**.
 
 3. Select Widget type: **Line**.
 
-![Figure 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
+![Figure 68.](images/5-Workshop/5.5-Neon-Operations/image068.png)
 
 4. Click **Next**, then navigate to **ECS → ClusterName, ServiceName**.
 
@@ -59,11 +59,11 @@ After completing this section, the system will meet the following requirements:
    - CPU Utilization
    - Memory Utilization
 
-![Figure 46.](/images/5-Workshop/5.5-Neon-Operations/image046.png)
+![Figure 46.](images/5-Workshop/5.5-Neon-Operations/image046.png)
 
 6. Enter an appropriate Widget name and click **Create widget**.
 
-![Figure 45.](/images/5-Workshop/5.5-Neon-Operations/image045.png)
+![Figure 45.](images/5-Workshop/5.5-Neon-Operations/image045.png)
 
 ---
 
@@ -71,7 +71,7 @@ After completing this section, the system will meet the following requirements:
 
 1. Open the Dashboard, select the newly created `NeonFoodMap-Operational-Dashboard`, and click **Add widget**.
 
-![Figure 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Figure 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Select Data type: **Metrics**, Preferred experience: **Metrics Console**.
 
@@ -79,7 +79,7 @@ After completing this section, the system will meet the following requirements:
 
 4. Select **CloudWatch Metrics**, then click **Next**.
 
-![Figure 70.](/images/5-Workshop/5.5-Neon-Operations/image070.png)
+![Figure 70.](images/5-Workshop/5.5-Neon-Operations/image070.png)
 
 5. Select **Per AppELB, per AZ, per TG Metrics**, then add the following Metrics based on the Target Group configuration created in the previous stage:
    - Healthy Host Count
@@ -88,14 +88,14 @@ After completing this section, the system will meet the following requirements:
    - Request Count
    - HTTPCode_Target_5XX_Count
 
-![Figure 60.](/images/5-Workshop/5.5-Neon-Operations/image060.png)
-![Figure 110.](/images/5-Workshop/5.5-Neon-Operations/image110.png)
-![Figure 111.](/images/5-Workshop/5.5-Neon-Operations/image111.png)
-![Figure 112.](/images/5-Workshop/5.5-Neon-Operations/image112.png)
+![Figure 60.](images/5-Workshop/5.5-Neon-Operations/image060.png)
+![Figure 110.](images/5-Workshop/5.5-Neon-Operations/image110.png)
+![Figure 111.](images/5-Workshop/5.5-Neon-Operations/image111.png)
+![Figure 112.](images/5-Workshop/5.5-Neon-Operations/image112.png)
 
 6. Enter an appropriate Widget name and click **Create widget**.
 
-![Figure 113.](/images/5-Workshop/5.5-Neon-Operations/image113.png)
+![Figure 113.](images/5-Workshop/5.5-Neon-Operations/image113.png)
 
 ---
 
@@ -103,7 +103,7 @@ After completing this section, the system will meet the following requirements:
 
 1. Open the Dashboard, select the newly created `NeonFoodMap-Operational-Dashboard`, and click **Add widget**.
 
-![Figure 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Figure 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Select Data type: **Metrics**, Preferred experience: **Metrics Console**.
 
@@ -111,21 +111,21 @@ After completing this section, the system will meet the following requirements:
 
 4. Select **CloudWatch Metrics**, then click **Next**.
 
-![Figure 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
+![Figure 68.](images/5-Workshop/5.5-Neon-Operations/image068.png)
 
 5. In the **Browse** window, select the **S3** namespace, then select the Bucket to monitor.
 
-![Figure 114.](/images/5-Workshop/5.5-Neon-Operations/image114.png)
+![Figure 114.](images/5-Workshop/5.5-Neon-Operations/image114.png)
 
 4. Select the Storage Metrics of the `neonfoodmap-frontend-dev` and `neonfoodmap-logs` Buckets:
    - **BucketSizeBytes**
    - **NumberOfObjects**
 
-![Figure 115.](/images/5-Workshop/5.5-Neon-Operations/image115.png)
+![Figure 115.](images/5-Workshop/5.5-Neon-Operations/image115.png)
 
 5. Enter an appropriate Widget name and click **Create widget**.
 
-![Figure 116.](/images/5-Workshop/5.5-Neon-Operations/image116.png)
+![Figure 116.](images/5-Workshop/5.5-Neon-Operations/image116.png)
 
 ---
 
@@ -133,11 +133,11 @@ After completing this section, the system will meet the following requirements:
 
 1. Open the Dashboard, select the newly created `NeonFoodMap-Operational-Dashboard`, and click **Add widget**.
 
-![Figure 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Figure 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Select **Log query**. Select the Log Groups of **ECS**, **Application**, and **ALB**.
 
-![Figure 74.](/images/5-Workshop/5.5-Neon-Operations/image074.png)
+![Figure 74.](images/5-Workshop/5.5-Neon-Operations/image074.png)
 
 4. Enter the following query in **CloudWatch Log Insights** to retrieve log records containing errors (`ERROR`, `Exception`, or status code `500`) from the last 7 days.
 

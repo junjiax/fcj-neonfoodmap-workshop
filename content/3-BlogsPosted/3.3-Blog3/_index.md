@@ -98,7 +98,7 @@ Once you have mastered those first building blocks, AWS will no longer look like
 
 ## Image
 
-![](/images/3-Blog/blog3.jpg)
+![](images/3-Blog/blog3.jpg)
 
 ## Link
 

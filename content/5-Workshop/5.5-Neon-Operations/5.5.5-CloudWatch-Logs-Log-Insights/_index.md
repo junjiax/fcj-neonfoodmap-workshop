@@ -30,17 +30,17 @@ By default, CloudWatch stores Logs indefinitely. To optimize storage costs, conf
 2. Navigate to the **CloudWatch** service.
 3. Select **Log groups**.
 
-![Figure 78.](/images/5-Workshop/5.5-Neon-Operations/image078.png)
+![Figure 78.](images/5-Workshop/5.5-Neon-Operations/image078.png)
 
 4. Select the Log Group to configure.
 5. Select **Actions → Edit retention setting**.
 
-![Figure 79.](/images/5-Workshop/5.5-Neon-Operations/image079.png)
+![Figure 79.](images/5-Workshop/5.5-Neon-Operations/image079.png)
 
 6. Under **Retention setting**, select **30 Days**.
 7. Click **Save** to save the configuration.
 
-![Figure 80.](/images/5-Workshop/5.5-Neon-Operations/image080.png)
+![Figure 80.](images/5-Workshop/5.5-Neon-Operations/image080.png)
 
 > **Note:** Repeat the same procedure for all Log Groups in the system to ensure that the retention policy is applied consistently.
 
@@ -98,7 +98,7 @@ To allow ECS containers to send Logs directly to CloudWatch, configure the **aws
 6. Update the ECS Service to use the newly created Revision.
 7. After the Deployment is completed, Logs will automatically be sent to CloudWatch.
 
-![Figure 106.](/images/5-Workshop/5.5-Neon-Operations/image106.png)
+![Figure 106.](images/5-Workshop/5.5-Neon-Operations/image106.png)
 
 ---
 
@@ -122,11 +122,11 @@ It can be used to:
 5. If the query needs to be reused, select **Save query**.
 6. Enter a query name and save it.
 
-![Figure 105.](/images/5-Workshop/5.5-Neon-Operations/image105.png)
+![Figure 105.](images/5-Workshop/5.5-Neon-Operations/image105.png)
 
-![Figure 107.](/images/5-Workshop/5.5-Neon-Operations/image107.png)
+![Figure 107.](images/5-Workshop/5.5-Neon-Operations/image107.png)
 
-![Figure 108.](/images/5-Workshop/5.5-Neon-Operations/image108.png)
+![Figure 108.](images/5-Workshop/5.5-Neon-Operations/image108.png)
 
 ---
 
@@ -138,7 +138,7 @@ VPC Flow Logs record network traffic entering and leaving the VPC, helping with 
 2. Select **Your VPCs**.
 3. Select the VPC used by the system.
 
-![Figure 98.](/images/5-Workshop/5.5-Neon-Operations/image098.png)
+![Figure 98.](images/5-Workshop/5.5-Neon-Operations/image098.png)
 
 4. Select the **Flow logs** tab.
 5. Click **Create flow log**.
@@ -151,15 +151,15 @@ VPC Flow Logs record network traffic entering and leaving the VPC, helping with 
 
 7. Click **Create flow log** to complete the configuration.
 
-![Figure 99.](/images/5-Workshop/5.5-Neon-Operations/image099.png)
+![Figure 99.](images/5-Workshop/5.5-Neon-Operations/image099.png)
 
-![Figure 100.](/images/5-Workshop/5.5-Neon-Operations/image100.png)
+![Figure 100.](images/5-Workshop/5.5-Neon-Operations/image100.png)
 
-![Figure 101.](/images/5-Workshop/5.5-Neon-Operations/image101.png)
+![Figure 101.](images/5-Workshop/5.5-Neon-Operations/image101.png)
 
-![Figure 102.](/images/5-Workshop/5.5-Neon-Operations/image102.png)
+![Figure 102.](images/5-Workshop/5.5-Neon-Operations/image102.png)
 
-![Figure 103.](/images/5-Workshop/5.5-Neon-Operations/image103.png)
+![Figure 103.](images/5-Workshop/5.5-Neon-Operations/image103.png)
 
 ---
 

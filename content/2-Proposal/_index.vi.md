@@ -12,28 +12,23 @@ pre: "<b>2.</b>"
 
 Đề xuất này trình bày giải pháp triển khai hệ thống NeonFoodMap trên nền tảng Amazon Web Services (AWS) theo kiến trúc Cloud-Native, đáp ứng các yêu cầu về khả năng mở rộng, tính sẵn sàng cao, bảo mật và tự động hóa quy trình phát hành phần mềm. Mục tiêu của giải pháp là xây dựng một hạ tầng triển khai có khả năng tái sử dụng, hỗ trợ triển khai lặp lại, đồng thời chuẩn hóa quy trình vận hành theo định hướng DevOps trong môi trường Production.
 
-
 NeonFoodMap là nền tảng website bản đồ ẩm thực, cho phép người dùng tìm kiếm, khám phá và đánh giá các địa điểm ăn uống theo thời gian thực. Hệ thống tích hợp các chức năng như tìm kiếm địa điểm (POI), định vị GPS, hiển thị lộ trình, đánh giá địa điểm và phát nội dung mô tả bằng công nghệ Text-to-Speech nhằm nâng cao trải nghiệm người dùng. Với đặc điểm xử lý dữ liệu theo thời gian thực và yêu cầu phục vụ nhiều người dùng đồng thời, hệ thống cần được triển khai trên một hạ tầng có khả năng mở rộng linh hoạt, đảm bảo tính sẵn sàng và dễ dàng bảo trì.
-
 
 Đề xuất tập trung xây dựng kiến trúc triển khai sử dụng Docker và Amazon ECS Fargate, quản lý mã nguồn bằng GitHub, tự động hóa quy trình Build–Test–Deploy thông qua GitHub Actions và OpenID Connect (OIDC), lưu trữ Docker Image trên Amazon ECR, triển khai cơ sở dữ liệu Amazon RDS trong Private Subnet, quản lý tài nguyên tĩnh bằng Amazon S3 và giám sát hệ thống bằng Amazon CloudWatch. Giải pháp hướng tới việc hình thành một quy trình triển khai thống nhất, an toàn và có khả năng mở rộng cho các giai đoạn phát triển tiếp theo của dự án.
 
-
 ---
 
-
 ## 2.2 Phát biểu vấn đề
+
 ### Hiện trạng
 
 Trước khi triển khai đề xuất, dự án NeonFoodMap Website mới chỉ tồn tại ở dạng mã nguồn ứng dụng (Frontend và Backend) hoạt động đơn lẻ, chưa được chuẩn hóa quy trình triển khai hay tích hợp lên hạ tầng đám mây. Cụ thể:
 
-* **Chưa có hạ tầng tự động hóa:** Quy trình build và deploy ứng dụng đang thực hiện thủ công, chưa thiết lập luồng CI/CD tự động hóa trên môi trường Production.
-* **Chưa ứng dụng mô hình Container hóa:** Ứng dụng chưa được đóng gói chuẩn hóa dưới dạng Docker Image để vận hành nhất quán giữa các môi trường.
-* **Hạ tầng AWS chưa được thiết lập:** Hệ thống mạng VPC, cơ sở dữ liệu phân tán, các chính sách bảo mật IAM tối ưu cũng như các cơ chế giám sát (Monitoring/Logging) trên nền tảng AWS chưa được xây dựng và cấu hình đồng bộ.
-
+- **Chưa có hạ tầng tự động hóa:** Quy trình build và deploy ứng dụng đang thực hiện thủ công, chưa thiết lập luồng CI/CD tự động hóa trên môi trường Production.
+- **Chưa ứng dụng mô hình Container hóa:** Ứng dụng chưa được đóng gói chuẩn hóa dưới dạng Docker Image để vận hành nhất quán giữa các môi trường.
+- **Hạ tầng AWS chưa được thiết lập:** Hệ thống mạng VPC, cơ sở dữ liệu phân tán, các chính sách bảo mật IAM tối ưu cũng như các cơ chế giám sát (Monitoring/Logging) trên nền tảng AWS chưa được xây dựng và cấu hình đồng bộ.
 
 ---
-
 
 ## 2.3. Mục tiêu triển khai
 
@@ -58,14 +53,11 @@ Trước khi triển khai đề xuất, dự án NeonFoodMap Website mới chỉ
 - Xây dựng hệ thống Logging và Monitoring.
 - Hoàn thiện tài liệu triển khai theo từng Sprint.
 
-
 ---
-
 
 ## 2.6. Kết quả mong đợi
 
 Sau khi hoàn thành quá trình triển khai, hệ thống dự kiến đạt được các kết quả sau:
-
 
 - Hoàn thiện kiến trúc triển khai trên nền tảng AWS theo mô hình Cloud-Native.
 - Quy trình CI/CD hoạt động tự động từ Build đến Deploy.

@@ -43,11 +43,11 @@ Main configurations:
 * Unhealthy threshold: `2`
 * Interval: `30 seconds`
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image025.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image026.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image027.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image028.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image029.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image025.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image026.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image027.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image028.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image029.png)
 
 #### 3. Creating an Application Load Balancer
 
@@ -63,10 +63,10 @@ Main configurations:
 6. Configure the `HTTP:80` listener and set the default route to the Frontend target group.
 7. Create the Load Balancer.
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image031.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image032.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image033.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image034.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image031.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image032.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image033.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image034.png)
 
 #### 4. Creating a Listener Rule for the API Path
 

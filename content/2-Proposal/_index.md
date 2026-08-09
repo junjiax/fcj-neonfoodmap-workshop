@@ -82,7 +82,7 @@ Standardizing and automating the system delivers tangible value:
 
 ## 2.8. Solution Architecture
 
-![](/images/2-Proposal/diagram1.png)
+![](images/2-Proposal/diagram1.png)
 
 ### List of AWS Services Used
 

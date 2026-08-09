@@ -26,7 +26,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 5. Chọn các private subnet ở hai AZ.
 6. Nhấn Create.
 
-![Hình 31.](/images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
+![Hình 31.](images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
 
 
 ### Tạo DB Parameter Group cho MySQL
@@ -46,9 +46,9 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
    - `collation_server = utf8mb4_unicode_ci`
 7. Nhấn Save changes.
 
-![Hình 33.](/images/5-Workshop/5.3-Neon-Infracstructure/image033.png)
-![Hình 35.](/images/5-Workshop/5.3-Neon-Infracstructure/image035.png)
-![Hình 37.](/images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
+![Hình 33.](images/5-Workshop/5.3-Neon-Infracstructure/image033.png)
+![Hình 35.](images/5-Workshop/5.3-Neon-Infracstructure/image035.png)
+![Hình 37.](images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
 
 
 ### Tạo Security Group cho RDS
@@ -66,7 +66,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 5. Giữ nguyên outbound rule mặc định.
 6. Nhấn Create security group.
 
-![Hình 39.](/images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
+![Hình 39.](images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
 
 ### Khởi tạo Amazon RDS MySQL instance
 
@@ -98,20 +98,20 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
    - Enable encryption
 9. Nhấn Create database.
 
-![Hình 41.](/images/5-Workshop/5.3-Neon-Infracstructure/image041.png)
-![Hình 43.](/images/5-Workshop/5.3-Neon-Infracstructure/image043.png)
-![Hình 45.](/images/5-Workshop/5.3-Neon-Infracstructure/image045.png)
-![Hình 47.](/images/5-Workshop/5.3-Neon-Infracstructure/image047.png)
-![Hình 49.](/images/5-Workshop/5.3-Neon-Infracstructure/image049.png)
-![Hình 51.](/images/5-Workshop/5.3-Neon-Infracstructure/image051.png)
-![Hình 53.](/images/5-Workshop/5.3-Neon-Infracstructure/image053.png)
-![Hình 55.](/images/5-Workshop/5.3-Neon-Infracstructure/image055.png)
-![Hình 57.](/images/5-Workshop/5.3-Neon-Infracstructure/image057.png)
-![Hình 100.](/images/5-Workshop/5.3-Neon-Infracstructure/image100.png)
-![Hình 102.](/images/5-Workshop/5.3-Neon-Infracstructure/image102.png)
-![Hình 104.](/images/5-Workshop/5.3-Neon-Infracstructure/image104.png)
-![Hình 106.](/images/5-Workshop/5.3-Neon-Infracstructure/image106.png)
-![Hình 108.](/images/5-Workshop/5.3-Neon-Infracstructure/image108.png)
+![Hình 41.](images/5-Workshop/5.3-Neon-Infracstructure/image041.png)
+![Hình 43.](images/5-Workshop/5.3-Neon-Infracstructure/image043.png)
+![Hình 45.](images/5-Workshop/5.3-Neon-Infracstructure/image045.png)
+![Hình 47.](images/5-Workshop/5.3-Neon-Infracstructure/image047.png)
+![Hình 49.](images/5-Workshop/5.3-Neon-Infracstructure/image049.png)
+![Hình 51.](images/5-Workshop/5.3-Neon-Infracstructure/image051.png)
+![Hình 53.](images/5-Workshop/5.3-Neon-Infracstructure/image053.png)
+![Hình 55.](images/5-Workshop/5.3-Neon-Infracstructure/image055.png)
+![Hình 57.](images/5-Workshop/5.3-Neon-Infracstructure/image057.png)
+![Hình 100.](images/5-Workshop/5.3-Neon-Infracstructure/image100.png)
+![Hình 102.](images/5-Workshop/5.3-Neon-Infracstructure/image102.png)
+![Hình 104.](images/5-Workshop/5.3-Neon-Infracstructure/image104.png)
+![Hình 106.](images/5-Workshop/5.3-Neon-Infracstructure/image106.png)
+![Hình 108.](images/5-Workshop/5.3-Neon-Infracstructure/image108.png)
 
 
 ### Lấy endpoint và lưu vào file `.env`

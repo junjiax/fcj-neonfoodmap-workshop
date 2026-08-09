@@ -30,12 +30,12 @@ Kết quả mong đợi:
 - Private subnet 3: `10.0.160.0/20`
 - Private subnet 4: `10.0.176.0/20`
 
-![Hình 1.](/images/5-Workshop/5.3-Neon-Infracstructure/image001.png)
-![Hình 2.](/images/5-Workshop/5.3-Neon-Infracstructure/image002.png)
-![Hình 3.](/images/5-Workshop/5.3-Neon-Infracstructure/image003.png)
-![Hình 4.](/images/5-Workshop/5.3-Neon-Infracstructure/image004.png)
-![Hình 5.](/images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
-![Hình 7.](/images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
+![Hình 1.](images/5-Workshop/5.3-Neon-Infracstructure/image001.png)
+![Hình 2.](images/5-Workshop/5.3-Neon-Infracstructure/image002.png)
+![Hình 3.](images/5-Workshop/5.3-Neon-Infracstructure/image003.png)
+![Hình 4.](images/5-Workshop/5.3-Neon-Infracstructure/image004.png)
+![Hình 5.](images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
+![Hình 7.](images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
 
 ### 2. Tạo Elastic IP cho NAT Gateway
 
@@ -45,8 +45,8 @@ Kết quả mong đợi:
 4. Thêm tag `Name=EIP-NAT-AZ1a`.
 5. Nhấn Allocate.
 
-![Hình 9.](/images/5-Workshop/5.3-Neon-Infracstructure/image009.png)
-![Hình 11.](/images/5-Workshop/5.3-Neon-Infracstructure/image011.png)
+![Hình 9.](images/5-Workshop/5.3-Neon-Infracstructure/image009.png)
+![Hình 11.](images/5-Workshop/5.3-Neon-Infracstructure/image011.png)
 
 
 ### 3. Tạo NAT Gateway
@@ -61,8 +61,8 @@ Kết quả mong đợi:
 4. Nhấn Create NAT gateway.
 5. Chờ trạng thái `Available`.
 
-![Hình 13.](/images/5-Workshop/5.3-Neon-Infracstructure/image013.png)
-![Hình 15.](/images/5-Workshop/5.3-Neon-Infracstructure/image015.png)
+![Hình 13.](images/5-Workshop/5.3-Neon-Infracstructure/image013.png)
+![Hình 15.](images/5-Workshop/5.3-Neon-Infracstructure/image015.png)
 
 ### 4. Cấu hình Route table cho private subnet
 
@@ -74,11 +74,11 @@ Kết quả mong đợi:
    - Target: NAT Gateway vừa tạo
 5. Nhấn Save changes.
 
-![Hình 17.](/images/5-Workshop/5.3-Neon-Infracstructure/image017.png)
-![Hình 19.](/images/5-Workshop/5.3-Neon-Infracstructure/image019.png)
-![Hình 21.](/images/5-Workshop/5.3-Neon-Infracstructure/image021.png)
-![Hình 23.](/images/5-Workshop/5.3-Neon-Infracstructure/image023.png)
-![Hình 25.](/images/5-Workshop/5.3-Neon-Infracstructure/image025.png)
+![Hình 17.](images/5-Workshop/5.3-Neon-Infracstructure/image017.png)
+![Hình 19.](images/5-Workshop/5.3-Neon-Infracstructure/image019.png)
+![Hình 21.](images/5-Workshop/5.3-Neon-Infracstructure/image021.png)
+![Hình 23.](images/5-Workshop/5.3-Neon-Infracstructure/image023.png)
+![Hình 25.](images/5-Workshop/5.3-Neon-Infracstructure/image025.png)
 
 
 ### 5. Kích hoạt Auto-assign Public IPv4 cho public subnet
@@ -90,5 +90,5 @@ Kết quả mong đợi:
 5. Lưu lại.
 6. Lặp lại tương tự với public subnet 2.
 
-![Hình 27.](/images/5-Workshop/5.3-Neon-Infracstructure/image027.png)
-![Hình 29.](/images/5-Workshop/5.3-Neon-Infracstructure/image029.png)
+![Hình 27.](images/5-Workshop/5.3-Neon-Infracstructure/image027.png)
+![Hình 29.](images/5-Workshop/5.3-Neon-Infracstructure/image029.png)

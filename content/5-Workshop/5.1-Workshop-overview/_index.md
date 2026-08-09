@@ -29,7 +29,7 @@ CloudWatch (Logs & Metrics) → Auto Scaling → AWS Budgets → Amazon SNS → 
 
 ### Overall Architecture
 
-![](/images/2-Proposal/diagram1.png)
+![](images/2-Proposal/diagram1.png)
 
 The system architecture is divided into five main layers:
 
@@ -125,7 +125,7 @@ SNS is responsible for sending email alerts when anomalies are detected.
 
 ### ECS Deployment Architecture
 
-![](/images/2-Proposal/diagram2.png)
+![](images/2-Proposal/diagram2.png)
 
 The system utilizes an ECS Cluster comprising two services:
 

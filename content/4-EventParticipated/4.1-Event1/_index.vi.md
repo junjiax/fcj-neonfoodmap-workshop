@@ -81,7 +81,7 @@ Cụ thể, em có thể vận dụng kiến thức về:
 Event Cloud Architect mang lại cho em trải nghiệm thực tế về việc vận dụng kiến thức Cloud trong môi trường có tính cạnh tranh và giới hạn về thời gian.
 
 Em có cơ hội:
-
+s
 * Trao đổi và học hỏi kiến thức AWS từ các thành viên trong team.
 * Rèn luyện khả năng đọc hiểu và phân tích câu hỏi kỹ thuật.
 * Làm quen với các dạng câu hỏi liên quan đến chứng chỉ AWS.

@@ -24,11 +24,11 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 3. Chọn **Dashboards**.
 4. Nhấn **Create dashboard**.
 
-![Hình 66.](/images/5-Workshop/5.5-Neon-Operations/image066.png)
+![Hình 66.](images/5-Workshop/5.5-Neon-Operations/image066.png)
 
 5. Nhập tên Dashboard (ví dụ: `NeonFoodMap-Operational-Dashboard`).
 
-![Hình 67.](/images/5-Workshop/5.5-Neon-Operations/image067.png)
+![Hình 67.](images/5-Workshop/5.5-Neon-Operations/image067.png)
 
 6. Chọn tạo Dashboard mới.
 7. Nếu đã chuẩn bị sẵn Dashboard dạng JSON:
@@ -36,7 +36,7 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
    - Dán nội dung JSON template.
    - Chọn **Save**.
 
-![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Hình 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 ---
 
@@ -44,12 +44,12 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 
 1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Hình 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Chọn Data type: **Metrics**, Preferred experience: **Metrics Console**
 
 3. Chọn Widget type: **Line**
-![Hình 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
+![Hình 68.](images/5-Workshop/5.5-Neon-Operations/image068.png)
 
 4. Nhấn **Next**, điều hướng đến **ECS → ClusterName, ServiceName**
 
@@ -57,11 +57,11 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
    - CPU Utilization
    - Memory Utilization
 
-![Hình 46.](/images/5-Workshop/5.5-Neon-Operations/image046.png)
+![Hình 46.](images/5-Workshop/5.5-Neon-Operations/image046.png)
 
 6. Đặt tên Widget phù hợp, nhấn **Create widget**.
 
-![Hình 45.](/images/5-Workshop/5.5-Neon-Operations/image045.png)
+![Hình 45.](images/5-Workshop/5.5-Neon-Operations/image045.png)
 
 
 ---
@@ -69,7 +69,7 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 #### Bước 3. Thêm Widget Metrics của Application Load Balancer (ALB)
 1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Hình 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Chọn Data type: **Metrics**, Preferred experience: **Metrics Console**
 
@@ -78,7 +78,7 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 
 4. Chọn **CloudWatch Metrics**, nhấn **Next**.
 
-![Hình 70.](/images/5-Workshop/5.5-Neon-Operations/image070.png)
+![Hình 70.](images/5-Workshop/5.5-Neon-Operations/image070.png)
 
 5. Chọn **Per AppELB, per AZ, per TG Metrics**, thêm các Metrics sau dựa vào cấu hình Targer Group ở giai đoạn trước:
    - Healthy Host Count
@@ -88,15 +88,15 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
    - HTTPCode_Target_5XX_Count
 
 
-![Hình 60.](/images/5-Workshop/5.5-Neon-Operations/image060.png)
-![Hình 110.](/images/5-Workshop/5.5-Neon-Operations/image110.png)
-![Hình 111.](/images/5-Workshop/5.5-Neon-Operations/image111.png)
-![Hình 112.](/images/5-Workshop/5.5-Neon-Operations/image112.png)
+![Hình 60.](images/5-Workshop/5.5-Neon-Operations/image060.png)
+![Hình 110.](images/5-Workshop/5.5-Neon-Operations/image110.png)
+![Hình 111.](images/5-Workshop/5.5-Neon-Operations/image111.png)
+![Hình 112.](images/5-Workshop/5.5-Neon-Operations/image112.png)
 
 6. Đặt tên Widget phù hợp, nhấn **Create widget**.
 
 
-![Hình 113.](/images/5-Workshop/5.5-Neon-Operations/image113.png)
+![Hình 113.](images/5-Workshop/5.5-Neon-Operations/image113.png)
 
 ---
 
@@ -104,7 +104,7 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 
 1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Hình 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Chọn Data type: **Metrics**, Preferred experience: **Metrics Console**
 
@@ -112,21 +112,21 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 
 4. Chọn **CloudWatch Metrics**, nhấn **Next**
 
-![Hình 68.](/images/5-Workshop/5.5-Neon-Operations/image068.png)
+![Hình 68.](images/5-Workshop/5.5-Neon-Operations/image068.png)
 
 5. Trong cửa sổ **Browse**, chọn namespace **S3**, sau đó chọn Bucket cần theo dõi.
 
-![Hình 114.](/images/5-Workshop/5.5-Neon-Operations/image114.png)
+![Hình 114.](images/5-Workshop/5.5-Neon-Operations/image114.png)
 
 4. Chọn các Storage Metrics của Bucket `neonfoodmap-frontend-dev` và `neonfoodmap-logs`:
    - **BucketSizeBytes**
    - **NumberOfObjects**
 
-![Hình 115.](/images/5-Workshop/5.5-Neon-Operations/image115.png)
+![Hình 115.](images/5-Workshop/5.5-Neon-Operations/image115.png)
 
 5. Đặt tên Widget phù hợp, nhấn **Create widget**.
 
-![Hình 116.](/images/5-Workshop/5.5-Neon-Operations/image116.png)
+![Hình 116.](images/5-Workshop/5.5-Neon-Operations/image116.png)
 
 
 ---
@@ -134,11 +134,11 @@ Sau khi hoàn thành phần này, hệ thống sẽ đáp ứng các yêu cầu 
 ####   Bước 5. Thêm Widget CloudWatch Log Insights
 1. Truy cập Dashboard, chọn Dashboard `NeonFoodMap-Operational-Dashboard` vừa mới tạo, chọn **Add widget**.
 
-![Hình 69.](/images/5-Workshop/5.5-Neon-Operations/image069.png)
+![Hình 69.](images/5-Workshop/5.5-Neon-Operations/image069.png)
 
 2. Chọn **Log query**. Chọn Log Group của **ECS**, **Application**, **ALB**
 
-![Hình 74.](/images/5-Workshop/5.5-Neon-Operations/image074.png)
+![Hình 74.](images/5-Workshop/5.5-Neon-Operations/image074.png)
 
 4. Nhập câu lệnh sau vào **CloudWatch Log Insights** để truy vấn các bản ghi log chứa lỗi (`ERROR`, `Exception` hoặc mã trạng thái `500`) trong 7 ngày gần nhất.
 
@@ -151,11 +151,11 @@ SOURCE "arn:aws:logs:ap-southeast-1:497172038341:log-group:/ecs/neonfoodmap-back
 | limit 20
 ```
 
-![Hình 75.](/images/5-Workshop/5.5-Neon-Operations/image075.png)
+![Hình 75.](images/5-Workshop/5.5-Neon-Operations/image075.png)
 
 5. Kiểm tra kết quả trả về, lưu Widget vào Dashboard bằng cách nhấn **create**, sau đó nhấn **Save** tại màn hình `DashboardsNeonFoodMap-Operational-Dashboard` để lưu toàn bộ danh sách Widget.
 
-![Hình 76.](/images/5-Workshop/5.5-Neon-Operations/image076.png)
+![Hình 76.](images/5-Workshop/5.5-Neon-Operations/image076.png)
 
 ---
 
@@ -218,7 +218,7 @@ CloudWatch sẽ chuyển Alarm sang trạng thái **ALARM** khi mức sử dụn
 
 7. Tại bước **Configure actions**, lựa chọn hành động khi Alarm được kích hoạt. Có thể chọn gửi thông báo thông qua **SNS Topic** hoặc bỏ qua nếu chỉ cần theo dõi trạng thái.
 
-![Hình 57.](/images/5-Workshop/5.5-Neon-Operations/image057.png)
+![Hình 57.](images/5-Workshop/5.5-Neon-Operations/image057.png)
 
 8. Đặt tên cho Alarm, ví dụ:
 
@@ -226,15 +226,15 @@ CloudWatch sẽ chuyển Alarm sang trạng thái **ALARM** khi mức sử dụn
 
 Có thể bổ sung mô tả để dễ dàng quản lý về sau.
 
-![Hình 55.](/images/5-Workshop/5.5-Neon-Operations/image055.png)
+![Hình 55.](images/5-Workshop/5.5-Neon-Operations/image055.png)
 
 9. Kiểm tra lại toàn bộ cấu hình và nhấn **Create alarm** để hoàn tất.
 
-![Hình 64.](/images/5-Workshop/5.5-Neon-Operations/image064.png)
+![Hình 64.](images/5-Workshop/5.5-Neon-Operations/image064.png)
 
 10. Sau khi tạo thành công, Alarm sẽ xuất hiện trong danh sách **CloudWatch Alarms** với trạng thái ban đầu là **OK**. Khi giá trị CPU vượt ngưỡng đã thiết lập, trạng thái sẽ tự động chuyển sang **ALARM**.
 
-![Hình 65.](/images/5-Workshop/5.5-Neon-Operations/image065.png)
+![Hình 65.](images/5-Workshop/5.5-Neon-Operations/image065.png)
 
 > **Lưu ý:** Tương tự, có thể tạo thêm các CloudWatch Alarm khác để giám sát hệ thống như:
 >
@@ -255,13 +255,13 @@ Có thể bổ sung mô tả để dễ dàng quản lý về sau.
 
 ![alt text](image-2.png)
 
-![Hình 47.](/images/5-Workshop/5.5-Neon-Operations/image047.png)
+![Hình 47.](images/5-Workshop/5.5-Neon-Operations/image047.png)
 
 ![alt text](image-1.png)
 
 5. Mở Topic vừa tạo, chọn **Create subscription**.
 
-![Hình 48.](/images/5-Workshop/5.5-Neon-Operations/image048.png)
+![Hình 48.](images/5-Workshop/5.5-Neon-Operations/image048.png)
 
 6. Protocol: chọn **Email**
 
@@ -269,6 +269,6 @@ Có thể bổ sung mô tả để dễ dàng quản lý về sau.
 
 8. Gửi Subscription, mở Email và nhấn **Confirm Subscription** để kích hoạt.
 
-![Hình 49.](/images/5-Workshop/5.5-Neon-Operations/image049.png)
+![Hình 49.](images/5-Workshop/5.5-Neon-Operations/image049.png)
 
 ---
