@@ -25,8 +25,8 @@ Các bước:
 6. Nhấn Create bucket.
 7. Lặp lại cho đủ 4 bucket.
 
-![Hình 59.](/images/5-Workshop/5.3-Neon-Infracstructure/image059.png)
-![Hình 61.](/images/5-Workshop/5.3-Neon-Infracstructure/image061.png)
+![Hình 59.](images/5-Workshop/5.3-Neon-Infracstructure/image059.png)
+![Hình 61.](images/5-Workshop/5.3-Neon-Infracstructure/image061.png)
 
 
 ### 2. Bật Versioning cho media và audio bucket
@@ -37,18 +37,18 @@ Các bước:
 4. Chọn Enable.
 5. Lặp lại tương tự với bucket `neonfoodmap-audio-dev`.
 
-![Hình 63.](/images/5-Workshop/5.3-Neon-Infracstructure/image063.png)
-![Hình 65.](/images/5-Workshop/5.3-Neon-Infracstructure/image065.png)
-![Hình 67.](/images/5-Workshop/5.3-Neon-Infracstructure/image067.png)
-![Hình 69.](/images/5-Workshop/5.3-Neon-Infracstructure/image069.png)
-![Hình 71.](/images/5-Workshop/5.3-Neon-Infracstructure/image071.png)
-![Hình 75.](/images/5-Workshop/5.3-Neon-Infracstructure/image075.png)
-![Hình 77.](/images/5-Workshop/5.3-Neon-Infracstructure/image077.png)
-![Hình 78.](/images/5-Workshop/5.3-Neon-Infracstructure/image078.png)
-![Hình 80.](/images/5-Workshop/5.3-Neon-Infracstructure/image080.png)
-![Hình 82.](/images/5-Workshop/5.3-Neon-Infracstructure/image082.png)
-![Hình 83.](/images/5-Workshop/5.3-Neon-Infracstructure/image083.png)
-![Hình 85.](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
+![Hình 63.](images/5-Workshop/5.3-Neon-Infracstructure/image063.png)
+![Hình 65.](images/5-Workshop/5.3-Neon-Infracstructure/image065.png)
+![Hình 67.](images/5-Workshop/5.3-Neon-Infracstructure/image067.png)
+![Hình 69.](images/5-Workshop/5.3-Neon-Infracstructure/image069.png)
+![Hình 71.](images/5-Workshop/5.3-Neon-Infracstructure/image071.png)
+![Hình 75.](images/5-Workshop/5.3-Neon-Infracstructure/image075.png)
+![Hình 77.](images/5-Workshop/5.3-Neon-Infracstructure/image077.png)
+![Hình 78.](images/5-Workshop/5.3-Neon-Infracstructure/image078.png)
+![Hình 80.](images/5-Workshop/5.3-Neon-Infracstructure/image080.png)
+![Hình 82.](images/5-Workshop/5.3-Neon-Infracstructure/image082.png)
+![Hình 83.](images/5-Workshop/5.3-Neon-Infracstructure/image083.png)
+![Hình 85.](images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
 
 
 ### 3. Cấu hình lifecycle rule cho bucket lưu trữ
@@ -60,7 +60,7 @@ Các bước:
 5. Chọn Apply to all objects in the bucket.
 6. Chọn chuyển object sang `Standard-IA` sau 90 ngày.
 
-![Hình 87.](/images/5-Workshop/5.3-Neon-Infracstructure/image087.png)
+![Hình 87.](images/5-Workshop/5.3-Neon-Infracstructure/image087.png)
 
 ### 4. Chặn truy cập public và bật ACL cho bucket
 
@@ -75,9 +75,9 @@ Các bước:
 9. Nhấn Save changes.
 
 
-![Hình 89.](/images/5-Workshop/5.3-Neon-Infracstructure/image089.png)
-![Hình 91.](/images/5-Workshop/5.3-Neon-Infracstructure/image091.png)
-![Hình 93.](/images/5-Workshop/5.3-Neon-Infracstructure/image093.png)
-![Hình 95.](/images/5-Workshop/5.3-Neon-Infracstructure/image095.png)
-![Hình 97.](/images/5-Workshop/5.3-Neon-Infracstructure/image097.png)
-![Hình 98.](/images/5-Workshop/5.3-Neon-Infracstructure/image098.png)
+![Hình 89.](images/5-Workshop/5.3-Neon-Infracstructure/image089.png)
+![Hình 91.](images/5-Workshop/5.3-Neon-Infracstructure/image091.png)
+![Hình 93.](images/5-Workshop/5.3-Neon-Infracstructure/image093.png)
+![Hình 95.](images/5-Workshop/5.3-Neon-Infracstructure/image095.png)
+![Hình 97.](images/5-Workshop/5.3-Neon-Infracstructure/image097.png)
+![Hình 98.](images/5-Workshop/5.3-Neon-Infracstructure/image098.png)

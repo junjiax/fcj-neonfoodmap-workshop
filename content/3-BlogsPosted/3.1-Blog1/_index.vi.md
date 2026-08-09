@@ -41,7 +41,7 @@ Hiện Kiro cung cấp rất nhiều Power đáp ứng nhu cầu tác vụ khác
 
 ## Hình ảnh
 
-![](/images/3-Blog/blog1.jpg)
+![](images/3-Blog/blog1.jpg)
 
 ## Link
 

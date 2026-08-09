@@ -41,7 +41,7 @@ For cost management, the system uses AWS Budgets with a budget set at USD 15/mon
 
 ### Overall Architecture
 
-![](/images/2-Proposal/diagram1.png)
+![](images/2-Proposal/diagram1.png)
 
 #### The system architecture is divided into five main layers:
 
@@ -133,7 +133,7 @@ SNS is responsible for sending Email Alerts when anomalies are detected.
 
 ### ECS Deployment Architecture
 
-![](/images/2-Proposal/diagram2.png)
+![](images/2-Proposal/diagram2.png)
 
 The system uses one ECS Cluster consisting of two services:
 

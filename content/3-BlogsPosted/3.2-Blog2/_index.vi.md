@@ -52,7 +52,7 @@ Mình vẫn đang trong quá trình học nên nếu có chỗ nào hiểu chưa
 
 ## Hình ảnh
 
-![](/images/3-Blog/blog2.jpg)
+![](images/3-Blog/blog2.jpg)
 
 ## Link
 

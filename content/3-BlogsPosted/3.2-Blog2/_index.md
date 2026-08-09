@@ -71,7 +71,7 @@ Ho Chi Minh City, July 31, 2026 <br>
 Diep Thuy An
 
 
-![](/images/3-Blog/blog2.jpg)
+![](images/3-Blog/blog2.jpg)
 
 
 [Blog link at AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2230171591081134/)

@@ -41,11 +41,11 @@ Các cấu hình chính:
 - Unhealthy threshold: `2`
 - Interval: `30 seconds`
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image025.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image026.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image027.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image028.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image029.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image025.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image026.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image027.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image028.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image029.png)
 
 #### 3. Tạo Application Load Balancer
 
@@ -60,10 +60,10 @@ Các cấu hình chính:
 6. Cấu hình listener `HTTP:80` và route mặc định tới frontend target group.
 7. Tạo load balancer.
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image031.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image032.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image033.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image034.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image031.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image032.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image033.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image034.png)
 
 #### 4. Tạo listener rule cho API path
 

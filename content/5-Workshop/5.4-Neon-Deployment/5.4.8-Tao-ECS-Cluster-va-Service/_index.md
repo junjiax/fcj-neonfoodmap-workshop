@@ -56,12 +56,12 @@ AWS Fargate (serverless)
 
 ---
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image010.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image011.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image012.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image013.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image014.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image015.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image010.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image011.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image012.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image013.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image014.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image015.png)
 
 #### Step 2. Create a Backend Task Definition with 256 CPU and 512 MB RAM
 
@@ -165,15 +165,15 @@ Use the following Log Group:
 
 ---
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image016.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image017.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image018.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image019.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image020.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image021.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image022.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image023.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image024.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image016.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image017.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image018.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image019.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image020.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image021.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image022.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image023.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image024.png)
 
 #### Step 3. Create a Frontend Task Definition with 256 CPU and 512 MB RAM
 
@@ -420,10 +420,10 @@ After completing the six steps above, verify the configuration before creating t
 
 After the above configurations are completed, the system is ready to create the **ECS Service** and deploy the Tasks across Subnets belonging to **AZ1 and AZ2**.
 
-![](/images/5-Workshop/5.4-Neon-Deployment/image039.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image040.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image041.png)
-![](/images/5-Workshop/5.4-Neon-Deployment/image042.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image039.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image040.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image041.png)
+![](images/5-Workshop/5.4-Neon-Deployment/image042.png)
 ![alt text](image-8.png)
 
 ---

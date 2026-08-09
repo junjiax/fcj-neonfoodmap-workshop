@@ -97,7 +97,7 @@ Khi đã nắm vững những viên gạch đầu tiên ấy, AWS sẽ không c�
 
 ## Hình ảnh
 
-![](/images/3-Blog/blog3.jpg)
+![](images/3-Blog/blog3.jpg)
 
 ## Link
 

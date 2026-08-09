@@ -25,7 +25,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 5. Select private subnets across two AZs.
 6. Click **Create**.
 
-![Figure 31.](/images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
+![Figure 31.](images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
 
 ### Create DB Parameter Group for MySQL
 
@@ -44,9 +44,9 @@ The infrastructure is built using a multi-tier model with the following layers:
    - `collation_server = utf8mb4_unicode_ci`
 7. Click **Save changes**.
 
-![Figure 33.](/images/5-Workshop/5.3-Neon-Infracstructure/image033.png)
-![Figure 35.](/images/5-Workshop/5.3-Neon-Infracstructure/image035.png)
-![Figure 37.](/images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
+![Figure 33.](images/5-Workshop/5.3-Neon-Infracstructure/image033.png)
+![Figure 35.](images/5-Workshop/5.3-Neon-Infracstructure/image035.png)
+![Figure 37.](images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
 
 ### Create Security Group for RDS
 
@@ -63,7 +63,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 5. Keep the default outbound rule unchanged.
 6. Click **Create security group**.
 
-![Figure 39.](/images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
+![Figure 39.](images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
 
 ### Create Amazon RDS MySQL Instance
 
@@ -95,20 +95,20 @@ The infrastructure is built using a multi-tier model with the following layers:
    - Enable encryption
 9. Click **Create database**.
 
-![Figure 41.](/images/5-Workshop/5.3-Neon-Infracstructure/image041.png)
-![Figure 43.](/images/5-Workshop/5.3-Neon-Infracstructure/image043.png)
-![Figure 45.](/images/5-Workshop/5.3-Neon-Infracstructure/image045.png)
-![Figure 47.](/images/5-Workshop/5.3-Neon-Infracstructure/image047.png)
-![Figure 49.](/images/5-Workshop/5.3-Neon-Infracstructure/image049.png)
-![Figure 51.](/images/5-Workshop/5.3-Neon-Infracstructure/image051.png)
-![Figure 53.](/images/5-Workshop/5.3-Neon-Infracstructure/image053.png)
-![Figure 55.](/images/5-Workshop/5.3-Neon-Infracstructure/image055.png)
-![Figure 57.](/images/5-Workshop/5.3-Neon-Infracstructure/image057.png)
-![Figure 100.](/images/5-Workshop/5.3-Neon-Infracstructure/image100.png)
-![Figure 102.](/images/5-Workshop/5.3-Neon-Infracstructure/image102.png)
-![Figure 104.](/images/5-Workshop/5.3-Neon-Infracstructure/image104.png)
-![Figure 106.](/images/5-Workshop/5.3-Neon-Infracstructure/image106.png)
-![Figure 108.](/images/5-Workshop/5.3-Neon-Infracstructure/image108.png)
+![Figure 41.](images/5-Workshop/5.3-Neon-Infracstructure/image041.png)
+![Figure 43.](images/5-Workshop/5.3-Neon-Infracstructure/image043.png)
+![Figure 45.](images/5-Workshop/5.3-Neon-Infracstructure/image045.png)
+![Figure 47.](images/5-Workshop/5.3-Neon-Infracstructure/image047.png)
+![Figure 49.](images/5-Workshop/5.3-Neon-Infracstructure/image049.png)
+![Figure 51.](images/5-Workshop/5.3-Neon-Infracstructure/image051.png)
+![Figure 53.](images/5-Workshop/5.3-Neon-Infracstructure/image053.png)
+![Figure 55.](images/5-Workshop/5.3-Neon-Infracstructure/image055.png)
+![Figure 57.](images/5-Workshop/5.3-Neon-Infracstructure/image057.png)
+![Figure 100.](images/5-Workshop/5.3-Neon-Infracstructure/image100.png)
+![Figure 102.](images/5-Workshop/5.3-Neon-Infracstructure/image102.png)
+![Figure 104.](images/5-Workshop/5.3-Neon-Infracstructure/image104.png)
+![Figure 106.](images/5-Workshop/5.3-Neon-Infracstructure/image106.png)
+![Figure 108.](images/5-Workshop/5.3-Neon-Infracstructure/image108.png)
 
 ### Retrieve Endpoint and Save to `.env` File
 

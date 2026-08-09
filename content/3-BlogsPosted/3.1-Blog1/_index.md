@@ -55,7 +55,7 @@ Ho Chi Minh City, August 02, 2026 <br>
 Truong Gia Hao
 
 
-![](/images/3-Blog/blog1.jpg)
+![](images/3-Blog/blog1.jpg)
 
 
 [Blog link at AWS Study Group](https://www.facebook.com/groups/awsstudygroupfcj/permalink/2232309990867294/)
