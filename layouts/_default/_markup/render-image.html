@@ -9,8 +9,5 @@
     {{- $src = $src | relURL -}}
 {{- end -}}
 
-<img
-  src="{{ $src }}"
-  alt="{{ .Text }}"
-  {{- with .Title }} title="{{ . }}"{{ end -}}
->
+<img src="{{ $src }}" alt="{{ .Text }}"
+    {{- with .Title }} title="{{ . }}"{{ end -}}>
