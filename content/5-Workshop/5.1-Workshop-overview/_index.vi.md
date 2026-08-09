@@ -36,6 +36,7 @@ Khi người dùng gửi một yêu cầu truy cập, yêu cầu trước tiên 
 ALB phân phối lưu lượng truy cập đến các ECS Fargate task đang chạy trên hai Availability Zone (AZ) khác nhau nhằm đảm bảo **High Availability**. Các container của ứng dụng kết nối đến Amazon RDS Primary instance được đặt tại Zone A để thực hiện các thao tác đọc/ghi dữ liệu.
 
 Đồng thời, dữ liệu được đồng bộ liên tục đến RDS Standby instance tại Zone B thông qua cơ chế Multi-AZ, cho phép hệ thống thực hiện chuyển đổi dự phòng (failover) khi xảy ra sự cố.
+![](images/2-Proposal/diagram1.png)
 
 Ngoài ra, các ECS container truy cập S3 Media Bucket thông qua VPC Endpoint, cho phép dữ liệu được truyền tải nội bộ trong mạng AWS mà không cần đi qua Internet công cộng. Điều này giúp tăng cường bảo mật và tối ưu chi phí truyền dữ liệu.
 

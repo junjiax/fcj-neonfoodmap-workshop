@@ -83,7 +83,7 @@ Việc chuẩn hóa và tự động hóa hệ thống mang lại những giá t
 
 ## 2.8. Kiến trúc giải pháp
 
-![](/images/2-Proposal/diagram1.png)
+![](images/2-Proposal/diagram1.png)
 
 ### Danh sách dịch vụ AWS được sử dụng
 
