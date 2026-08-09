@@ -1,4 +1,4 @@
-baseURL = "https://github.com/junjiax/fcj-neonfoodmap-workshop"
+baseURL = "https://junjiax.github.io/fcj-neonfoodmap-workshop/"
 relativeURLs = true
 canonifyURLs = false
 defaultContentLanguage = "en"
