@@ -1,89 +1,96 @@
 ---
+
 title: "Event 1"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 4.1. </b> "
----
+----------------------
 
 # Bài thu hoạch “Event Cloud Architect”
 
 ### Mục Đích Của Sự Kiện
 
-- Được tham gia 
+Event Cloud Architect được tổ chức nhằm tạo cơ hội cho các thành viên vận dụng kiến thức về AWS Cloud thông qua hình thức thi đấu theo đội. Hoạt động giúp người tham gia củng cố kiến thức về các dịch vụ AWS, rèn luyện khả năng phân tích câu hỏi và đưa ra quyết định trong thời gian giới hạn.
 
-### Danh Sách Diễn Giả
+* Thành lập team và tham gia trả lời các câu hỏi từ các bộ đề do ban tổ chức biên soạn.
+* Các câu hỏi tập trung vào kiến thức liên quan đến AWS Cloud và các dịch vụ phổ biến trên AWS.
+* Có tổng cộng **8 đội** tham gia và được tổ chức theo hình thức thi đấu qua **3 vòng**, gồm:
 
-- **Jignesh Shah** - Director, Open Source Databases
-- **Erica Liu** - Sr. GTM Specialist, AppMod
-- **Fabrianne Effendi** - Assc. Specialist SA, Serverless Amazon Web Services
+  * **Vòng Tứ kết:** Các đội trả lời bộ câu hỏi để chọn ra những đội có kết quả tốt nhất bước vào vòng tiếp theo.
+  * **Vòng Bán kết:** Các đội tiếp tục xử lý những câu hỏi có độ khó cao hơn nhằm chọn ra các đội tiến vào vòng chung kết.
+  * **Vòng Chung kết:** Các đội đạt kết quả tốt ở vòng bán kết tiếp tục tranh tài tại sự kiện **Event 2 – Chung kết Event Cloud Architect**.
+
+Thông qua hình thức thi đấu theo đội, em có cơ hội trao đổi kiến thức với các thành viên, phân chia việc xử lý câu hỏi và thống nhất đáp án trong thời gian giới hạn.
 
 ### Nội Dung Nổi Bật
 
-#### Đưa ra các ảnh hưởng tiêu cực của kiến trúc ứng dụng cũ
+#### Bộ đề AWS với độ khó tăng dần
 
-- Thời gian release sản phẩm lâu → Mất doanh thu/bỏ lỡ cơ hội
-- Hoạt động kém hiệu quả → Mất năng suất, tốn kém chi phí
-- Không tuân thủ các quy định về bảo mật → Mất an ninh, uy tín
+Các bộ đề của sự kiện được xây dựng dựa trên kiến thức liên quan đến các chứng chỉ AWS, với độ khó tăng dần qua từng vòng. Nội dung yêu cầu người tham gia không chỉ ghi nhớ kiến thức mà còn phải hiểu cách các dịch vụ AWS hoạt động và lựa chọn phương án phù hợp với từng tình huống.
 
-#### Chuyển đổi sang kiến trúc ứng dụng mới - Microservice Architecture
+Một số nhóm kiến thức nổi bật được củng cố trong quá trình tham gia gồm:
 
-Chuyển đổi thành hệ thống modular – từng chức năng là một **dịch vụ độc lập** giao tiếp với nhau qua **sự kiện** với 3 trụ cột cốt lõi:
+* **AWS Core Services:** Củng cố kiến thức về các dịch vụ nền tảng như IAM, VPC, EC2, S3, RDS và các thành phần cơ bản của AWS.
+* **Security và Access Control:** Hiểu rõ hơn về IAM, policy, role, quyền truy cập và nguyên tắc cấp quyền tối thiểu (**Least Privilege**).
+* **Networking và Architecture:** Củng cố kiến thức về VPC, subnet, route table, Internet Gateway, NAT Gateway, Security Group và cách tổ chức tài nguyên trong một kiến trúc Cloud.
+* **High Availability và Scalability:** Hiểu rõ hơn về Availability Zone, Multi-AZ, khả năng mở rộng và các phương án giúp hệ thống tăng tính sẵn sàng.
+* **Monitoring và Operations:** Làm quen với các khái niệm liên quan đến monitoring, logging và vận hành hệ thống trên AWS.
+* **AWS Architecture:** Rèn luyện khả năng phân tích yêu cầu và lựa chọn dịch vụ AWS phù hợp thay vì chỉ dựa vào việc ghi nhớ chức năng của từng dịch vụ.
 
-- **Queue Management**: Xử lý tác vụ bất đồng bộ
-- **Caching Strategy:** Tối ưu performance
-- **Message Handling:** Giao tiếp linh hoạt giữa services
+#### Kỹ năng làm việc nhóm
 
-#### Domain-Driven Design (DDD)
+Bên cạnh kiến thức kỹ thuật, hình thức thi đấu theo đội giúp em rèn luyện kỹ năng phối hợp và trao đổi thông tin. Khi gặp những câu hỏi có nhiều phương án gần giống nhau, các thành viên cần nhanh chóng phân tích, đưa ra lập luận và thống nhất đáp án.
 
-- **Phương pháp 4 bước**: Xác định domain events → sắp xếp timeline → identify actors → xác định bounded contexts
-- **Case study bookstore**: Minh họa cách áp dụng DDD thực tế
-- **Context mapping**: 7 patterns tích hợp bounded contexts
+#### Khả năng phân tích và ra quyết định
 
+Các câu hỏi có thời gian trả lời giới hạn yêu cầu em phải đọc kỹ yêu cầu, xác định từ khóa quan trọng và loại bỏ những phương án không phù hợp trước khi lựa chọn đáp án.
+
+Điều này giúp em cải thiện khả năng phân tích vấn đề và đưa ra quyết định nhanh chóng, đặc biệt đối với những câu hỏi yêu cầu áp dụng kiến thức AWS vào các tình huống thực tế.
 
 ### Những Gì Học Được
 
-#### Sơ lược về chứng chỉ AWS 
+Thông qua Event Cloud Architect, em có cơ hội hệ thống hóa lại các kiến thức AWS đã học và nhận ra mối liên hệ giữa các dịch vụ trong một hệ thống Cloud.
 
-- **Business-first approach**: Luôn bắt đầu từ business domain, không phải technology
-- **Ubiquitous language**: Importance của common vocabulary giữa business và tech teams
-- **Bounded contexts**: Cách identify và manage complexity trong large systems
+Một số bài học chính gồm:
 
-#### Kiến Trúc Kỹ Thuật
+* Không nên chỉ học thuộc chức năng của từng dịch vụ mà cần hiểu **khi nào và tại sao nên sử dụng dịch vụ đó**.
+* Một bài toán Cloud thường cần kết hợp nhiều dịch vụ để đáp ứng đồng thời các yêu cầu về bảo mật, hiệu năng, khả năng mở rộng và tính sẵn sàng.
+* Khi phân tích một câu hỏi kiến trúc, cần xác định rõ yêu cầu trước khi lựa chọn giải pháp.
+* Kiến thức về networking và security là nền tảng quan trọng khi thiết kế hệ thống trên AWS.
+* Làm việc nhóm hiệu quả giúp tăng khả năng giải quyết các vấn đề có tính phức tạp.
 
-- **Event storming technique**: Phương pháp thực tế để mô hình hóa quy trình kinh doanh
-- Sử dụng **Event-driven communication** thay vì synchronous calls
-- **Integration patterns**: Hiểu khi nào dùng sync, async, pub/sub, streaming
-- **Compute spectrum**: Criteria chọn từ VM → containers → serverless
+### Ứng Dụng Vào Công Việc
 
-### Trải nghiệm trong event
+Những kiến thức được củng cố thông qua sự kiện có thể áp dụng trực tiếp vào quá trình thực tập và triển khai dự án NeonFoodmap.
 
-Tham gia workshop **“GenAI-powered App-DB Modernization”** là một trải nghiệm rất bổ ích, giúp tôi có cái nhìn toàn diện về cách hiện đại hóa ứng dụng và cơ sở dữ liệu bằng các phương pháp và công cụ hiện đại. Một số trải nghiệm nổi bật:
+Cụ thể, em có thể vận dụng kiến thức về:
 
-#### Học hỏi từ các diễn giả có chuyên môn cao
-- Các diễn giả đến từ AWS và các tổ chức công nghệ lớn đã chia sẻ **best practices** trong thiết kế ứng dụng hiện đại.
-- Qua các case study thực tế, tôi hiểu rõ hơn cách áp dụng **Domain-Driven Design (DDD)** và **Event-Driven Architecture** vào các project lớn.
+* **IAM** để phân quyền và kiểm soát quyền truy cập tài nguyên.
+* **VPC, Subnet và Security Group** để xây dựng và kiểm soát kiến trúc mạng.
+* **ECS Fargate** để triển khai ứng dụng container.
+* **Application Load Balancer** để phân phối traffic đến các backend service.
+* **RDS** để triển khai cơ sở dữ liệu và tăng tính sẵn sàng.
+* **CloudWatch** để theo dõi metric, thu thập log và hỗ trợ xử lý sự cố.
+* **ECR và CI/CD** để tự động hóa quá trình build và triển khai ứng dụng.
 
-#### Trải nghiệm kỹ thuật thực tế
-- Tham gia các phiên trình bày về **event storming** giúp tôi hình dung cách **mô hình hóa quy trình kinh doanh** thành các domain events.
-- Học cách **phân tách microservices** và xác định **bounded contexts** để quản lý sự phức tạp của hệ thống lớn.
-- Hiểu rõ trade-offs giữa **synchronous và asynchronous communication** cũng như các pattern tích hợp như **pub/sub, point-to-point, streaming**.
+Đặc biệt, việc luyện tập các câu hỏi kiến trúc giúp em có cách tiếp cận tốt hơn khi phân tích yêu cầu triển khai thay vì lựa chọn dịch vụ một cách riêng lẻ.
 
-#### Ứng dụng công cụ hiện đại
-- Trực tiếp tìm hiểu về **Amazon Q Developer**, công cụ AI hỗ trợ SDLC từ lập kế hoạch đến maintenance.
-- Học cách **tự động hóa code transformation** và pilot serverless với **AWS Lambda**, từ đó nâng cao năng suất phát triển.
+### Trải Nghiệm Khi Tham Gia Sự Kiện
 
-#### Kết nối và trao đổi
-- Workshop tạo cơ hội trao đổi trực tiếp với các chuyên gia, đồng nghiệp và team business, giúp **nâng cao ngôn ngữ chung (ubiquitous language)** giữa business và tech.
-- Qua các ví dụ thực tế, tôi nhận ra tầm quan trọng của **business-first approach**, luôn bắt đầu từ nhu cầu kinh doanh thay vì chỉ tập trung vào công nghệ.
+Event Cloud Architect mang lại cho em trải nghiệm thực tế về việc vận dụng kiến thức Cloud trong môi trường có tính cạnh tranh và giới hạn về thời gian.
 
-#### Bài học rút ra
-- Việc áp dụng DDD và event-driven patterns giúp giảm **coupling**, tăng **scalability** và **resilience** cho hệ thống.
-- Chiến lược hiện đại hóa cần **phased approach** và đo lường **ROI**, không nên vội vàng chuyển đổi toàn bộ hệ thống.
-- Các công cụ AI như Amazon Q Developer có thể **boost productivity** nếu được tích hợp vào workflow phát triển hiện tại.
+Em có cơ hội:
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
+* Trao đổi và học hỏi kiến thức AWS từ các thành viên trong team.
+* Rèn luyện khả năng đọc hiểu và phân tích câu hỏi kỹ thuật.
+* Làm quen với các dạng câu hỏi liên quan đến chứng chỉ AWS.
+* Cải thiện kỹ năng làm việc nhóm và thống nhất quyết định.
+* Nhận biết được những phần kiến thức AWS cần tiếp tục nghiên cứu và củng cố.
 
+> Tổng thể, sự kiện không chỉ giúp em củng cố kiến thức kỹ thuật về AWS mà còn giúp em thay đổi cách tiếp cận đối với các bài toán Cloud. Thay vì chỉ tập trung vào từng dịch vụ riêng lẻ, em bắt đầu chú trọng hơn đến yêu cầu của hệ thống, mối quan hệ giữa các thành phần, khả năng bảo mật, tính sẵn sàng và khả năng mở rộng.
 
-> Tổng thể, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi thay đổi cách tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và phối hợp hiệu quả hơn giữa các team.
+### Một số hình ảnh khi tham gia sự kiện
+
+* [![Hình ảnh tham gia Event Cloud Architect](image.png)](https://www.facebook.com/share/r/1GUXvU6A4n/)
+[Video về sự kiện trên Facebook](https://www.facebook.com/share/r/1GUXvU6A4n/?utm_source=chatgpt.com)

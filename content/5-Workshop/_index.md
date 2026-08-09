@@ -1,23 +1,23 @@
 ---
-Title: "Workshop"
-Date: 2024-01-01
-Weight: 5
-Chapter: False
-Previous: " <b> 5. </b> "
+title: "Workshop"
+date: 2024-01-01
+weight: 5
+chapter: false
+pre: " <b> 5. </b> "
 ---
 
 # NeonFoodMap - Deploying a Cloud-Native Application on AWS
 
 #### Overview
 
-This workshop guides you through the entire process of building, developing, and operating **NeonFoodMap**—a food and travel map application—on the Amazon Web Services (AWS) platform. The project employs modern Cloud & DevOps models, featuring a fully automated CI/CD pipeline, Multi-AZ readiness, and a comprehensive monitoring system.
+This workshop guides you through the entire process of building, automating the deployment of, and operating **NeonFoodMap**—a food and travel map application—on the Amazon Web Services (AWS) platform. The project employs modern Cloud & DevOps models, featuring a fully automated CI/CD pipeline, Multi-AZ readiness, and a comprehensive monitoring system.
 
 The workshop is divided into key stages:
 
 - **Infrastructure**: Setting up the network and AWS service foundation (VPC, RDS, S3, IAM)
 - **Deployment**: Building a CI/CD pipeline using GitHub Actions and deploying the application to ECS Fargate
 - **Operations**: Configuring auto-scaling, CDN distribution, monitoring, cost alerts, and end-to-end testing
-- **Illustrations**: Reference list of all screenshots used in the workshop
+
 
 #### Architecture Overview
 

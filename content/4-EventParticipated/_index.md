@@ -7,6 +7,7 @@ pre: " <b> 4. </b> "
 ---
 
 ### [Event 1](4.1-Event1/)
+
 &emsp;**Event Name:** Cloud Architect Event
 
 &emsp;**Time:** 09:00, June 20, 2026
@@ -15,9 +16,8 @@ pre: " <b> 4. </b> "
 
 &emsp;**Role:** Attendee
 
-
-
 ### [Event 2](4.2-Event2/)
+
 &emsp;**Event Name:** Cloud Architect Event Finals
 
 &emsp;**Time:** 09:00, July 11, 2026
@@ -26,9 +26,8 @@ pre: " <b> 4. </b> "
 
 &emsp;**Role:** Attendee
 
-
-
 ### [Event 3](4.3-Event3/)
+
 &emsp;**Event Name:** Agent Forge - Deepdive Day 1
 
 &emsp;**Time:** 09:00, August 1, 2026

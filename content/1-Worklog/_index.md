@@ -1,25 +1,26 @@
 ---
-title: "Work Log"
+
+title: "Worklog"
 date: 2024-01-01
 weight: 1
 chapter: false
 pre: " <b> 1. </b> "
----
+--------------------
 
-The work log below details my workflow—spanning from my initial days at the office and the exploration of technologies and services to the acceptance of tasks and projects, as well as my participation in a five-member team project—broken down week-by-week as follows:
+The following worklog documents are my individual work throughout the internship, from starting work at the office, learning about technologies and services, receiving assigned tasks and projects, to participating in the development of a five-member team project. The activities are presented in detail on a weekly basis as follows:
 
-**Week 1:** [Familiarization with AWS and core AWS services; scoping the project for implementation](1.1-week1/)
+**Week 1:** [Learning Cloud Computing Fundamentals and AWS Foundation](1.1-week1/)
 
-**Week 2:** [Exploring DevOps, CI/CD, and Docker](1.2-week2/)
+**Week 2:** [Studying AWS Architecture and Planning the NeonFoodMap Deployment](1.2-week2/)
 
-**Week 3:** [Exploring ECS ​​and CloudWatch](1.3-week3/)
+**Week 3:** [Studying AWS Services and Preparing Application Configuration](1.3-week3/)
 
-**Week 4:** [Initiating Phase 1 of the project: Building deployment infrastructure on AWS](1.4-week4/)
+**Week 4:** [Deploying Amazon S3 and Configuring AWS Access Permissions](1.4-week4/)
 
-**Week 5:** [Initiating Phase 2 of the project: Establishing continuous integration and deployment (CI/CD) pipelines using AWS services](1.5-week5/)
+**Week 5:** [Deploying Containerized Applications on Amazon ECS and Setting Up CI/CD](1.5-week5/)
 
-**Week 6:** [Initiating Phase 3 of the project: System and application monitoring and operations](1.6-week6/)
+**Week 6:** [System Monitoring and Log Analysis with Amazon CloudWatch](1.6-week6/)
 
-**Week 7:** [Consolidation and documentation for the workshop](1.7-week7/)
+**Week 7:** [Testing, Optimizing, and Finalizing the NeonFoodMap Deployment Process](1.7-week7/)
 
-**Week 8:** [Finalizing the internship report and project summary](1.8-week8/)
+**Week 8:** [Summarizing the Internship and Finalizing Project Documentation](1.8-week8/)

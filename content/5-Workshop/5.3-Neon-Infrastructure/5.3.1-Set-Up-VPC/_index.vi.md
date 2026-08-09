@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.1. </b> "
 ---
 
-### 5.3.1.1 Khởi tạo Amazon VPC
+### 1. Khởi tạo Amazon VPC
 
 Bước đầu tiên là tạo VPC và subnet theo kiến trúc chuẩn.
 1. Truy cập AWS Management Console.
@@ -37,7 +37,7 @@ Kết quả mong đợi:
 ![Hình 5.](/images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
 ![Hình 7.](/images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
 
-### 5.3.1.2. Tạo Elastic IP cho NAT Gateway
+### 2. Tạo Elastic IP cho NAT Gateway
 
 1. Mở VPC Console.
 2. Chọn Elastic IP addresses.
@@ -49,7 +49,7 @@ Kết quả mong đợi:
 ![Hình 11.](/images/5-Workshop/5.3-Neon-Infracstructure/image011.png)
 
 
-### 5.3.1.3. Tạo NAT Gateway
+### 3. Tạo NAT Gateway
 
 1. Vào VPC Console → NAT gateways.
 2. Chọn Create NAT gateway.
@@ -64,7 +64,7 @@ Kết quả mong đợi:
 ![Hình 13.](/images/5-Workshop/5.3-Neon-Infracstructure/image013.png)
 ![Hình 15.](/images/5-Workshop/5.3-Neon-Infracstructure/image015.png)
 
-### 5.3.1.4. Cấu hình Route table cho private subnet
+### 4. Cấu hình Route table cho private subnet
 
 1. Mở Route tables.
 2. Chọn route table gắn với private subnet thuộc AZ 1a.
@@ -81,7 +81,7 @@ Kết quả mong đợi:
 ![Hình 25.](/images/5-Workshop/5.3-Neon-Infracstructure/image025.png)
 
 
-### 5.3.1.5. Kích hoạt Auto-assign Public IPv4 cho public subnet
+### 5. Kích hoạt Auto-assign Public IPv4 cho public subnet
 
 1. Vào VPC Console → Subnets.
 2. Chọn public subnet 1.

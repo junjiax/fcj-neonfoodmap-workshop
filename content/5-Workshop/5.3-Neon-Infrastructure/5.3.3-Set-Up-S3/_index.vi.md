@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.3. </b> "
 ---
 
-### 5.3.11. Tạo 4 bucket S3 cho hệ thống
+### 1. Tạo 4 bucket S3 cho hệ thống
 
 Tạo các bucket theo chức năng sau:
 
@@ -29,7 +29,7 @@ Các bước:
 ![Hình 61.](/images/5-Workshop/5.3-Neon-Infracstructure/image061.png)
 
 
-### 5.3.12. Bật Versioning cho media và audio bucket
+### 2. Bật Versioning cho media và audio bucket
 
 1. Chọn bucket `neonfoodmap-media-dev`.
 2. Vào tab Properties.
@@ -51,7 +51,7 @@ Các bước:
 ![Hình 85.](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
 
 
-### 5.3.13. Cấu hình lifecycle rule cho bucket lưu trữ
+### 3. Cấu hình lifecycle rule cho bucket lưu trữ
 
 1. Chọn bucket cần áp dụng lifecycle.
 2. Vào Management → Lifecycle rules.
@@ -62,7 +62,7 @@ Các bước:
 
 ![Hình 87.](/images/5-Workshop/5.3-Neon-Infracstructure/image087.png)
 
-### 5.3.14. Chặn truy cập public và bật ACL cho bucket
+### 4. Chặn truy cập public và bật ACL cho bucket
 
 1. Chọn bucket.
 2. Vào tab Permissions.

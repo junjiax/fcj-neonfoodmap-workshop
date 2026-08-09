@@ -1,242 +1,397 @@
 ---
-title : "Prerequiste"
-date : 2024-01-01 
-weight : 2 
+title : "Prerequisites"
+date : 2024-01-01
+weight : 2
 chapter : false
 pre : " <b> 5.2. </b> "
 ---
 
-#### IAM permissions
-Add the following IAM permission policy to your user account to deploy and cleanup this workshop.
-```
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*",
-                "cloudwatch:*",
-                "ec2:AcceptTransitGatewayPeeringAttachment",
-                "ec2:AcceptTransitGatewayVpcAttachment",
-                "ec2:AllocateAddress",
-                "ec2:AssociateAddress",
-                "ec2:AssociateIamInstanceProfile",
-                "ec2:AssociateRouteTable",
-                "ec2:AssociateSubnetCidrBlock",
-                "ec2:AssociateTransitGatewayRouteTable",
-                "ec2:AssociateVpcCidrBlock",
-                "ec2:AttachInternetGateway",
-                "ec2:AttachNetworkInterface",
-                "ec2:AttachVolume",
-                "ec2:AttachVpnGateway",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateClientVpnEndpoint",
-                "ec2:CreateClientVpnRoute",
-                "ec2:CreateCustomerGateway",
-                "ec2:CreateDhcpOptions",
-                "ec2:CreateFlowLogs",
-                "ec2:CreateInternetGateway",
-                "ec2:CreateLaunchTemplate",
-                "ec2:CreateNetworkAcl",
-                "ec2:CreateNetworkInterface",
-                "ec2:CreateNetworkInterfacePermission",
-                "ec2:CreateRoute",
-                "ec2:CreateRouteTable",
-                "ec2:CreateSecurityGroup",
-                "ec2:CreateSubnet",
-                "ec2:CreateSubnetCidrReservation",
-                "ec2:CreateTags",
-                "ec2:CreateTransitGateway",
-                "ec2:CreateTransitGatewayPeeringAttachment",
-                "ec2:CreateTransitGatewayPrefixListReference",
-                "ec2:CreateTransitGatewayRoute",
-                "ec2:CreateTransitGatewayRouteTable",
-                "ec2:CreateTransitGatewayVpcAttachment",
-                "ec2:CreateVpc",
-                "ec2:CreateVpcEndpoint",
-                "ec2:CreateVpcEndpointConnectionNotification",
-                "ec2:CreateVpcEndpointServiceConfiguration",
-                "ec2:CreateVpnConnection",
-                "ec2:CreateVpnConnectionRoute",
-                "ec2:CreateVpnGateway",
-                "ec2:DeleteCustomerGateway",
-                "ec2:DeleteFlowLogs",
-                "ec2:DeleteInternetGateway",
-                "ec2:DeleteNetworkInterface",
-                "ec2:DeleteNetworkInterfacePermission",
-                "ec2:DeleteRoute",
-                "ec2:DeleteRouteTable",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DeleteSubnet",
-                "ec2:DeleteSubnetCidrReservation",
-                "ec2:DeleteTags",
-                "ec2:DeleteTransitGateway",
-                "ec2:DeleteTransitGatewayPeeringAttachment",
-                "ec2:DeleteTransitGatewayPrefixListReference",
-                "ec2:DeleteTransitGatewayRoute",
-                "ec2:DeleteTransitGatewayRouteTable",
-                "ec2:DeleteTransitGatewayVpcAttachment",
-                "ec2:DeleteVpc",
-                "ec2:DeleteVpcEndpoints",
-                "ec2:DeleteVpcEndpointServiceConfigurations",
-                "ec2:DeleteVpnConnection",
-                "ec2:DeleteVpnConnectionRoute",
-                "ec2:Describe*",
-                "ec2:DetachInternetGateway",
-                "ec2:DisassociateAddress",
-                "ec2:DisassociateRouteTable",
-                "ec2:GetLaunchTemplateData",
-                "ec2:GetTransitGatewayAttachmentPropagations",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:ModifySecurityGroupRules",
-                "ec2:ModifyTransitGatewayVpcAttachment",
-                "ec2:ModifyVpcAttribute",
-                "ec2:ModifyVpcEndpoint",
-                "ec2:ReleaseAddress",
-                "ec2:ReplaceRoute",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:RunInstances",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:UpdateSecurityGroupRuleDescriptionsEgress",
-                "ec2:UpdateSecurityGroupRuleDescriptionsIngress",
-                "iam:AddRoleToInstanceProfile",
-                "iam:AttachRolePolicy",
-                "iam:CreateInstanceProfile",
-                "iam:CreatePolicy",
-                "iam:CreateRole",
-                "iam:DeleteInstanceProfile",
-                "iam:DeletePolicy",
-                "iam:DeleteRole",
-                "iam:DeleteRolePolicy",
-                "iam:DetachRolePolicy",
-                "iam:GetInstanceProfile",
-                "iam:GetPolicy",
-                "iam:GetRole",
-                "iam:GetRolePolicy",
-                "iam:ListPolicyVersions",
-                "iam:ListRoles",
-                "iam:PassRole",
-                "iam:PutRolePolicy",
-                "iam:RemoveRoleFromInstanceProfile",
-                "lambda:CreateFunction",
-                "lambda:DeleteFunction",
-                "lambda:DeleteLayerVersion",
-                "lambda:GetFunction",
-                "lambda:GetLayerVersion",
-                "lambda:InvokeFunction",
-                "lambda:PublishLayerVersion",
-                "logs:CreateLogGroup",
-                "logs:DeleteLogGroup",
-                "logs:DescribeLogGroups",
-                "logs:PutRetentionPolicy",
-                "route53:ChangeTagsForResource",
-                "route53:CreateHealthCheck",
-                "route53:CreateHostedZone",
-                "route53:CreateTrafficPolicy",
-                "route53:DeleteHostedZone",
-                "route53:DisassociateVPCFromHostedZone",
-                "route53:GetHostedZone",
-                "route53:ListHostedZones",
-                "route53domains:ListDomains",
-                "route53domains:ListOperations",
-                "route53domains:ListTagsForDomain",
-                "route53resolver:AssociateResolverEndpointIpAddress",
-                "route53resolver:AssociateResolverRule",
-                "route53resolver:CreateResolverEndpoint",
-                "route53resolver:CreateResolverRule",
-                "route53resolver:DeleteResolverEndpoint",
-                "route53resolver:DeleteResolverRule",
-                "route53resolver:DisassociateResolverEndpointIpAddress",
-                "route53resolver:DisassociateResolverRule",
-                "route53resolver:GetResolverEndpoint",
-                "route53resolver:GetResolverRule",
-                "route53resolver:ListResolverEndpointIpAddresses",
-                "route53resolver:ListResolverEndpoints",
-                "route53resolver:ListResolverRuleAssociations",
-                "route53resolver:ListResolverRules",
-                "route53resolver:ListTagsForResource",
-                "route53resolver:UpdateResolverEndpoint",
-                "route53resolver:UpdateResolverRule",
-                "s3:AbortMultipartUpload",
-                "s3:CreateBucket",
-                "s3:DeleteBucket",
-                "s3:DeleteObject",
-                "s3:GetAccountPublicAccessBlock",
-                "s3:GetBucketAcl",
-                "s3:GetBucketOwnershipControls",
-                "s3:GetBucketPolicy",
-                "s3:GetBucketPolicyStatus",
-                "s3:GetBucketPublicAccessBlock",
-                "s3:GetObject",
-                "s3:GetObjectVersion",
-                "s3:GetBucketVersioning",
-                "s3:ListAccessPoints",
-                "s3:ListAccessPointsForObjectLambda",
-                "s3:ListAllMyBuckets",
-                "s3:ListBucket",
-                "s3:ListBucketMultipartUploads",
-                "s3:ListBucketVersions",
-                "s3:ListJobs",
-                "s3:ListMultipartUploadParts",
-                "s3:ListMultiRegionAccessPoints",
-                "s3:ListStorageLensConfigurations",
-                "s3:PutAccountPublicAccessBlock",
-                "s3:PutBucketAcl",
-                "s3:PutBucketPolicy",
-                "s3:PutBucketPublicAccessBlock",
-                "s3:PutObject",
-                "secretsmanager:CreateSecret",
-                "secretsmanager:DeleteSecret",
-                "secretsmanager:DescribeSecret",
-                "secretsmanager:GetSecretValue",
-                "secretsmanager:ListSecrets",
-                "secretsmanager:ListSecretVersionIds",
-                "secretsmanager:PutResourcePolicy",
-                "secretsmanager:TagResource",
-                "secretsmanager:UpdateSecret",
-                "sns:ListTopics",
-                "ssm:DescribeInstanceProperties",
-                "ssm:DescribeSessions",
-                "ssm:GetConnectionStatus",
-                "ssm:GetParameters",
-                "ssm:ListAssociations",
-                "ssm:ResumeSession",
-                "ssm:StartSession",
-                "ssm:TerminateSession"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
+### 5.2. Prerequisites
 
+Before starting the NeonFoodMap deployment process on AWS, prepare the AWS account, source code, local development environment, GitHub repository, and the required AWS access permissions.
+
+The prerequisites in this section only cover the environment and access requirements. The creation and configuration of AWS resources such as IAM, VPC, RDS, S3, ECR, ECS, and CloudWatch are performed in the subsequent deployment sections.
+
+---
+
+### 5.2.1. AWS Account and Region
+
+An AWS account is required to deploy and operate the NeonFoodMap application.
+
+1. Access the **AWS Management Console**.
+
+2. Sign in using an AWS account with sufficient permissions to perform the deployment.
+
+3. Set the AWS Region to:
+
+```text
+Asia Pacific (Singapore) - ap-southeast-1
 ```
 
-#### Provision resources using CloudFormation
+4. Verify that the selected Region is displayed consistently in the AWS Management Console before creating resources.
 
-In this lab, we will use **N.Virginia region (us-east-1)**.
+The project uses `ap-southeast-1` as the primary deployment Region. AWS resources created in subsequent steps should be deployed in this Region unless otherwise specified.
 
-To prepare the workshop environment, deploy this **CloudFormation Template** (click link): [PrivateLinkWorkshop ](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://s3.us-east-1.amazonaws.com/reinvent-endpoints-builders-session/Nested.yaml&stackName=PLCloudSetup). Accept all of the defaults when deploying the template. 
+> The AWS resources are not created in this prerequisite section. This section only verifies that the AWS account and deployment Region are ready.
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack1.png)
+---
 
-+ Tick 2 acknowledgement boxes
-+ Choose **Create stack**
+### 5.2.2. NeonFoodMap Source Code
 
-![create stack](/images/5-Workshop/5.2-Prerequisite/create-stack2.png)
+NeonFoodMap consists of two main application components:
 
-The **ClouddFormation** deployment requires about 15 minutes to complete.
+```text
+NeonFoodMap
+├── Backend
+│   └── Django
+│
+└── Frontend
+    └── React + TypeScript
+```
 
-![complete](/images/5-Workshop/5.2-Prerequisite/complete.png)
+The source code must be available locally before starting the deployment process.
 
-+ **2 VPCs** have been created
+Clone the NeonFoodMap repository:
 
-![vpcs](/images/5-Workshop/5.2-Prerequisite/vpcs.png)
+```bash
+git clone https://github.com/HaoWasabi/NeonFoodmap.git
+```
 
-+ **3 EC2s** have been created
+Navigate to the project directory:
 
-![EC2](/images/5-Workshop/5.2-Prerequisite/ec2.png)
+```bash
+cd NeonFoodmap
+```
+
+Verify the source code:
+
+```bash
+git status
+```
+
+The repository should contain the source code required for both the Backend and Frontend.
+
+The source code will later be used to:
+
+- Install Backend and Frontend dependencies.
+- Run the applications locally.
+- Build Docker Images.
+- Push Docker Images to Amazon ECR.
+- Execute the CI/CD pipeline through GitHub Actions.
+
+---
+
+### 5.2.3. Development Environment
+
+The local development environment must contain the tools required to develop, test, and package the NeonFoodMap application.
+
+The required tools are:
+
+```text
+Development Environment
+├── Git
+├── Python
+├── Python Virtual Environment
+├── Node.js / npm
+└── Docker
+```
+
+#### Git
+
+Git is used to clone the NeonFoodMap source code and manage changes during development.
+
+Check the installed Git version:
+
+```bash
+git --version
+```
+
+Example:
+
+```text
+git version 2.x.x
+```
+
+If the command returns the Git version, Git is ready to use.
+
+---
+
+#### Python
+
+Python is required to run the NeonFoodMap Django Backend.
+
+Check the installed Python version:
+
+```bash
+python --version
+```
+
+Example:
+
+```text
+Python 3.12.x
+```
+
+If the system uses `python3`, run:
+
+```bash
+python3 --version
+```
+
+The Python version should be compatible with the version required by the Backend project.
+
+---
+
+#### Python Virtual Environment
+
+A Python virtual environment is used to isolate the Backend dependencies from the system Python environment.
+
+Navigate to the Backend directory:
+
+```bash
+cd backend
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+After creation, the Backend directory will contain:
+
+```text
+backend/
+├── venv/
+├── manage.py
+├── requirements.txt
+├── config/
+└── ...
+```
+
+Activate the virtual environment.
+
+**Windows PowerShell:**
+
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+**Windows Command Prompt:**
+
+```cmd
+venv\Scripts\activate
+```
+
+**Linux/macOS:**
+
+```bash
+source venv/bin/activate
+```
+
+After successful activation, `(venv)` appears at the beginning of the terminal prompt:
+
+```text
+(venv) PS D:\NeonFoodMap\backend>
+```
+
+Update `pip`:
+
+```bash
+python -m pip install --upgrade pip
+```
+
+Install the Backend dependencies from `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+
+Verify the Django installation:
+
+```bash
+python -m django --version
+```
+
+The virtual environment should not be committed to Git. Add the following entry to `.gitignore`:
+
+```gitignore
+venv/
+```
+
+> The virtual environment is used for local development and testing. During the ECS deployment process, Python dependencies are installed inside the Docker Image according to `requirements.txt`.
+
+---
+
+#### Node.js / npm
+
+Node.js and npm are required to install dependencies and build the NeonFoodMap React Frontend.
+
+Check the Node.js version:
+
+```bash
+node --version
+```
+
+Check the npm version:
+
+```bash
+npm --version
+```
+
+Example:
+
+```text
+Node.js: 22.x.x
+npm: 10.x.x
+```
+
+Navigate to the Frontend directory:
+
+```bash
+cd frontend
+```
+
+Install the Frontend dependencies:
+
+```bash
+npm install
+```
+
+Verify that the Frontend dependencies are installed successfully.
+
+The Frontend can then be tested locally using the project's configured npm scripts.
+
+---
+
+#### Docker
+
+Docker is required to build and test the Container Images used by NeonFoodMap.
+
+Check the Docker installation:
+
+```bash
+docker --version
+```
+
+Verify that Docker is running:
+
+```bash
+docker info
+```
+
+Docker will later be used to package the application into Container Images:
+
+```text
+Backend Source Code
+        ↓
+Docker Build
+        ↓
+Backend Image
+```
+
+and:
+
+```text
+Frontend Source Code
+        ↓
+Docker Build
+        ↓
+Frontend Image
+```
+
+The resulting Images will subsequently be pushed to Amazon ECR and deployed to Amazon ECS Fargate.
+
+---
+
+### 5.2.4. GitHub Repository
+
+The NeonFoodMap source code is hosted in the following GitHub repository:
+
+```text
+https://github.com/HaoWasabi/NeonFoodmap.git
+```
+
+Verify that the local repository is connected to the correct remote:
+
+```bash
+git remote -v
+```
+
+Expected result:
+
+```text
+origin  https://github.com/HaoWasabi/NeonFoodmap.git (fetch)
+origin  https://github.com/HaoWasabi/NeonFoodmap.git (push)
+```
+
+The repository will later be used by the CI/CD pipeline to:
+
+1. Trigger the workflow when code is pushed or a Pull Request is created.
+2. Run Backend tests.
+3. Run Frontend checks.
+4. Run End-to-End tests.
+5. Build Docker Images.
+6. Push Images to Amazon ECR.
+7. Deploy the application to Amazon ECS.
+8. Execute post-deployment smoke tests.
+
+The GitHub Actions workflow should be stored under:
+
+```text
+.github/
+└── workflows/
+```
+
+At this stage, only verify that the repository is accessible and the source code can be cloned. The detailed configuration of GitHub Actions, OIDC, ECR, and ECS deployment is performed in the subsequent CI/CD sections.
+
+---
+
+### 5.2.5. Required AWS Access
+
+The AWS account used for the project must have sufficient permissions to create and configure the AWS resources required by NeonFoodMap.
+
+The deployment process will require access to services including:
+
+| AWS Service | Purpose |
+|-------------|---------|
+| IAM | Manage users, groups, policies, and roles |
+| VPC | Configure the application network |
+| Amazon RDS | Provide the application database |
+| Amazon S3 | Store application files and static assets |
+| Amazon ECR | Store Docker Images |
+| Amazon ECS | Run Backend and Frontend Containers |
+| Elastic Load Balancing | Distribute application traffic |
+| Amazon CloudWatch | Collect and monitor application logs |
+| AWS Secrets Manager | Store sensitive application configuration |
+| AWS STS | Provide temporary credentials for CI/CD authentication |
+
+Before starting the deployment, verify that the AWS account or IAM identity being used is authorized to access the required services.
+
+The project follows the **Principle of Least Privilege**, so permissions should only be granted according to the operations required by each user, role, or deployment component.
+
+> The IAM policies and roles are not created in this prerequisite section. Their detailed configuration is performed in the IAM deployment section.
+
+---
+
+### Prerequisite Checklist
+
+Before proceeding to the AWS deployment steps, verify the following:
+
+| No. | Requirement | Status |
+|-----|-------------|--------|
+| 1 | AWS Account | Ready |
+| 2 | AWS Region `ap-southeast-1` | Selected |
+| 3 | NeonFoodMap Source Code | Available |
+| 4 | Git | Installed |
+| 5 | Python | Installed |
+| 6 | Python Virtual Environment | Created |
+| 7 | Backend Dependencies | Installed |
+| 8 | Node.js / npm | Installed |
+| 9 | Frontend Dependencies | Installed |
+| 10 | Docker | Installed and running |
+| 11 | GitHub Repository | Accessible |
+| 12 | GitHub Actions Workflow | Available |
+| 13 | Required AWS Access | Available |
+
+After all prerequisites are satisfied, the environment is ready to proceed with the detailed AWS deployment of **NeonFoodMap**.

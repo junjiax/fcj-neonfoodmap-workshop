@@ -16,7 +16,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 - S3 bucket: stores frontend assets, media, audio, and logs
 - IAM Role and OIDC: grants secure deploy permissions to GitHub Actions
 
-### 5.3.6. Create DB Subnet Group for Amazon RDS
+### Create DB Subnet Group for Amazon RDS
 
 1. Open the Amazon RDS Console.
 2. Select **Subnet groups**.
@@ -27,7 +27,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 
 ![Figure 31.](/images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
 
-### 5.3.7. Create DB Parameter Group for MySQL
+### Create DB Parameter Group for MySQL
 
 1. Go to RDS Console → **Parameter groups**.
 2. Click **Create parameter group**.
@@ -48,7 +48,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 ![Figure 35.](/images/5-Workshop/5.3-Neon-Infracstructure/image035.png)
 ![Figure 37.](/images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
 
-### 5.3.8. Create Security Group for RDS
+### Create Security Group for RDS
 
 1. Open EC2 Console → **Security Groups**.
 2. Click **Create security group**.
@@ -65,7 +65,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 
 ![Figure 39.](/images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
 
-### 5.3.9. Create Amazon RDS MySQL Instance
+### Create Amazon RDS MySQL Instance
 
 1. Go to Amazon RDS Console → **Databases** → **Create database**.
 2. Select **Standard Create**.
@@ -110,7 +110,7 @@ The infrastructure is built using a multi-tier model with the following layers:
 ![Figure 106.](/images/5-Workshop/5.3-Neon-Infracstructure/image106.png)
 ![Figure 108.](/images/5-Workshop/5.3-Neon-Infracstructure/image108.png)
 
-### 5.3.10. Retrieve Endpoint and Save to `.env` File
+### Retrieve Endpoint and Save to `.env` File
 
 1. Open the DB instance you just created.
 2. Select the **Connectivity & security** tab.

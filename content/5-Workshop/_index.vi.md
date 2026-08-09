@@ -10,14 +10,14 @@ pre: " <b> 5. </b> "
 
 #### Tổng quan
 
-Workshop này hướng dẫn toàn bộ quy trình xây dựng, triển khai và vận hành **NeonFoodMap** - ứng dụng bản đồ ẩm thực và du lịch - trên nền tảng Amazon Web Services (AWS). Dự án áp dụng mô hình Cloud & DevOps hiện đại với pipeline CI/CD tự động hoàn toàn, khả năng sẵn sàng cao theo Multi-AZ, và hệ thống giám sát toàn diện.
+Workshop này hướng dẫn toàn bộ quy trình xây dựng, tự động hóa việc triển khai và vận hành **NeonFoodMap** - ứng dụng bản đồ ẩm thực và du lịch - trên nền tảng Amazon Web Services (AWS). Dự án áp dụng mô hình Cloud & DevOps hiện đại với pipeline CI/CD tự động hoàn toàn, khả năng sẵn sàng cao theo Multi-AZ, và hệ thống giám sát toàn diện.
 
-Workshop được chia thành bốn giai đoạn chính:
+Workshop được chia thành ba giai đoạn chính:
 
 - **Hạ tầng**: Thiết lập mạng và các dịch vụ AWS nền tảng (VPC, RDS, S3, IAM)
 - **Triển khai**: Xây dựng pipeline CI/CD bằng GitHub Actions và triển khai ứng dụng lên ECS Fargate
 - **Vận hành**: Cấu hình auto-scaling, phân phối CDN, giám sát, cảnh báo chi phí và kiểm thử end-to-end
-- **Hình ảnh minh họa**: Danh sách tham chiếu toàn bộ ảnh chụp màn hình sử dụng trong workshop
+
 
 #### Tổng quan kiến trúc
 

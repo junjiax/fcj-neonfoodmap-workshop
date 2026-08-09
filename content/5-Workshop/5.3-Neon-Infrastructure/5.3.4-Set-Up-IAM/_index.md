@@ -1,12 +1,12 @@
 ---
-title : "Initialize and Configure IAM"
-date : 2024-01-01
-weight : 4
-chapter : false
-pre : " <b> 5.3.4. </b> "
+title: "Initialize and Configure IAM"
+date: 2024-01-01
+weight: 4
+chapter: false
+pre: " <b> 5.3.4. </b> "
 ---
 
-### 5.3.15. Create IAM Role for ECS Task Execution
+### 1. Create IAM Role for ECS Task Execution
 
 1. Open IAM Console → **Roles** → **Create role**.
 2. Select trusted entity: `AWS service → Elastic Container Service → ECS Task`.
@@ -32,7 +32,7 @@ pre : " <b> 5.3.4. </b> "
 ![Figure 129.](/images/5-Workshop/5.3-Neon-Infracstructure/image129.png)
 ![Figure 131.](/images/5-Workshop/5.3-Neon-Infracstructure/image131.png)
 
-### 5.3.16. Create GitHub OIDC Provider and IAM Role for GitHub Actions
+### 2. Create GitHub OIDC Provider and IAM Role for GitHub Actions
 
 1. Go to IAM Console → **Access management** → **Identity providers**.
 2. Click **Add provider**.

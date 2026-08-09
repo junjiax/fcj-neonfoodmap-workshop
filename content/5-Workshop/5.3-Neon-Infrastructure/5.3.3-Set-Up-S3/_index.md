@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.3. </b> "
 ---
 
-### 5.3.11. Create 4 S3 Buckets for the System
+### 1. Create 4 S3 Buckets for the System
 
 Create buckets for the following purposes:
 
@@ -28,7 +28,7 @@ Steps:
 ![Figure 59.](/images/5-Workshop/5.3-Neon-Infracstructure/image059.png)
 ![Figure 61.](/images/5-Workshop/5.3-Neon-Infracstructure/image061.png)
 
-### 5.3.12. Enable Versioning for Media and Audio Buckets
+### 2. Enable Versioning for Media and Audio Buckets
 
 1. Select the `neonfoodmap-media-dev` bucket.
 2. Go to the **Properties** tab.
@@ -49,7 +49,7 @@ Steps:
 ![Figure 83.](/images/5-Workshop/5.3-Neon-Infracstructure/image083.png)
 ![Figure 85.](/images/5-Workshop/5.3-Neon-Infracstructure/image085.png)
 
-### 5.3.13. Configure Lifecycle Rule for Storage Bucket
+### 3. Configure Lifecycle Rule for Storage Bucket
 
 1. Select the bucket you want to apply the lifecycle rule to.
 2. Go to **Management** → **Lifecycle rules**.
@@ -60,7 +60,7 @@ Steps:
 
 ![Figure 87.](/images/5-Workshop/5.3-Neon-Infracstructure/image087.png)
 
-### 5.3.14. Block Public Access and Enable ACL for Bucket
+### 4. Block Public Access and Enable ACL for Bucket
 
 1. Select the bucket.
 2. Go to the **Permissions** tab.

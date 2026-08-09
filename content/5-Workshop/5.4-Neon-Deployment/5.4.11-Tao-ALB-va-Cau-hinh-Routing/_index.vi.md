@@ -8,7 +8,7 @@ pre : " <b> 5.4.11. </b> "
 
 ### 5.4.11. Tạo Application Load Balancer và cấu hình routing
 
-#### 5.4.11.1. Tạo security group cho ALB
+#### 1. Tạo security group cho ALB
 
 1. Mở EC2 Console → Security Groups.
 2. Chọn Create security group.
@@ -26,7 +26,7 @@ pre : " <b> 5.4.11. </b> "
 ![alt text](image-1.png)
 
 
-#### 5.4.11.2. Tạo target group cho frontend và backend
+#### 2. Tạo target group cho frontend và backend
 
 - `TG-NeonFoodMap-FE` cho frontend
 - `TG-NeonFoodMap-BE` cho backend
@@ -47,7 +47,7 @@ Các cấu hình chính:
 ![](/images/5-Workshop/5.4-Neon-Deployment/image028.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image029.png)
 
-#### 5.4.11.3. Tạo Application Load Balancer
+#### 3. Tạo Application Load Balancer
 
 1. Mở EC2 Console → Load Balancers.
 2. Chọn Create load balancer → Application Load Balancer.
@@ -65,7 +65,7 @@ Các cấu hình chính:
 ![](/images/5-Workshop/5.4-Neon-Deployment/image033.png)
 ![](/images/5-Workshop/5.4-Neon-Deployment/image034.png)
 
-#### 5.4.11.4. Tạo listener rule cho API path
+#### 4. Tạo listener rule cho API path
 
 1. Mở ALB → Listeners and rules.
 

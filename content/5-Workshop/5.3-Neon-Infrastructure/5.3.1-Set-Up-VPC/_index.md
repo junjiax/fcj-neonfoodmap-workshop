@@ -6,7 +6,7 @@ chapter : false
 pre : " <b> 5.3.1. </b> "
 ---
 
-### 5.3.1.1 Create Amazon VPC
+### 1. Create Amazon VPC
 
 The first step is to create a VPC and subnets following the standard architecture.
 
@@ -38,7 +38,7 @@ Expected results:
 ![Figure 5.](/images/5-Workshop/5.3-Neon-Infracstructure/image005.png)
 ![Figure 7.](/images/5-Workshop/5.3-Neon-Infracstructure/image007.png)
 
-### 5.3.1.2. Create Elastic IP for NAT Gateway
+### 2. Create Elastic IP for NAT Gateway
 
 1. Open the VPC Console.
 2. Select **Elastic IP addresses**.
@@ -49,7 +49,7 @@ Expected results:
 ![Figure 9.](/images/5-Workshop/5.3-Neon-Infracstructure/image009.png)
 ![Figure 11.](/images/5-Workshop/5.3-Neon-Infracstructure/image011.png)
 
-### 5.3.1.3. Create NAT Gateway
+### 3. Create NAT Gateway
 
 1. Go to VPC Console → **NAT gateways**.
 2. Click **Create NAT gateway**.
@@ -64,7 +64,7 @@ Expected results:
 ![Figure 13.](/images/5-Workshop/5.3-Neon-Infracstructure/image013.png)
 ![Figure 15.](/images/5-Workshop/5.3-Neon-Infracstructure/image015.png)
 
-### 5.3.1.4. Configure Route Table for Private Subnet
+### 4. Configure Route Table for Private Subnet
 
 1. Open **Route tables**.
 2. Select the route table associated with the private subnet in AZ 1a.
@@ -80,7 +80,7 @@ Expected results:
 ![Figure 23.](/images/5-Workshop/5.3-Neon-Infracstructure/image023.png)
 ![Figure 25.](/images/5-Workshop/5.3-Neon-Infracstructure/image025.png)
 
-### 5.3.1.5. Enable Auto-assign Public IPv4 for Public Subnets
+### 5. Enable Auto-assign Public IPv4 for Public Subnets
 
 1. Go to VPC Console → **Subnets**.
 2. Select public subnet 1.

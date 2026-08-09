@@ -17,7 +17,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 - S3 bucket: lưu trữ frontend, media, audio, logs
 - IAM Role và OIDC: cấp quyền deploy an toàn cho GitHub Actions
 
-### 5.3.6. Tạo DB Subnet Group cho Amazon RDS
+### Tạo DB Subnet Group cho Amazon RDS
 
 1. Mở Amazon RDS Console.
 2. Chọn Subnet groups.
@@ -29,7 +29,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 ![Hình 31.](/images/5-Workshop/5.3-Neon-Infracstructure/image031.png)
 
 
-### 5.3.7. Tạo DB Parameter Group cho MySQL
+### Tạo DB Parameter Group cho MySQL
 
 1. Vào RDS Console → Parameter groups.
 2. Chọn Create parameter group.
@@ -51,7 +51,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 ![Hình 37.](/images/5-Workshop/5.3-Neon-Infracstructure/image037.png)
 
 
-### 5.3.8. Tạo Security Group cho RDS
+### Tạo Security Group cho RDS
 
 1. Mở EC2 Console → Security Groups.
 2. Chọn Create security group.
@@ -68,7 +68,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 
 ![Hình 39.](/images/5-Workshop/5.3-Neon-Infracstructure/image039.png)
 
-### 5.3.9. Khởi tạo Amazon RDS MySQL instance
+### Khởi tạo Amazon RDS MySQL instance
 
 1. Vào Amazon RDS Console → Databases → Create database.
 2. Chọn Standard Create.
@@ -114,7 +114,7 @@ Hạ tầng cần được xây dựng theo mô hình multi-tier với các lớ
 ![Hình 108.](/images/5-Workshop/5.3-Neon-Infracstructure/image108.png)
 
 
-### 5.3.10. Lấy endpoint và lưu vào file `.env`
+### Lấy endpoint và lưu vào file `.env`
 
 1. Mở DB instance vừa tạo.
 2. Chọn tab Connectivity & security.
