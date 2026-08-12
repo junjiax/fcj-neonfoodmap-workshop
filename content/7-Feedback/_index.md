@@ -24,26 +24,27 @@ During my internship, I have learned many new skills, such as using project mana
 The company culture is very positive: everyone respects one another, maintaining a serious yet cheerful work atmosphere. When facing urgent projects, everyone pulls together and supports each other, regardless of their position. This makes me feel like a true part of the team, even though I am just an intern. **6. Intern policies/benefits**
 The company provides an internship allowance and offers flexible scheduling when needed. Additionally, the opportunity to participate in internal training sessions is a major plus.
 
-
 ### Other questions
-- What were you **most satisfied** with during your internship? 
+
+- What were you **most satisfied** with during your internship?
 
 What I appreciated most about the internship was the opportunity to gain exposure to the software deployment process using the DevOps model on the AWS platform. Furthermore, the professional, open, and learning-oriented work environment boosted my confidence in conducting research, solving problems, and fostering personal growth.
 
-- What do you think the company **needs to improve** for future interns? 
+- What do you think the company **needs to improve** for future interns?
 
 Based on my experience, the program was well-structured and provided significant value to interns. Therefore, I do not currently have any specific suggestions for improvement.
 
-- If recommending this to friends, would you **advise them to intern here**? Why? 
+- If recommending this to friends, would you **advise them to intern here**? Why?
 
 I would certainly recommend that my friends intern here, as it is an ideal environment for students to access modern technologies, participate in real-world projects, and hone their professional skills.
 
 ### Suggestions & expectations
-- Do you have any suggestions to improve the internship experience? 
+
+- Do you have any suggestions to improve the internship experience?
 
 I do not have any additional suggestions at this time, as the internship program effectively met my learning and experiential needs.
 
-- Would you like to continue with this program in the future? 
+- Would you like to continue with this program in the future?
 
 I would love to continue participating in the program in the future if the opportunity arises.
 
