@@ -32,8 +32,8 @@ jobs:
           hugo-version: '0.164.0'
           extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: Build Hugo 
+        run: hugo --gc --minify
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
