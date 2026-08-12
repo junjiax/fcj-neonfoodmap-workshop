@@ -184,11 +184,11 @@ CloudWatch Alarms giúp giám sát các chỉ số (Metrics) của hệ thống 
 
 2. Chọn **Create alarm** để tạo cảnh báo mới.
 
-![alt text](image-3.png)
+![alt text](images/image-3.png)
 
 3. Tại bước **Specify metric and conditions**, nhấn **Select metric** để lựa chọn Metric cần theo dõi.
 
-![alt text](image-4.png)
+![alt text](images/image-4.png)
 
 
 4. Trong danh sách Metric, chọn:
@@ -196,11 +196,11 @@ CloudWatch Alarms giúp giám sát các chỉ số (Metrics) của hệ thống 
    - **ECS**
    - **ClusterName, ServiceName**
 
-![alt text](image-5.png)
+![alt text](images/image-5.png)
 
 5. Chọn Metric **CPUUtilization** của ECS Service, sau đó nhấn **Select metric**.
 
-![alt text](image-6.png)
+![alt text](images/image-6.png)
 
 
 6. Cấu hình điều kiện kích hoạt Alarm:
@@ -213,8 +213,8 @@ CloudWatch Alarms giúp giám sát các chỉ số (Metrics) của hệ thống 
 
 CloudWatch sẽ chuyển Alarm sang trạng thái **ALARM** khi mức sử dụng CPU trung bình vượt quá **80%** trong khoảng thời gian đánh giá.
 
-![alt text](image-7.png)
-![alt text](image-8.png)
+![alt text](images/image-7.png)
+![alt text](images/image-8.png)
 
 7. Tại bước **Configure actions**, lựa chọn hành động khi Alarm được kích hoạt. Có thể chọn gửi thông báo thông qua **SNS Topic** hoặc bỏ qua nếu chỉ cần theo dõi trạng thái.
 
@@ -253,11 +253,11 @@ Có thể bổ sung mô tả để dễ dàng quản lý về sau.
 
 4. Hoàn tất việc tạo Topic.
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ![Hình 47.](images/5-Workshop/5.5-Neon-Operations/image047.png)
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 5. Mở Topic vừa tạo, chọn **Create subscription**.
 
